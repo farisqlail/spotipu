@@ -20,6 +20,9 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('sbadmin/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+    {{-- Styles CSS --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
 </head>
 
 <body id="page-top">
