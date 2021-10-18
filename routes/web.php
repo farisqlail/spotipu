@@ -8,3 +8,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/ads', [AdsController::class, 'index']);
+Route::get('/member', [MemberController::class, 'index']);

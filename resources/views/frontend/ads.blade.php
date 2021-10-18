@@ -1,4 +1,8 @@
-@extends('layouts')
+@extends('layouts.app')
+
+@section('title')
+    Spotipu - Pasang Iklan
+@endsection
 
 @section('content')
     

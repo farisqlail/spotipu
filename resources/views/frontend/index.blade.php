@@ -1,4 +1,8 @@
-@extends('layouts')
+@extends('layouts.app')
+
+@section('title')
+    Spotipu - Platform Music
+@endsection
 
 @section('content')
 
