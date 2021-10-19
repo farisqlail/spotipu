@@ -12,3 +12,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/ads', [AdsController::class, 'index']);
 Route::get('/member', [MemberController::class, 'index']);
+
+// Route Authentication
+Route::get('/login', 'App\Http\Controllers\AuthenticationLogin@tes')->name('AuthLogin');
