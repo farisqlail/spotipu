@@ -70,58 +70,70 @@
 
                             <div class="row mt-3">
                                 <div class="col-sm-6">
-                                    <div class="card"
-                                        style="background-color: #446FDD; border: none; height: 5rem;">
-                                        <div class="card-body d-flex align-items-center" align="center">
-                                            <h6 class="text-white mx-auto"><b>Hip Hop</b></h6>
+                                    <a href="">
+                                        <div class="card"
+                                            style="background-color: #446FDD; border: none; height: 5rem;">
+                                            <div class="card-body d-flex align-items-center" align="center">
+                                                <h6 class="text-white mx-auto"><b>Hip Hop</b></h6>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="card"
-                                        style="background-color: #CCD93B; border: none; height: 5rem;">
-                                        <div class="card-body d-flex align-items-center" align="center">
-                                            <h6 class="text-white mx-auto"><b>Rock</b></h6>
+                                    <a href="">
+                                        <div class="card"
+                                            style="background-color: #CCD93B; border: none; height: 5rem;">
+                                            <div class="card-body d-flex align-items-center" align="center">
+                                                <h6 class="text-white mx-auto"><b>Rock</b></h6>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row mt-3">
-                                <div class="col-sm-6">
-                                    <div class="card"
-                                        style="background-color: #D29A67; border: none; height: 5rem;">
-                                        <div class="card-body d-flex align-items-center" align="center">
-                                            <h6 class="text-white mx-auto"><b>Folk</b></h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="card"
-                                        style="background-color: #E36AA4; border: none; height: 5rem;">
-                                        <div class="card-body d-flex align-items-center" align="center">
-                                            <h6 class="text-white mx-auto"><b>Metal</b></h6>
-                                        </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
 
                             <div class="row mt-3">
                                 <div class="col-sm-6">
-                                    <div class="card"
-                                        style="background-color: #79C256; border: none; height: 5rem;">
-                                        <div class="card-body d-flex align-items-center" align="center">
-                                            <h6 class="text-white mx-auto"><b>Dance</b></h6>
+                                    <a href="">
+                                        <div class="card"
+                                            style="background-color: #D29A67; border: none; height: 5rem;">
+                                            <div class="card-body d-flex align-items-center" align="center">
+                                                <h6 class="text-white mx-auto"><b>Folk</b></h6>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="card"
-                                        style="background-color: #B444D0; border: none; height: 5rem;">
-                                        <div class="card-body d-flex align-items-center" align="center">
-                                            <h6 class="text-white mx-auto"><b>Pop</b></h6>
+                                    <a href="">
+                                        <div class="card"
+                                            style="background-color: #E36AA4; border: none; height: 5rem;">
+                                            <div class="card-body d-flex align-items-center" align="center">
+                                                <h6 class="text-white mx-auto"><b>Metal</b></h6>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-sm-6">
+                                    <a href="">
+                                        <div class="card"
+                                            style="background-color: #79C256; border: none; height: 5rem;">
+                                            <div class="card-body d-flex align-items-center" align="center">
+                                                <h6 class="text-white mx-auto"><b>Dance</b></h6>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a href="">
+                                        <div class="card"
+                                            style="background-color: #B444D0; border: none; height: 5rem;">
+                                            <div class="card-body d-flex align-items-center" align="center">
+                                                <h6 class="text-white mx-auto"><b>Pop</b></h6>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
 
@@ -228,9 +240,9 @@
                         <div class="progress mt-3" style="height: 2px; width: 80%;">
                             <div class="progress-bar bg-warning" role="progressbar" style="width: 30%; " aria-valuenow="25"
                                 aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            
-                            <button class="btn btn-lg btn-warning mt-3"><i class="fas fa-play"></i></button>
+                        </div>
+
+                        <button class="btn btn-lg btn-warning mt-3"><i class="fas fa-play"></i></button>
                     </div>
 
                 </div>
