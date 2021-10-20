@@ -71,7 +71,7 @@ Spotipu - Beli Member
                     <br>
                     <br> -->
                     <div class="btn-member" align="center">
-                        <button class="align-self-end btn btn-light">Pilih Paket</button>
+                        <a href="" class="align-self-end btn btn-light">Pilih Paket</a>
                     </div>
                 </div>
             </div>
