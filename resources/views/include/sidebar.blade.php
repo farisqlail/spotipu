@@ -33,7 +33,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{ url('/genre') }}">
                     <i class="fas fa-fw fa-music"></i>
                     <span>Genre</span></a>
             </li>
