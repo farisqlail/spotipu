@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo-2.png') }}" type="image/x-icon">
+
     <title>@yield('title')</title>
 
     {{-- Style --}}

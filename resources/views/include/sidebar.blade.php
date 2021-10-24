@@ -3,8 +3,8 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon">
+                   <img src="{{ asset('assets/img/logo-2.png') }}" width="50" alt="" srcset="">
                 </div>
                 <div class="sidebar-brand-text mx-3">Spotipu</div>
             </a>
