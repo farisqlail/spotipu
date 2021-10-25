@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="card-caption text-start mt-3">
-                        <h5><b>Green Day</b></h5>
+                        <h5 class="text-white"><b>Green Day</b></h5>
                         <small class="text-muted">Artist</small>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                     </div>
 
                     <div class="card-caption text-start mt-3">
-                        <h5><b>Green Day</b></h5>
+                        <h5 class="text-white"><b>Green Day</b></h5>
                         <small class="text-muted">Artist</small>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                     </div>
 
                     <div class="card-caption text-start mt-3">
-                        <h5><b>Green Day</b></h5>
+                        <h5 class="text-white"><b>Green Day</b></h5>
                         <small class="text-muted">Artist</small>
                     </div>
                 </div>
@@ -59,66 +59,7 @@
                     </div>
 
                     <div class="card-caption text-start mt-3">
-                        <h5><b>Green Day</b></h5>
-                        <small class="text-muted">Artist</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-3 mb-3">
-        <div class="col-md-3">
-            <div class="card" style="background-color: #2D3E50; border: none;">
-                <div class="card-body">
-                    <div class="card-image" align="center">
-                        <img src="{{ asset('assets/img/greenday-2.png') }}" class="img-fluid rounded-circle" width="150" alt="" srcset="">
-                    </div>
-
-                    <div class="card-caption text-start mt-3">
-                        <h5><b>Green Day</b></h5>
-                        <small class="text-muted">Artist</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card" style="background-color: #2D3E50; border: none;">
-                <div class="card-body">
-                    <div class="card-image" align="center">
-                        <img src="{{ asset('assets/img/greenday-2.png') }}" class="img-fluid rounded-circle" width="150" alt="" srcset="">
-                    </div>
-
-                    <div class="card-caption text-start mt-3">
-                        <h5><b>Green Day</b></h5>
-                        <small class="text-muted">Artist</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card" style="background-color: #2D3E50; border: none;">
-                <div class="card-body">
-                    <div class="card-image" align="center">
-                        <img src="{{ asset('assets/img/greenday-2.png') }}" class="img-fluid rounded-circle" width="150" alt="" srcset="">
-                    </div>
-
-                    <div class="card-caption text-start mt-3">
-                        <h5><b>Green Day</b></h5>
-                        <small class="text-muted">Artist</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card" style="background-color: #2D3E50; border: none;">
-                <div class="card-body">
-                    <div class="card-image" align="center">
-                        <img src="{{ asset('assets/img/greenday-2.png') }}" class="img-fluid rounded-circle" width="150" alt="" srcset="">
-                    </div>
-
-                    <div class="card-caption text-start mt-3">
-                        <h5><b>Green Day</b></h5>
+                        <h5 class="text-white"><b>Green Day</b></h5>
                         <small class="text-muted">Artist</small>
                     </div>
                 </div>
@@ -135,7 +76,7 @@
                     </div>
 
                     <div class="card-caption text-start mt-3">
-                        <h5><b>Green Day</b></h5>
+                        <h5 class="text-white"><b>Green Day</b></h5>
                         <small class="text-muted">Artist</small>
                     </div>
                 </div>
@@ -149,7 +90,7 @@
                     </div>
 
                     <div class="card-caption text-start mt-3">
-                        <h5><b>Green Day</b></h5>
+                        <h5 class="text-white"><b>Green Day</b></h5>
                         <small class="text-muted">Artist</small>
                     </div>
                 </div>
@@ -163,7 +104,7 @@
                     </div>
 
                     <div class="card-caption text-start mt-3">
-                        <h5><b>Green Day</b></h5>
+                        <h5 class="text-white"><b>Green Day</b></h5>
                         <small class="text-muted">Artist</small>
                     </div>
                 </div>
@@ -177,7 +118,66 @@
                     </div>
 
                     <div class="card-caption text-start mt-3">
-                        <h5><b>Green Day</b></h5>
+                        <h5 class="text-white"><b>Green Day</b></h5>
+                        <small class="text-muted">Artist</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3 mb-3">
+        <div class="col-md-3">
+            <div class="card" style="background-color: #2D3E50; border: none;">
+                <div class="card-body">
+                    <div class="card-image" align="center">
+                        <img src="{{ asset('assets/img/greenday-2.png') }}" class="img-fluid rounded-circle" width="150" alt="" srcset="">
+                    </div>
+
+                    <div class="card-caption text-start mt-3">
+                        <h5 class="text-white"><b>Green Day</b></h5>
+                        <small class="text-muted">Artist</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="background-color: #2D3E50; border: none;">
+                <div class="card-body">
+                    <div class="card-image" align="center">
+                        <img src="{{ asset('assets/img/greenday-2.png') }}" class="img-fluid rounded-circle" width="150" alt="" srcset="">
+                    </div>
+
+                    <div class="card-caption text-start mt-3">
+                        <h5 class="text-white"><b>Green Day</b></h5>
+                        <small class="text-muted">Artist</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="background-color: #2D3E50; border: none;">
+                <div class="card-body">
+                    <div class="card-image" align="center">
+                        <img src="{{ asset('assets/img/greenday-2.png') }}" class="img-fluid rounded-circle" width="150" alt="" srcset="">
+                    </div>
+
+                    <div class="card-caption text-start mt-3">
+                        <h5 class="text-white"><b>Green Day</b></h5>
+                        <small class="text-muted">Artist</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="background-color: #2D3E50; border: none;">
+                <div class="card-body">
+                    <div class="card-image" align="center">
+                        <img src="{{ asset('assets/img/greenday-2.png') }}" class="img-fluid rounded-circle" width="150" alt="" srcset="">
+                    </div>
+
+                    <div class="card-caption text-start mt-3">
+                        <h5 class="text-white"><b>Green Day</b></h5>
                         <small class="text-muted">Artist</small>
                     </div>
                 </div>
