@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8" data-aos="fade-up">
 
             <div class="card shadow-sm rounded" style="background-color: #2D3E50; border: none;">
                 <div class="card-body">
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-7" data-aos="fade-up">
                     <div class="card shadow-sm rounded" style="background-color: #2D3E50; border: none;">
                         <div class="card-body">
                             <div class="row">
@@ -222,7 +222,7 @@
             </div>
 
         </div>
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4"  data-aos="fade-up">
             <div class="card card-player shadow-sm rounded" style="background-color: #2D3E50; border: none; ">
                 <div class="card-body">
 

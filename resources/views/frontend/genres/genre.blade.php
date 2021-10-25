@@ -8,7 +8,7 @@
 
     <h2 class="text-white">Genres</h2>
 
-    <div class="row mt-3">
+    <div class="row mt-3" data-aos="fade-up">
         <div class="col-md-3">
              <div class="card" style="background-color: #2D3E50; border: none;">
                 <img src="{{ asset('assets/img/rock.png') }}" class="card-img-top" alt="...">
@@ -59,7 +59,7 @@
        </div>
     </div>
 
-    <div class="row mt-3">
+    <div class="row mt-3" data-aos="fade-up">
         <div class="col-md-3">
              <div class="card" style="background-color: #2D3E50; border: none;">
                 <img src="{{ asset('assets/img/rock.png') }}" class="card-img-top" alt="...">

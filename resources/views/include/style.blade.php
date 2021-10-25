@@ -11,3 +11,5 @@
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet"> 
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">

@@ -8,7 +8,7 @@
 
     <h2 class="text-white">Artist</h2>
 
-    <div class="row mt-3">
+    <div class="row mt-3" data-aos="fade-up">
         <div class="col-md-3">
             <div class="card" style="background-color: #2D3E50; border: none;">
                 <div class="card-body">
@@ -67,7 +67,7 @@
         </div>
     </div>
 
-    <div class="row mt-3 mb-3">
+    <div class="row mt-3" data-aos="fade-up">
         <div class="col-md-3">
             <div class="card" style="background-color: #2D3E50; border: none;">
                 <div class="card-body">
@@ -126,7 +126,7 @@
         </div>
     </div>
 
-    <div class="row mt-3 mb-3">
+    <div class="row mt-3" data-aos="fade-up">
         <div class="col-md-3">
             <div class="card" style="background-color: #2D3E50; border: none;">
                 <div class="card-body">
