@@ -16,6 +16,10 @@ class MemberController extends Controller
         return view('frontend.member.member');
     }
 
+    public function bayar(){
+        return view('frontend.member.pembayaran');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
