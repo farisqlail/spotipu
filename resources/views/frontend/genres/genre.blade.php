@@ -8,8 +8,8 @@
 
     <h2 class="text-white">Genres</h2>
 
-    <div class="row mt-3" data-aos="fade-up">
-        <div class="col-md-3">
+    <div class="row mt-5" data-aos="fade-up">
+        <div class="col-md-3 hvr-grow">
              <div class="card" style="background-color: #2D3E50; border: none;">
                 <img src="{{ asset('assets/img/rock.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 hvr-grow">
              <div class="card" style="background-color: #2D3E50; border: none;">
                 <img src="{{ asset('assets/img/folk.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 hvr-grow">
              <div class="card" style="background-color: #2D3E50; border: none;">
                 <img src="{{ asset('assets/img/hiphop.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -45,7 +45,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 hvr-grow">
             <div class="card" style="background-color: #2D3E50; border: none;">
                 <img src="{{ asset('assets/img/folk.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -59,8 +59,8 @@
        </div>
     </div>
 
-    <div class="row mt-3" data-aos="fade-up">
-        <div class="col-md-3">
+    <div class="row mt-5" data-aos="fade-up">
+        <div class="col-md-3 hvr-grow">
              <div class="card" style="background-color: #2D3E50; border: none;">
                 <img src="{{ asset('assets/img/rock.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -72,7 +72,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 hvr-grow">
              <div class="card" style="background-color: #2D3E50; border: none;">
                 <img src="{{ asset('assets/img/folk.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -84,7 +84,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 hvr-grow">
              <div class="card" style="background-color: #2D3E50; border: none;">
                 <img src="{{ asset('assets/img/hiphop.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -96,7 +96,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 hvr-grow">
             <div class="card" style="background-color: #2D3E50; border: none;">
                 <img src="{{ asset('assets/img/folk.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">

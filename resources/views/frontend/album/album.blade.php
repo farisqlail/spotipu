@@ -8,8 +8,8 @@
 
     <h2 class="text-white">Album</h2>
 
-    <div class="row mt-3" data-aos="fade-up">
-        <div class="col-md-3">
+    <div class="row mt-5" data-aos="fade-up">
+        <div class="col-md-3 hvr-grow">
             <div class="card" style="background-color: #2D3E50; border: none;">
                 <div class="card-body">
                     <div class="card-image">
@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 hvr-grow">
             <div class="card" style="background-color: #2D3E50; border: none;">
                 <div class="card-body">
                     <div class="card-image">
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 hvr-grow">
             <div class="card" style="background-color: #2D3E50; border: none;">
                 <div class="card-body">
                     <div class="card-image">
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 hvr-grow">
             <div class="card" style="background-color: #2D3E50; border: none;">
                 <div class="card-body">
                     <div class="card-image">
@@ -79,8 +79,8 @@
         </div>
     </div>
 
-    <div class="row mt-3" data-aos="fade-up">
-        <div class="col-md-3">
+    <div class="row mt-5" data-aos="fade-up">
+        <div class="col-md-3 hvr-grow">
             <div class="card" style="background-color: #2D3E50; border: none;">
                 <div class="card-body">
                     <div class="card-image">
@@ -97,7 +97,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 hvr-grow">
             <div class="card" style="background-color: #2D3E50; border: none;">
                 <div class="card-body">
                     <div class="card-image">
@@ -114,7 +114,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 hvr-grow">
             <div class="card" style="background-color: #2D3E50; border: none;">
                 <div class="card-body">
                     <div class="card-image">
@@ -131,7 +131,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 hvr-grow">
             <div class="card" style="background-color: #2D3E50; border: none;">
                 <div class="card-body">
                     <div class="card-image">
