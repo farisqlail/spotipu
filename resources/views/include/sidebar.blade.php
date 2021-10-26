@@ -54,7 +54,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/member') }}">
                     <i class="far fa-fw fa-gem"></i>
-                    <span>Langganan</span></a>
+                    <span>Member</span></a>
             </li>
             
 
