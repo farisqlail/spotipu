@@ -14,3 +14,25 @@
 .btn-member {
    margin-top: auto;
 }
+
+.form-ads input {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+}
+
+.form-ads input:valid {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+}
+
+.form-ads textarea {
+    background-color: #2D3E50;
+    border: none;
+}
+
+.form-ads textarea:validg {
+    background-color: #2D3E50;
+    border: none;
+}

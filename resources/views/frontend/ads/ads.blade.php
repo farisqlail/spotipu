@@ -70,7 +70,56 @@
 
     <h5 class="text-white mt-5">Create New Campaign</h5><br>
     
-    <form action="">
+    <form action="" class="text-white form-ads">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Kategori Produk <span style="color:red;">*</span></label>
+                    <input type="text" name="" class="form-control" placeholder="Fashion" id="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Judul Iklan <span style="color:red;">*</span></label>
+                    <input type="text" name="" class="form-control" placeholder="Outer branded" id="">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Merk <span style="color:red;">*</span></label>
+                    <input type="text" name="" class="form-control" placeholder="H7M" id="">
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="">Nama <span style="color:red;">*</span></label>
+                    <input type="text" name="" class="form-control" placeholder="PWL Outer" id="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Judul Iklan <span style="color:red;">*</span></label>
+                    <textarea name="" class="form-control" id="" cols="30" rows="5"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Harga  <span style="color:red;">*</span></label>
+                    <input type="text" name="" class="form-control" placeholder="Rp.00000" id="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Link Website <span style="color:red;">*</span></label>
+                    <input type="text" name="" class="form-control" placeholder="Tokopedia.com" id="">
+                </div>
+            </div>
+        </div>
 
     </form>
 
