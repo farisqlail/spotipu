@@ -11,13 +11,19 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
+
         return view('frontend.member.member');
     }
 
     public function bayar(){
+
         return view('frontend.member.pembayaran');
+    }
+
+    public function invoice(){
+
+        return view('frontend.member.invoice');
     }
 
     /**
