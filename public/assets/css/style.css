@@ -27,12 +27,42 @@
     height: 50px;
 }
 
+.form-ads select {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+}
+
+.form-ads select option {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+    color: #fff;
+}
+
+.form-ads select:valid {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+}
+
 .form-ads textarea {
     background-color: #2D3E50;
     border: none;
 }
 
-.form-ads textarea:validg {
+.form-ads textarea:valid {
     background-color: #2D3E50;
     border: none;
 }
+
+.form-ads .img-up {
+    background-color: transparent !important;
+    border: none;
+}
+
+.form-ads .btn-ads {
+    background-color: #4684E2;
+    color: #fff;
+}
+
