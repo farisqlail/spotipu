@@ -61,8 +61,8 @@
                 <div class="mb-1">
                     <input type="number" placeholder="Masukan nomer handphone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
-                <button type="submit" class="btn btn-primary">Login</button><br>
-                <button class="btn btn-rounded mt-2" style="background-color: #48536C; font-color: #ffffff;">Register</button>
+                <button type="submit" class="btn btn-primary">Register</button><br>
+                <a href="/login">Kembali ke halaman login</a>
               </form>
             
         </div>
