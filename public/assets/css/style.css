@@ -5,12 +5,31 @@
 
 .btn-campaign {
     font-family: 'Poppins', sans-serif !important;
-    background-color: #2D3E50; 
-    border-radius: 20px; 
+    background-color: #2D3E50;
+    border-radius: 20px;
     height: 40px;
     padding: 8px;
 }
 
 .btn-member {
-   margin-top: auto;
+    margin-top: auto;
+}
+
+.cardpaket {
+    background-color: #2D3E50;
+    border: none;
+    height: 273px;
+    width: 850px;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.metodebayar {
+    background-color: #F6F6F6;
+    border: none;
+    height: 208px;
+    width: 605px;
+    padding: 20px;
+    border-radius: 10px;
 }

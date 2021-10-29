@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo-2.png') }}" type="image/x-icon">
+
     <title>@yield('title')</title>
 
     {{-- Style --}}
@@ -33,7 +35,7 @@
                 @include('include.navbar')
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container-fluid mb-5">
 
                     {{-- <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">

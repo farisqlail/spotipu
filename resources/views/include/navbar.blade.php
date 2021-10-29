@@ -1,5 +1,5 @@
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand topbar mb-4 static-top">
+                <nav class="navbar navbar-expand topbar mb-4 static-top" data-aos="zoom-in">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -21,9 +21,9 @@
                     </form>
 
                     <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" data-aos="zoom-in">
 
-                        <a href="{{ url('/ads') }}" class="btn btn-sm text-white mt-3 btn-campaign">&nbsp;<i class="fas fa-plus"> &nbsp; Create Campaign &nbsp;</i></a>
+                        <a href="{{ url('/ads') }}" class="btn btn-sm text-white mt-3 btn-campaign">&nbsp;<i class="fas fa-plus"> &nbsp; Pasang Iklan &nbsp;</i></a>
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
