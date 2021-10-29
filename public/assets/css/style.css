@@ -12,6 +12,7 @@
 }
 
 .btn-member {
+<<<<<<< HEAD
     margin-top: auto;
 }
 
@@ -33,3 +34,59 @@
     padding: 20px;
     border-radius: 10px;
 }
+=======
+   margin-top: auto;
+}
+
+.form-ads input {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+}
+
+.form-ads input:valid {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+}
+
+.form-ads select {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+}
+
+.form-ads select option {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+    color: #fff;
+}
+
+.form-ads select:valid {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+}
+
+.form-ads textarea {
+    background-color: #2D3E50;
+    border: none;
+}
+
+.form-ads textarea:valid {
+    background-color: #2D3E50;
+    border: none;
+}
+
+.form-ads .img-up {
+    background-color: transparent !important;
+    border: none;
+}
+
+.form-ads .btn-ads {
+    background-color: #4684E2;
+    color: #fff;
+}
+
+>>>>>>> 1fd538b22e879b2d0a5e808999f2b2785bb4d4a2

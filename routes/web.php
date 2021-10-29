@@ -24,4 +24,13 @@ Route::get('/album', [AlbumController::class, 'index']);
 
 
 // Route Authentication
-Route::get('/login', 'App\Http\Controllers\AuthenticationLogin@tes')->name('AuthLogin');
+
+//Route Login
+Route::get('/login', function () {
+    return view('authentication/login');
+});
+
+//Route Register
+Route::get('/register', function () {
+    return view('authentication/register');
+});
