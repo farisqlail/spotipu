@@ -169,7 +169,7 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="">Durasi <span style="color:red;">*</span></label>
+                    <label for="">Bukti Pembayaran <span style="color:red;">*</span></label>
                     <input type="file" class="form-control" name="">
                 </div>
             </div>

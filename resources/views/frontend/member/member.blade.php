@@ -26,7 +26,7 @@ Spotipu - Beli Member
 
 
 
-                    <div class="btn-member" align="center">
+                    <div class="btn-member hvr-shrink" align="center">
                         <a href="{{ route('member.bayar', $id="batagor") }}" class="align-self-end btn btn-light">Pilih Paket</a>
                     </div>
                 </div>
@@ -48,7 +48,7 @@ Spotipu - Beli Member
                     <br>
                     <br>
                     <br> -->
-                    <div class="btn-member " align="center">
+                    <div class="btn-member hvr-shrink " align="center">
                         <button class="align-self-end btn btn-light">Pilih Paket</button>
                     </div>
                 </div>
@@ -70,7 +70,7 @@ Spotipu - Beli Member
                     <!-- <br>
                     <br>
                     <br> -->
-                    <div class="btn-member" align="center">
+                    <div class="btn-member hvr-shrink" align="center">
                         <a href="{{url('/pembayaran')}}" class="align-self-end btn btn-light">Pilih Paket</a>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ Spotipu - Beli Member
                     <p><i class="fas fa-music"></i> &nbsp; Dengarkan lagu offline, atur equalizer</p>
 
 
-                    <div class="btn-member " align="center">
+                    <div class="btn-member hvr-shrink " align="center">
                         <button class="align-self-end btn btn-light">Pilih Paket</button>
                     </div>
                 </div>
