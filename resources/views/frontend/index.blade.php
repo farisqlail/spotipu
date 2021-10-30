@@ -164,7 +164,7 @@
                                     <small>Green Day</small>
                                 </div>
                                 <div class="col-md-3 d-flex align-items-center hvr-grow">
-                                    <button class="btn btn-warning ml-auto"><i class="fas fa-play"></i></button>
+                                    <a href="{{ route('player.index', $id="still breathing") }}" class="btn btn-warning ml-auto"><i class="fas fa-play"></i></a>
                                 </div>
                             </div>
 

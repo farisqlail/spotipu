@@ -6,6 +6,7 @@ use App\Http\Controllers\AdsController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\PlayerController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -23,7 +24,7 @@ Route::get('/pembayaran/checkout/{id}', [MemberController::class, 'checkout'])->
 Route::get('/artist', [ArtistController::class, 'index']);
 Route::get('/genre', [GenreController::class, 'index']);
 Route::get('/album', [AlbumController::class, 'index']);
-
+Route::get('/player/{id}', [PlayerController::class, 'index'])->name('player.index');
 
 // Route Authentication
 
