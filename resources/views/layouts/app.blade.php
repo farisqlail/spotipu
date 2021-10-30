@@ -68,7 +68,9 @@
     </a>
 
     {{-- Script --}}
+    @stack('prepend-script')
     @include('include.script')
+    @stack('addon-script')
 
 </body>
 

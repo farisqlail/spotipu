@@ -5,13 +5,14 @@
 
 .btn-campaign {
     font-family: 'Poppins', sans-serif !important;
-    background-color: #2D3E50; 
-    border-radius: 20px; 
+    background-color: #2D3E50;
+    border-radius: 20px;
     height: 40px;
     padding: 8px;
 }
 
 .btn-member {
+
    margin-top: auto;
 }
 
@@ -49,5 +50,96 @@ img{
 }
 
 .label{
-    margin-left: -250px
+    margin-left: -250px;
+    margin-top: auto;
+}
+
+.cardpaket {
+    background-color: #2D3E50;
+    border: none;
+    height: 273px;
+    width: 850px;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.metodebayar {
+    background-color: #F6F6F6;
+    border: none;
+    height: 208px;
+    width: 605px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form-ads input {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+}
+
+.form-ads input:valid {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+}
+
+.form-ads select {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+}
+
+.form-ads select option {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+    color: #fff;
+}
+
+.form-ads select:valid {
+    background-color: #2D3E50;
+    border: none;
+    height: 50px;
+}
+
+.form-ads textarea {
+    background-color: #2D3E50;
+    border: none;
+}
+
+.form-ads textarea:valid {
+    background-color: #2D3E50;
+    border: none;
+}
+
+.form-ads .img-up {
+    background-color: transparent !important;
+    border: none;
+}
+
+.form-ads .btn-ads {
+    background-color: #4684E2;
+    color: #fff;
+}
+
+.button-beli a {
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.button-checkout a {
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.button-paket a {
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    padding: 12px;    
+
 }
