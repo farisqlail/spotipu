@@ -59,7 +59,7 @@
             </div>
 
             <div class="button-beli mt-5 mb-3" align="center">
-                <a href="{{ route('member.checkout', $id=1) }}" class="btn btn-lg btn-light hvr-shrink">Bayar</a>
+                <a href="{{ route('member.checkout') }}" class="btn btn-lg btn-light hvr-shrink">Bayar</a>
             </div>
         </div>
     </div>
