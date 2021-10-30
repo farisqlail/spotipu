@@ -19,7 +19,7 @@ Spotipu - Invoice
     </div>
 
     <div class="button-paket mt-5 mb-5" align="center">
-        <a href="{{ route('member.pembayaran') }}"
+        <a href="{{ url('/') }}"
             class="align-self-end btn btn-light hvr-shrink">Terima Kasih</a>
     </div>
 <!-- </div> -->

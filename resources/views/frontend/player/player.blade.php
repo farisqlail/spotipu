@@ -12,7 +12,7 @@
         <h3 class="text-white mt-5"><b>Still Breathing</b></h3>
         <span>Green Day</span>
 
-        <div class="button-play" align="center">
+        <div class="button-play mt-4" align="center">
             <audio id="audio">
                 <source
                     src="{{ asset('assets/music/air-mata-api.mp3') }}"
