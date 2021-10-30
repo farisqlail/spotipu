@@ -17,7 +17,8 @@ Route::get('/ads', [AdsController::class, 'index']);
 Route::get('/member', [MemberController::class, 'index']);
 
 Route::get('/pembayaran/{id}', [MemberController::class, 'bayar'])->name('member.bayar');
-Route::get('/pembayaran/invoice/{id}', [MemberController::class, 'invoice']);
+Route::get('/pembayaran/invoice/{id}', [MemberController::class, 'invoice'])->name('member.pembayaran');
+Route::get('/pembayaran/checkout/{id}', [MemberController::class, 'checkout'])->name('member.checkout');
 
 Route::get('/artist', [ArtistController::class, 'index']);
 Route::get('/genre', [GenreController::class, 'index']);

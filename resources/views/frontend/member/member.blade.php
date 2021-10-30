@@ -27,7 +27,7 @@ Spotipu - Beli Member
 
 
                     <div class="btn-member" align="center">
-                        <button class="align-self-end btn btn-light">Pilih Paket</button>
+                        <a href="{{ route('member.bayar', $id="batagor") }}" class="align-self-end btn btn-light">Pilih Paket</a>
                     </div>
                 </div>
             </div>

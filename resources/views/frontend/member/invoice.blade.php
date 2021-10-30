@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="card mt-3" style="background-color: #2D3E50; border: none;">
+    <div class="card mt-3" data-aos="fade-up" style="background-color: #2D3E50; border: none;">
         <div class="card-body text-white">
 
             <div class="title-invoice" align="center">
@@ -59,7 +59,7 @@
             </div>
 
             <div class="button-beli mt-5 mb-3" align="center">
-                <button class="btn btn-lg btn-light hvr-shrink">Bayar</button>
+                <a href="{{ route('member.checkout', $id=1) }}" class="btn btn-lg btn-light hvr-shrink">Bayar</a>
             </div>
         </div>
     </div>

@@ -85,7 +85,13 @@
     color: #fff;
 }
 
-.button-beli button {
+.button-beli a {
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.button-checkout a {
     width: 200px;
     height: 50px;
     border-radius: 15px;
