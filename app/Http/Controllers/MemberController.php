@@ -31,6 +31,11 @@ class MemberController extends Controller
         return view('frontend.member.checkout');
     }
 
+    public function konfirmasi(){
+
+        return view('frontend.member.konfirmasi');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -44,7 +44,7 @@
             <span>Batas pembayaran dilakukan maksimal 30 menit setelah pesan</span>
 
             <div class="button-checkout mt-5 mb-3" align="center">
-                <a href="{{ url('/') }}" class="btn btn-lg btn-light hvr-shrink">Konfirmasi</a>
+                <a href="{{ route('member.konfirmasi', $id=1) }}" class="btn btn-lg btn-light hvr-shrink">Konfirmasi</a>
             </div>
         </div>
     </div>
