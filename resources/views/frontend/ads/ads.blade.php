@@ -106,7 +106,7 @@
                 <div class="form-group">
                     <label for="">Judul Iklan <span style="color:red;">*</span></label>
                     <textarea name="" class="form-control" id="" cols="30"
-                        rows="5">ouetr ini dibuat dari bahan pilihan...</textarea>
+                        rows="5" placeholder="ouetr ini dibuat dari bahan pilihan..."></textarea>
                 </div>
             </div>
         </div>
