@@ -17,10 +17,10 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/ads', [AdsController::class, 'index']);
 Route::get('/member', [MemberController::class, 'index']);
 
-Route::get('/pembayaran/{id}', [MemberController::class, 'bayar'])->name('member.bayar');
-Route::get('/pembayaran/invoice/{id}', [MemberController::class, 'invoice'])->name('member.pembayaran');
-Route::get('/pembayaran/checkout/{id}', [MemberController::class, 'checkout'])->name('member.checkout');
-Route::get('/pembayaran/konfirmasi/{id}', [MemberController::class, 'konfirmasi'])->name('member.konfirmasi');
+Route::get('/pembayaran', [MemberController::class, 'bayar'])->name('member.pembayaran');
+Route::get('/pembayaran/invoice', [MemberController::class, 'invoice'])->name('member.invoice');
+Route::get('/pembayaran/checkout', [MemberController::class, 'checkout'])->name('member.checkout');
+Route::get('/pembayaran/konfirmasi', [MemberController::class, 'konfirmasi'])->name('member.konfirmasi');
 
 Route::get('/artist', [ArtistController::class, 'index']);
 Route::get('/genre', [GenreController::class, 'index']);

@@ -89,7 +89,7 @@ Spotipu - Bayar Member
         </div>
 
         <div class="button-paket mt-5" align="center">
-            <a href="{{ route('member.checkout', $id='faris') }}"
+            <a href="{{ route('member.invoice') }}"
                 class="align-self-end btn btn-light hvr-shrink">Total Bayar</a>
         </div>
         <iframe src="https://embed.lottiefiles.com/animation/64294" frameborder="0"></iframe>
