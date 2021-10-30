@@ -47,12 +47,42 @@ body{
 img{
     width: 200px;
     height: 200px;
+    margin-top: -90px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.label{
-    margin-left: -250px;
-    margin-top: auto;
+.labelemail{
+    margin-left: -300px;
+    margin-top: 12px;
+    font-style: bold;
+    font-size: large;
+    color: #fff;
 }
+
+.labelpass{
+    margin-left: -270px;
+    margin-top: 12px;
+    font-style: bold;
+    font-size: large;
+    color: #fff;
+}
+
+.labeluser{
+    margin-left: -260px;
+    font-style: bold;
+    font-size: large;
+    color: #fff;
+}
+
+.labelhp{
+    margin-left: -290px;
+    margin-top: 12px;
+    font-style: bold;
+    font-size: large;
+    color: #fff;
+}
+
 
 .cardpaket {
     background-color: #2D3E50;
@@ -122,6 +152,18 @@ img{
 .form-ads .btn-ads {
     background-color: #4684E2;
     color: #fff;
+}
+
+.formcon{
+    margin-top: 50px;
+}
+
+.formcon2{
+    margin-top: 0px;
+}
+
+.buttoncon{
+    margin-top: 20px;
 }
 
 .button-beli a {
