@@ -8,37 +8,7 @@
 </head>
 
 
-<style>
-    body{
-        background-image: url('/assets/img/bglogin.png');
-        background-size: cover;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        
-    }
-    .card{
-        width: 580px;
-        height: 580px;
-        margin: auto;
-        margin-top: 150px;
-        border-radius: 30%;
-    }
-    .formlogin{
-        margin: auto;
-    }
-
-    .input{
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        background: none;
-        border: #ffffff;
-    }
-    img{
-        width: 200px;
-        height: 200px;
-    }
-</style>
+<link rel="stylesheet" href="assets/css/style.css">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 

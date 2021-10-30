@@ -14,3 +14,40 @@
 .btn-member {
    margin-top: auto;
 }
+
+body{
+    background-image: url('/assets/img/bglogin.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+.card{
+    width: 580px;
+    height: 580px;
+    margin: auto;
+    margin-top: 130px;
+    border-radius: 30%;
+}
+.formlogin{
+    margin: auto;
+}
+
+.input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: #e00303;
+    background: transparent;
+    text-decoration: #ffffff;
+    border: #ffffff;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+}
+
+.label{
+    margin-left: -250px
+}
