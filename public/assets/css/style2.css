@@ -5,6 +5,7 @@ body{
     background-repeat: no-repeat;
     
 }
+
 .card{
     width: 580px;
     height: 580px;
@@ -12,6 +13,7 @@ body{
     margin-top: 130px;
     border-radius: 30%;
 }
+
 .formlogin{
     margin: auto;
 }

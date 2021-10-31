@@ -11,6 +11,15 @@
     padding: 8px;
 }
 
+.btn-login {
+    font-family: 'Poppins', sans-serif !important;
+    background-color: #F5A524;
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+    padding: 8px;
+}
+
 .btn-member {
 
    margin-top: auto;
