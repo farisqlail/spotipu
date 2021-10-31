@@ -47,7 +47,7 @@
       
                       <div class="buttoncon">
                         <button style="width: 60%; background-color: #009BA0; border: none" type="submit" class="btn btn-dark mt-1 mb-3">Register</button><br>
-                        <a href="/login">Kembali ke halaman login</a>
+                        <a class="aref" href="/login">Kembali ke halaman login</a>
                       </div>
                 </div>
 
