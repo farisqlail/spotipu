@@ -18,10 +18,10 @@
                     src="{{ asset('assets/music/still-breathing.mp3') }}"
                     type="audio/mpeg">
             </audio>
-            <button class="btn btn-primary" id="playPauseBtn" onClick="playPause()" align="center">
+            <button class="btn btn-lg btn-warning mt-3 hvr-grow" id="playPauseBtn" onClick="playPause()" align="center">
                 <i class="fas fa-play"></i>
             </button>
-            <button class="btn btn-danger ml-3" onClick="stop()" align="center">
+            <button class="btn btn-lg btn-danger mt-3 ml-3 hvr-grow" onClick="stop()" align="center">
                 <i class="fas fa-stop"></i>
             </button>
         </div>

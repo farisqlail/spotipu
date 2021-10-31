@@ -27,28 +27,28 @@
                         </div>
 
                         <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/greenday.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Green Day</h6>
+                            <img src="{{ asset('assets/img/fur.png') }}" class="img-fluid" alt="" srcset="">
+                            <h6 class="mt-2 text-white">Fur</h6>
                         </div>
 
                         <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/greenday.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Green Day</h6>
+                            <img src="{{ asset('assets/img/honney.png') }}" class="img-fluid" alt="" srcset="">
+                            <h6 class="mt-2 text-white">Honey Moon</h6>
                         </div>
 
                         <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/greenday.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Green Day</h6>
+                            <img src="{{ asset('assets/img/boy.png') }}" class="img-fluid" alt="" srcset="">
+                            <h6 class="mt-2 text-white">Boy Pablo</h6>
                         </div>
 
                         <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/greenday.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Green Day</h6>
+                            <img src="{{ asset('assets/img/easy.png') }}" class="img-fluid" alt="" srcset="">
+                            <h6 class="mt-2 text-white">Easy Life</h6>
                         </div>
 
                         <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/greenday.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Green Day</h6>
+                            <img src="{{ asset('assets/img/burgerkill.png') }}" class="img-fluid" alt="" srcset="">
+                            <h6 class="mt-2 text-white">Burgerkill</h6>
                         </div>
                     </div>
 
@@ -157,7 +157,7 @@
                                     <h4>01</h4>
                                 </div>
                                 <div class="col-md-1 mr-auto">
-                                    <img src="{{ asset('assets/img/greenday-1.png') }}" alt="" srcset="">
+                                    <img src="{{ asset('assets/img/greenday.png') }}" alt="" srcset="">
                                 </div>
                                 <div class="col-md-5 pl-4 hvr-grow">
                                     <h6 class="text-white">Still Breathing</h6>
@@ -170,14 +170,14 @@
 
                             <div class="row mt-3">
                                 <div class="col-md-2 d-flex align-items-center">
-                                    <h4>01</h4>
+                                    <h4>02</h4>
                                 </div>
                                 <div class="col-md-1 mr-auto">
-                                    <img src="{{ asset('assets/img/greenday-1.png') }}" alt="" srcset="">
+                                    <img src="{{ asset('assets/img/honney.png') }}" alt="" srcset="">
                                 </div>
                                 <div class="col-md-5 pl-4 hvr-grow">
-                                    <h6 class="text-white">Still Breathing</h6>
-                                    <small>Green Day</small>
+                                    <h6 class="text-white">Magic</h6>
+                                    <small>Honney Moon</small>
                                 </div>
                                 <div class="col-md-3 d-flex align-items-center hvr-grow">
                                     <button class="btn btn-warning ml-auto"><i class="fas fa-play"></i></button>
@@ -186,30 +186,14 @@
 
                             <div class="row mt-3">
                                 <div class="col-md-2 d-flex align-items-center">
-                                    <h4>01</h4>
+                                    <h4>03</h4>
                                 </div>
                                 <div class="col-md-1 mr-auto">
-                                    <img src="{{ asset('assets/img/greenday-1.png') }}" alt="" srcset="">
+                                    <img src="{{ asset('assets/img/easy.png') }}" alt="" srcset="">
                                 </div>
                                 <div class="col-md-5 pl-4 hvr-grow">
-                                    <h6 class="text-white">Still Breathing</h6>
-                                    <small>Green Day</small>
-                                </div>
-                                <div class="col-md-3 d-flex align-items-center hvr-grow">
-                                    <button class="btn btn-warning ml-auto"><i class="fas fa-play"></i></button>
-                                </div>
-                            </div>
-
-                            <div class="row mt-3">
-                                <div class="col-md-2 d-flex align-items-center">
-                                    <h4>01</h4>
-                                </div>
-                                <div class="col-md-1 mr-auto">
-                                    <img src="{{ asset('assets/img/greenday-1.png') }}" alt="" srcset="">
-                                </div>
-                                <div class="col-md-5 pl-4 hvr-grow">
-                                    <h6 class="text-white">Still Breathing</h6>
-                                    <small>Green Day</small>
+                                    <h6 class="text-white">Nightmare</h6>
+                                    <small>Easy Life</small>
                                 </div>
                                 <div class="col-md-3 d-flex align-items-center hvr-grow">
                                     <button class="btn btn-warning ml-auto"><i class="fas fa-play"></i></button>
