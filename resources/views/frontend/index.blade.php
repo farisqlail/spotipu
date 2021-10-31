@@ -16,7 +16,7 @@
                             <h5 class="text-white">Artis Favorit</h5>
                         </div>
                         <div class="col-sm-4" align="right">
-                            <a href="http://" style="color: #D4D4D4">lihat selengkapnya</a>
+                            <a href="{{ url('/artist') }}" style="color: #D4D4D4">lihat selengkapnya</a>
                         </div>
                     </div>
 
@@ -61,10 +61,10 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-7">
-                                    <h5 class="text-white">Artis Favorit</h5>
+                                    <h5 class="text-white">Genres</h5>
                                 </div>
                                 <div class="col-sm-5" align="right">
-                                    <a href="http://" style="color: #D4D4D4">Lengkap</a>
+                                    <a href="{{ url('/genre') }}" style="color: #D4D4D4">Lengkap</a>
                                 </div>
                             </div>
 
@@ -148,7 +148,7 @@
                                     <h5 class="text-white">Top Artist</h5>
                                 </div>
                                 <div class="col-sm-5" align="right">
-                                    <a href="http://" style="color: #D4D4D4">Lihat Lengkap</a>
+                                    <a href="{{ url('/artist') }}" style="color: #D4D4D4">Lihat Lengkap</a>
                                 </div>
                             </div>
 

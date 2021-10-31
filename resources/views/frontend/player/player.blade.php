@@ -15,7 +15,7 @@
         <div class="button-play mt-4" align="center">
             <audio id="audio">
                 <source
-                    src="{{ asset('assets/music/air-mata-api.mp3') }}"
+                    src="{{ asset('assets/music/still-breathing.mp3') }}"
                     type="audio/mpeg">
             </audio>
             <button class="btn btn-primary" id="playPauseBtn" onClick="playPause()" align="center">
