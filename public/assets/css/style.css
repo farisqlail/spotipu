@@ -12,7 +12,8 @@
 }
 
 .btn-member {
-    margin-top: auto;
+
+   margin-top: auto;
 }
 
 .cardpaket {
@@ -102,4 +103,5 @@
     height: 50px;
     border-radius: 15px;
     padding: 12px;    
+
 }

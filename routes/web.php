@@ -31,10 +31,14 @@ Route::get('/player/{id}', [PlayerController::class, 'index'])->name('player.ind
 
 //Route Login
 Route::get('/login', function () {
-    return view('authentication/login');
+    return view('authentication/login', [
+        "title" => 'Login'
+    ]);
 });
 
 //Route Register
 Route::get('/register', function () {
-    return view('authentication/register');
+    return view('authentication/register', [
+        "title" => 'Register'
+    ]);
 });

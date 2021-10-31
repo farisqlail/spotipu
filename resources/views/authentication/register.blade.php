@@ -4,41 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>{{ $title }}</title>
 </head>
 
-
-<style>
-    body{
-        background-image: url('/assets/img/bglogin.png');
-        background-size: cover;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        
-    }
-    .card{
-        width: 580px;
-        height: 580px;
-        margin: auto;
-        margin-top: 150px;
-        border-radius: 30%;
-    }
-    .formlogin{
-        margin: auto;
-    }
-
-    .input{
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        background: none;
-        border: #ffffff;
-    }
-    img{
-        width: 200px;
-        height: 200px;
-    }
-</style>
+<link rel="stylesheet" href="assets/css/style2.css">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -46,27 +15,48 @@
 
     <div class="container" >
         
-        <div class="card" style="background-color: #00856B">
+        <div class="card" style="background-color: #00856B; border-radius: 25%">
             <img src="assets/img/logo-2.png" alt="">
-            <form class="formlogin">
-                <div class="mb-1">
-                  <input type="email" placeholder="Masukan Username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <form align="center" >
+                
+                <div align="center" class="formcon2">
+
+                    {{-- TextField UserName --}}
+                    <div class="form-group mb-1">
+                        <label class="labeluser" for="">Username</label>
+                        <input style="width: 60%; background: transparent; border-width: 3px; border-top: none; border-left: none; border-right: none;" type="text"  class="form-control" id="">
+                      </div>
+                    {{-- TextField Email --}}
+                    <div class="form-group mb-1">
+                        <label class="labelemail" for="">Email</label>
+                        <input style="width: 60%; background: transparent; border-width: 3px; border-top: none; border-left: none; border-right: none;" type="email"  class="form-control" id="">
+                      </div>
+                      
+
+                      {{-- TextField Password --}}
+                      <div class="form-group mt-1" style="margin-top: 10px">
+                        <Label class="labelpass">Password</Label>
+                        <input style="width: 60%; background: transparent; border-width: 3px; border-top: none; border-left: none; border-right: none;" type="password" class="form-control mt-2" id="exampleInputPassword1">
+                      </div>
+
+                      {{-- TextField NomerHp --}}
+                      <div class="form-group mt-1" style="margin-top: 10px">
+                        <Label class="labelhp">No_Hp</Label>
+                        <input style="width: 60%; background: transparent; border-width: 3px; border-top: none; border-left: none; border-right: none;" type="number" class="form-control mt-2" id="exampleInputPassword1">
+                      </div>
+      
+                      <div class="buttoncon">
+                        <button style="width: 60%; background-color: #009BA0; border: none" type="submit" class="btn btn-dark mt-1 mb-3">Register</button><br>
+                        <a href="/login">Kembali ke halaman login</a>
+                      </div>
                 </div>
-                <div class="mb-1">
-                    <input type="email" placeholder="Masukan Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  </div>
-                <div class="mb-4">
-                  <input type="password" placeholder="Masukan Password" class="form-control mt-2" id="exampleInputPassword1">
-                </div>
-                <div class="mb-1">
-                    <input type="number" placeholder="Masukan nomer handphone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  </div>
-                <button type="submit" class="btn btn-primary">Register</button><br>
-                <a href="/login">Kembali ke halaman login</a>
-              </form>
+
+            </form>
             
         </div>
     </div>
     
 </body>
 </html>
+
+
