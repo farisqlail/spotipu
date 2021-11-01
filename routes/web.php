@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/ads', [AdsController::class, 'index']);
+Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
 Route::get('/member', [MemberController::class, 'index']);
 
 Route::get('/pembayaran', [MemberController::class, 'bayar'])->name('member.pembayaran');
@@ -29,8 +30,6 @@ Route::get('/album', [AlbumController::class, 'index']);
 Route::get('/player/{id}', [PlayerController::class, 'index'])->name('player.index');
 
 // Route Authentication
-
-//Route Login
 Route::get('/login', function () {
     return view('authentication/login', [
         "title" => 'Login'

@@ -13,7 +13,6 @@ class AdsController extends Controller
      */
     public function index()
     {
-        
         return view('frontend.ads.ads');
     }
 
@@ -35,8 +34,28 @@ class AdsController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $kategori = $request->input('kategori');
+        $judul = $request->input('judul');
+        $merk = $request->input('merk');
+        $nama = $request->input('deskripsi');
+        $harga = $request->input('harga');
+        $link = $request->input('link');
+        $anggaran = $request->input('anggaran');
+        $durasi = $request->input('durasi');
+        $metode = $request->input('metode');
+
+        return array(
+            $kategori,
+            $judul,
+            $merk,
+            $nama,
+            $harga,
+            $link,
+            $anggaran,
+            $durasi,
+            $metode
+        );
+    }   
 
     /**
      * Display the specified resource.

@@ -74,18 +74,19 @@
 
     <h5 class="text-white mt-5">Create New Campaign</h5><br>
 
-    <form action="" class="text-white form-ads">
+    <form action="{{ route('ads.store') }}" method="post" class="text-white form-ads">
+        {{ csrf_field() }}
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Kategori Produk <span style="color:red;">*</span></label>
-                    <input type="text" name="" class="form-control" placeholder="Fashion" id="">
+                    <input type="text" name="kategori" class="form-control" placeholder="Fashion" id="">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Judul Iklan <span style="color:red;">*</span></label>
-                    <input type="text" name="" class="form-control" placeholder="Outer branded" id="">
+                    <input type="text" name="judul" class="form-control" placeholder="Outer branded" id="">
                 </div>
             </div>
         </div>
@@ -94,18 +95,18 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Merk <span style="color:red;">*</span></label>
-                    <input type="text" name="" class="form-control" placeholder="H7M" id="">
+                    <input type="text" name="merk" class="form-control" placeholder="H7M" id="">
                 </div>
 
                 <div class="form-group mt-4">
                     <label for="">Nama <span style="color:red;">*</span></label>
-                    <input type="text" name="" class="form-control" placeholder="PWL Outer" id="">
+                    <input type="text" name="nama" class="form-control" placeholder="PWL Outer" id="">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="">Judul Iklan <span style="color:red;">*</span></label>
-                    <textarea name="" class="form-control" id="" cols="30"
+                    <label for="">Deskripsi <span style="color:red;">*</span></label>
+                    <textarea name="deskripsi" class="form-control" id="" cols="30"
                         rows="5" placeholder="ouetr ini dibuat dari bahan pilihan..."></textarea>
                 </div>
             </div>
@@ -115,13 +116,13 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Harga <span style="color:red;">*</span></label>
-                    <input type="text" name="" class="form-control" placeholder="Rp.00000" id="">
+                    <input type="text" name="harga" class="form-control" placeholder="Rp.00000" id="">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Link Website <span style="color:red;">*</span></label>
-                    <input type="text" name="" class="form-control" placeholder="Tokopedia.com" id="">
+                    <input type="text" name="link" class="form-control" placeholder="Tokopedia.com" id="">
                 </div>
             </div>
         </div>
@@ -139,17 +140,17 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Anggaran <span style="color:red;">*</span></label>
-                    <input type="text" name="" class="form-control" placeholder="Rp.100000" id="">
+                    <input type="text" name="anggaran" class="form-control" placeholder="Rp.100000" id="">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Durasi <span style="color:red;">*</span></label>
-                    <select class="form-control">
+                    <select class="form-control" name="durasi">
                         <option>Pilih Durasi</option>
-                        <option>1 Bulan</option>
-                        <option>1 Minggu</option>
-                        <option>3 Hari</option>
+                        <option value="30">1 Bulan</option>
+                        <option value="7">1 Minggu</option>
+                        <option value="3">3 Hari</option>
                     </select>
                 </div>
             </div>
@@ -159,23 +160,23 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Metode Pembayaran <span style="color:red;">*</span></label>
-                    <select class="form-control">
+                    <select class="form-control" name="metode">
                         <option>Pilih Metode Pembayaran</option>
-                        <option>Transfer Bank</option>
-                        <option>OVO</option>
-                        <option>Gopay</option>
+                        <option value="bank">Transfer Bank</option>
+                        <option value="ovo">OVO</option>
+                        <option value="gopay">Gopay</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Bukti Pembayaran <span style="color:red;">*</span></label>
-                    <input type="file" class="form-control" name="">
+                    <input type="file" class="form-control" name="bukti">
                 </div>
             </div>
         </div>
 
-        <button type="button" class="btn btn-block btn-lg btn-ads hvr-shrink mt-3">Submit</button>
+        <button type="submit" class="btn btn-block btn-lg btn-ads hvr-shrink mt-3">Submit</button>
     </form>
 
 @endsection
