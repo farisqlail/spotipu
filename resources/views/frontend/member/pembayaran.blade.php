@@ -8,7 +8,8 @@ Spotipu - Bayar Member
 <div class="judul" align="center" style="color: #ffff;">
     <h2><b>Paket kamu</b></h2>
 </div>
-<form action="POST">
+<form action="{{ route('member.store') }}" method="post" >
+    {{ csrf_field() }}
     <div class="card-form" data-aos="fade-up" align="center">
 
         <div class="cardpaket" align="left">
@@ -50,6 +51,23 @@ Spotipu - Bayar Member
                 </div>
             </div>
 
+            <hr mt-7 style="background-color: #ffff;">
+            <div class="row mt-3">
+                <div class="col-md-4 align-self-center">
+                    <span>Bayar ke nomor virtual</span>
+                    <input type="text" class="form-control mt-3" name="" id="" value="SPTP19478524614" disabled>
+                </div>
+                <div class="col-md-4 align-self-center" align="center">
+                    <span class="text-white">atau scan</span>
+                </div>
+                <div class="col-md-4" align="center">
+                    <img src="{{ asset('assets/img/scan.png') }}" class="img-fluid" width="150" alt="">
+                </div>
+            </div>
+
+
+            <span>Batas pembayaran dilakukan maksimal 30 menit setelah pesan</span> 
+
 
         </div>
         <div class="metodebayar mt-5" align="center">
@@ -59,12 +77,12 @@ Spotipu - Bayar Member
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <input type="radio" name="gopay">
+                        <input type="radio" name="metodebayar"  value="gopay">
                         <img src="{{ asset('assets/img/gopay.png') }}" class="img-fluid"
                             width="100">
                     </div>
                     <div class="col-md-6">
-                        <input type="radio" name="ovo">
+                        <input type="radio" name="metodebayar" value="ovo">
                         <img src="{{ asset('assets/img/ovo.png') }}" class="img-fluid"
                             width="100">
                     </div>
@@ -73,12 +91,12 @@ Spotipu - Bayar Member
 
                 <div class="row mt-4">
                     <div class="col-md-6">
-                        <input type="radio" name="dana">
+                        <input type="radio" name="metodebayar" value="dana">
                         <img src="{{ asset('assets/img/dana.png') }}" class="img-fluid"
                             width="100">
                     </div>
                     <div class="col-md-6">
-                        <input type="radio" name="shopee">
+                        <input type="radio" name="metodebayar" value="shopee">
                         <img src="{{ asset('assets/img/shopee.png') }}" class="img-fluid"
                             width="100">
                     </div>
@@ -89,10 +107,12 @@ Spotipu - Bayar Member
         </div>
 
         <div class="button-paket mt-5" align="center">
-            <a href="{{ route('member.invoice') }}"
-                class="align-self-end btn btn-light hvr-shrink">Total Bayar</a>
+            <!-- <a href="{{ route('member.invoice') }}"
+                class="align-self-end btn btn-light hvr-shrink">Total Bayar</a> -->
+
+                <button type="submit" class="align-self-end btn btn-light hvr-shrink">Total Bayar</button>
         </div>
-        <iframe src="https://embed.lottiefiles.com/animation/64294" frameborder="0"></iframe>
+        
     </div>
 
 </form>

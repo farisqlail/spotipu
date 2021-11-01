@@ -18,6 +18,7 @@ Route::get('/ads', [AdsController::class, 'index']);
 Route::get('/member', [MemberController::class, 'index']);
 
 Route::get('/pembayaran', [MemberController::class, 'bayar'])->name('member.pembayaran');
+Route::post('/pembayaran-store', [MemberController::class, 'store'])->name('member.store');
 Route::get('/pembayaran/invoice', [MemberController::class, 'invoice'])->name('member.invoice');
 Route::get('/pembayaran/checkout', [MemberController::class, 'checkout'])->name('member.checkout');
 Route::get('/pembayaran/konfirmasi', [MemberController::class, 'konfirmasi'])->name('member.konfirmasi');

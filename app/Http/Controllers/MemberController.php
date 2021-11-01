@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bayar;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
@@ -52,9 +53,39 @@ class MemberController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $data)
     {
-        //
+        $harga = 5000;
+        // $harga = $data -> input($hrgPaket);
+        $lama = $data -> input('lama') ;
+        $tgl = $data -> input('tglbeli');
+        $pbayar = $data -> input('metodebayar');
+
+        $totalbayar = $harga*$lama + 1000;
+        $dateNow = date('d');
+        $lamaMember = $dateNow + $lama;
+        $hasilMember = $lamaMember.'-'.date('M-Y');
+
+        // dd($totalbayar);
+return view('frontend.member.invoice', compact('harga', 'lama', 'hasilMember', 'tgl','pbayar', 'totalbayar'));
+        // return array(
+        //     $harga,
+        //     $hasilMember,
+        //     $tgl,
+        //     $pbayar,
+        //     $totalbayar
+        // );
+
+        // $datapembelian = new Bayar(); //nama Models
+        // $printharga = $datapembelian-> cetakHarga($harga);
+        // $printlama = $datapembelian->cetakLama($lama);
+        // $printtgl = $datapembelian-> cetakTglbeli($tgl);
+        // $printpbayar = $datapembelian-> cetakPbayar($pbayar);
+
+        
+
+
+
     }
 
     /**

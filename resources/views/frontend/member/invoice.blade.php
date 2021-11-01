@@ -38,11 +38,11 @@
                 </div>
                 <div class="col-md-4">
                     <span class="text-muted">@smunny23</span><br><br>
-                    <span class="text-muted">15 Oktober 2021</span><br><br>
-                    <span class="text-muted">5 Hari</span><br><br>
-                    <span class="text-muted">20 Oktober 2021</span><br><br>
-                    <span class="text-muted">Rp 5.000</span><br><br>
-                    <span class="text-muted">GoPay</span><br><br>
+                    <span class="text-muted">{{ date('d-M-Y')}}</span><br><br>
+                    <span class="text-muted">{{ $lama }} hari</span><br><br>
+                    <span class="text-muted">{{ $hasilMember }}</span><br><br>
+                    <span class="text-muted">Rp {{ $harga }}</span><br><br>
+                    <span class="text-muted">{{ $pbayar }}</span><br><br>
                     <span class="text-muted">RP 1.000</span><br><br>
                 </div>
             </div>
@@ -54,12 +54,12 @@
                     <h3>Total Bayar</h3>
                 </div>
                 <div class="col-md-4">
-                    <h3>Rp 26.000</h3>
+                    <h3>Rp {{ $totalbayar }}</h3>
                 </div>
             </div>
 
             <div class="button-beli mt-5 mb-3" align="center">
-                <a href="{{ route('member.checkout') }}" class="btn btn-lg btn-light hvr-shrink">Bayar</a>
+                <a href="{{ route('member.konfirmasi') }}" class="btn btn-lg btn-light hvr-shrink">Bayar</a>
             </div>
         </div>
     </div>
