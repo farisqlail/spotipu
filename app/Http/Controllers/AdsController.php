@@ -21,7 +21,7 @@ class AdsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function invoiceIklan()
     {
         //
     }
@@ -40,14 +40,17 @@ class AdsController extends Controller
         $kategori = $request->input('kategori');
         $judul = $request->input('judul');
         $merk = $request->input('merk');
-        $nama = $request->input('deskripsi');
-        $harga = $request->input('harga');
+        $namaProduk = $request->input('namaProduk');
+        $deskripsi = $request->input('deskripsi');
+        $hargaProduk = $request->input('hargaProduk');
         $link = $request->input('link');
-        $anggaran = $request->input('anggaran');
+        // $anggaran = $request->input('anggaran');
         $durasi = $request->input('durasi');
         $metode = $request->input('metode');
 
-        return view('frontend.ads.invoidAds');
+        $total = $biayaIklan * $durasi;
+
+        return view('frontend.ads.invoidAds', compact('biayaIklan', 'kategori', 'judul', 'merk','namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'total'));
 
         // return array(
         //     $kategori,

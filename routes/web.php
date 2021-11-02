@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [HomeController::class, 'index']);
-Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
+
 Route::get('/member', [MemberController::class, 'index']);
 
 Route::get('/pembayaran', [MemberController::class, 'bayar'])->name('member.pembayaran');
@@ -47,16 +47,18 @@ Route::get('/register', function () {
 
 // Route Pasang Iklan
 Route::get('/ads', [AdsController::class, 'index']);
+Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
 
+// Route::get('/ads/invoiceIklan', [AddsController::class, 'invoiceIklan']);
 
     // Route Untuk sementara 
-Route::get('/invoiceAds', function () {
-    return view('frontend/ads/invoidAds', [
-        "title" => 'Invoice Ads'
-    ]);
-});
+// Route::get('/invoiceAds', function () {
+//     return view('frontend/ads/invoidAds', [
+//         "title" => 'Invoice Ads'
+//     ]);
+// });
 
-Route::get('/invoiceAds/transdone', function () {
+Route::get('/ads-store/transdone', function () {
     return view('frontend/ads/transiklandone', [
         "title" => 'Invoice Ads'
     ]);
