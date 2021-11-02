@@ -69,7 +69,7 @@
             </div>
 
             <div class="button-beli mt-5 mb-3" align="center">
-                <a href="/ads-store/transiklandone" class="btn btn-lg btn-light hvr-shrink">Bayar</a>
+                <a href="/ads-store/transdone" class="btn btn-lg btn-light hvr-shrink">Bayar</a>
             </div>
         </div>
     </div>
