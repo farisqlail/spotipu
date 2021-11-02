@@ -177,6 +177,11 @@
         </div>
 
         <button type="submit" class="btn btn-block btn-lg btn-ads hvr-shrink mt-3">Submit</button>
+        <form target="blank" action="/invoiceAds">
+
+            <button type="submit" class="btn btn-block btn-lg btn-ads hvr-shrink mt-3">Just Check Ui</button>
+        
+        </form>
     </form>
 
 @endsection

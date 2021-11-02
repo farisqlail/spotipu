@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/ads', [AdsController::class, 'index']);
 Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
 Route::get('/member', [MemberController::class, 'index']);
 
@@ -30,15 +29,35 @@ Route::get('/album', [AlbumController::class, 'index']);
 Route::get('/player/{id}', [PlayerController::class, 'index'])->name('player.index');
 
 // Route Authentication
+
+    // Route Login
 Route::get('/login', function () {
     return view('authentication/login', [
         "title" => 'Login'
     ]);
 });
 
-//Route Register
+    //Route Register
 Route::get('/register', function () {
     return view('authentication/register', [
         "title" => 'Register'
+    ]);
+});
+
+
+// Route Pasang Iklan
+Route::get('/ads', [AdsController::class, 'index']);
+
+
+    // Route Untuk sementara 
+Route::get('/invoiceAds', function () {
+    return view('frontend/ads/invoidAds', [
+        "title" => 'Invoice Ads'
+    ]);
+});
+
+Route::get('/invoiceAds/transdone', function () {
+    return view('frontend/ads/transiklandone', [
+        "title" => 'Invoice Ads'
     ]);
 });

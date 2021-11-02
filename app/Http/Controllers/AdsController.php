@@ -34,6 +34,9 @@ class AdsController extends Controller
      */
     public function store(Request $request)
     {
+        $biayaIklan = 10000;
+
+
         $kategori = $request->input('kategori');
         $judul = $request->input('judul');
         $merk = $request->input('merk');
@@ -44,18 +47,20 @@ class AdsController extends Controller
         $durasi = $request->input('durasi');
         $metode = $request->input('metode');
 
-        return array(
-            $kategori,
-            $judul,
-            $merk,
-            $nama,
-            $harga,
-            $link,
-            $anggaran,
-            $durasi,
-            $metode
-        );
-    }   
+        return view('frontend.ads.invoidAds');
+
+        // return array(
+        //     $kategori,
+        //     $judul,
+        //     $merk,
+        //     $nama,
+        //     $harga,
+        //     $link,
+        //     $anggaran,
+        //     $durasi,
+        //     $metode
+        // );
+    }
 
     /**
      * Display the specified resource.

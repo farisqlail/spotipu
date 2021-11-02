@@ -12,27 +12,32 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function index()
+    {
 
         return view('frontend.member.member');
     }
 
-    public function bayar(){
+    public function bayar()
+    {
 
         return view('frontend.member.pembayaran');
     }
 
-    public function invoice(){
+    public function invoice()
+    {
 
         return view('frontend.member.invoice');
     }
 
-    public function checkout(){
+    public function checkout()
+    {
 
         return view('frontend.member.checkout');
     }
 
-    public function konfirmasi(){
+    public function konfirmasi()
+    {
 
         return view('frontend.member.konfirmasi');
     }
@@ -57,17 +62,17 @@ class MemberController extends Controller
     {
         $harga = 5000;
         // $harga = $data -> input($hrgPaket);
-        $lama = $data -> input('lama') ;
-        $tgl = $data -> input('tglbeli');
-        $pbayar = $data -> input('metodebayar');
+        $lama = $data->input('lama');
+        $tgl = $data->input('tglbeli');
+        $pbayar = $data->input('metodebayar');
 
-        $totalbayar = $harga*$lama + 1000;
+        $totalbayar = $harga * $lama + 1000;
         $dateNow = date('d');
         $lamaMember = $dateNow + $lama;
-        $hasilMember = $lamaMember.'-'.date('M-Y');
+        $hasilMember = $lamaMember . '-' . date('M-Y');
 
         // dd($totalbayar);
-return view('frontend.member.invoice', compact('harga', 'lama', 'hasilMember', 'tgl','pbayar', 'totalbayar'));
+        return view('frontend.member.invoice', compact('harga', 'lama', 'hasilMember', 'tgl', 'pbayar', 'totalbayar'));
         // return array(
         //     $harga,
         //     $hasilMember,
@@ -81,10 +86,6 @@ return view('frontend.member.invoice', compact('harga', 'lama', 'hasilMember', '
         // $printlama = $datapembelian->cetakLama($lama);
         // $printtgl = $datapembelian-> cetakTglbeli($tgl);
         // $printpbayar = $datapembelian-> cetakPbayar($pbayar);
-
-        
-
-
 
     }
 
