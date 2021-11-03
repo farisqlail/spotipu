@@ -8,8 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ads extends Model
 {
 
-    public function total()
+    public function total($biayaIklan, $durasi)
     {
-        //
+        $total = $biayaIklan * $durasi;
+
+
+        return $total;
     }
 }

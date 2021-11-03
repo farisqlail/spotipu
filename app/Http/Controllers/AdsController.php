@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Ads;
+use SebastianBergmann\CodeCoverage\Report\Xml\Total;
 
 class AdsController extends Controller
 {
@@ -48,7 +50,15 @@ class AdsController extends Controller
         $durasi = $request->input('durasi');
         $metode = $request->input('metode');
 
-        $total = $biayaIklan * $durasi + $admin;
+        // $total = $biayaIklan * $durasi + $admin;
+
+        $total = new ads();
+
+        // $total -> total($biayaIklan, $durasi);
+
+        $total = $total -> total($biayaIklan, $durasi) + $admin;
+
+        // $totals = $total + $admin;
 
         return view('frontend.ads.invoidAds', compact('biayaIklan','admin',  'kategori', 'judul', 'merk','namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'total'));
 
