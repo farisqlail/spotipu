@@ -8,18 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ads extends Model
 {
 
-    public function ads($kategori, $judul, $merk, $namaProduk, $deskripsi, $hargaProduk, $link, $durasi)
+    public function total($biayaIklan, $durasi)
     {
-        
-        return array(
-            $kategori,
-            $judul,
-            $merk,
-            $namaProduk,
-            $deskripsi,
-            $hargaProduk,
-            $link,
-            $durasi
-        );
+        $total = $biayaIklan * $durasi;
+
+
+        return $total;
     }
 }

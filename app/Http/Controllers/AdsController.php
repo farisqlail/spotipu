@@ -57,25 +57,14 @@ class AdsController extends Controller
         $deskripsi = $request->input('deskripsi');
         $hargaProduk = $request->input('hargaProduk');
         $link = $request->input('link');
-        // $anggaran = $request->input('anggaran');
         $durasi = $request->input('durasi');
         $metode = $request->input('metode');
 
-        $total = $biayaIklan * $durasi + $admin;
+        $total = new ads();
+        $total = $total -> total($biayaIklan, $durasi) + $admin;
 
         return view('frontend.ads.invoidAds', compact('biayaIklan','admin',  'kategori', 'judul', 'merk','namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'total'));
 
-        // return array(
-        //     $kategori,
-        //     $judul,
-        //     $merk,
-        //     $nama,
-        //     $harga,
-        //     $link,
-        //     $anggaran,
-        //     $durasi,
-        //     $metode
-        // );
     }
 
     /**

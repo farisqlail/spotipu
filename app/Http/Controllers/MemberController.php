@@ -61,31 +61,20 @@ class MemberController extends Controller
     public function store(Request $data)
     {
         $harga = 5000;
-        // $harga = $data -> input($hrgPaket);
+        $admin = 1000;
+        
         $lama = $data->input('lama');
         $tgl = $data->input('tglbeli');
         $pbayar = $data->input('metodebayar');
 
-        $totalbayar = $harga * $lama + 1000;
+        $totalBayar = new Bayar();
+        $totalBayars = $totalBayar -> totalBayar($harga, $lama) + $admin;
+
         $dateNow = date('d');
         $lamaMember = $dateNow + $lama;
         $hasilMember = $lamaMember . '-' . date('M-Y');
 
-        // dd($totalbayar);
-        return view('frontend.member.invoice', compact('harga', 'lama', 'hasilMember', 'tgl', 'pbayar', 'totalbayar'));
-        // return array(
-        //     $harga,
-        //     $hasilMember,
-        //     $tgl,
-        //     $pbayar,
-        //     $totalbayar
-        // );
-
-        // $datapembelian = new Bayar(); //nama Models
-        // $printharga = $datapembelian-> cetakHarga($harga);
-        // $printlama = $datapembelian->cetakLama($lama);
-        // $printtgl = $datapembelian-> cetakTglbeli($tgl);
-        // $printpbayar = $datapembelian-> cetakPbayar($pbayar);
+        return view('frontend.member.invoice', compact('harga', 'admin','lama', 'hasilMember', 'tgl', 'pbayar', 'totalBayars'));
 
     }
 

@@ -49,10 +49,10 @@
                     <span class="text-muted">Rp. {{ $hargaProduk }}</span><br><br>
                     <span class="text-muted">{{ $link }}</span><br><br>
                     {{-- <span class="text-muted">{{ $anggaran }}</span><br><br> --}}
-                    <span class="text-muted">{{ $durasi }}</span><br><br>
-                    <span class="text-muted">Rp. {{ $metode }}</span><br><br>
+                    <span class="text-muted">{{ $durasi }} Hari</span><br><br>
+                    <span class="text-muted">{{ $metode }}</span><br><br>
                     <span class="text-muted">Rp. {{ $biayaIklan }}</span><br><br>
-                    <span class="text-muted">{{ $admin }}</span><br><br>
+                    <span class="text-muted">Rp. {{ $admin }}</span><br><br>
                 </div>
             </div>
 
@@ -63,7 +63,7 @@
                     <h3>Total Bayar</h3>
                 </div>
                 <div class="col-md-4">
-                    <h3>Rp {{ $total }}</h3>
+                    <h3>Rp. {{ $total }}</h3>
                 </div>
             </div>
 
