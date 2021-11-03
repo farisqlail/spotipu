@@ -19,7 +19,7 @@
                     <div class="col-md-8 align-self-center" align="left">
                         <h4 class="text-white">
                             Yeay! Pesananmu sedang diproses
-                            Spotipu premium akan aktif setelah kamu melakukan pembayaran
+                            Spotipu premium akan aktif setelah kamu melakukan
                         </h4>
                     </div>
                 </div>
