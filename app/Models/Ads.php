@@ -8,8 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class ads extends Model
 {
 
-    public function total()
+    public function ads($kategori, $judul, $merk, $namaProduk, $deskripsi, $hargaProduk, $link, $durasi)
     {
-        //
+        
+        return array(
+            $kategori,
+            $judul,
+            $merk,
+            $namaProduk,
+            $deskripsi,
+            $hargaProduk,
+            $link,
+            $durasi
+        );
     }
 }

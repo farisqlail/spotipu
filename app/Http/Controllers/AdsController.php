@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Ads;
 
 class AdsController extends Controller
 {
+
+    public function __construct()
+    {
+        $ads = new Ads();
+        // dd($ads);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +25,7 @@ class AdsController extends Controller
         $c = $b.'-'.date('M-Y');
         // date_sub($a, date_interval_create_from_date_string($b));
 
-        dd($c);
+        // dd($c);
         return view('frontend.ads.ads');
     }
 
