@@ -41,7 +41,6 @@
 
                 </div>
                 <div class="col-md-4">
-                    <span class="text-muted">@smunny23</span><br><br>
                     <span class="text-muted">{{ $kategori }}</span><br><br>
                     <span class="text-muted">{{ $judul }} </span><br><br>
                     <span class="text-muted">{{ $merk }}</span><br><br>
@@ -53,7 +52,7 @@
                     <span class="text-muted">{{ $durasi }}</span><br><br>
                     <span class="text-muted">Rp. {{ $metode }}</span><br><br>
                     <span class="text-muted">Rp. {{ $biayaIklan }}</span><br><br>
-                    <span class="text-muted">RP 1.000</span><br><br>
+                    <span class="text-muted">{{ $admin }}</span><br><br>
                 </div>
             </div>
 

@@ -35,7 +35,7 @@ class AdsController extends Controller
     public function store(Request $request)
     {
         $biayaIklan = 10000;
-
+        $admin      = 2000;
 
         $kategori = $request->input('kategori');
         $judul = $request->input('judul');
@@ -48,9 +48,9 @@ class AdsController extends Controller
         $durasi = $request->input('durasi');
         $metode = $request->input('metode');
 
-        $total = $biayaIklan * $durasi;
+        $total = $biayaIklan * $durasi + $admin;
 
-        return view('frontend.ads.invoidAds', compact('biayaIklan', 'kategori', 'judul', 'merk','namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'total'));
+        return view('frontend.ads.invoidAds', compact('biayaIklan','admin',  'kategori', 'judul', 'merk','namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'total'));
 
         // return array(
         //     $kategori,

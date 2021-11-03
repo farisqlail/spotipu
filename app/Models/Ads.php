@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ads extends Model
 {
 
-    public function index()
+    public function total()
     {
         //
     }
