@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <h2 class="text-white">Hello Susi, Welcome back!</h2>
+    <h2 class="text-white">Hello Wang-jarim, Welcome back!</h2>
 
     <br>
 
@@ -72,7 +72,7 @@
     </div>
     {{-- end Row Card Cicil --}}
 
-    <h5 class="text-white mt-5">Create New Campaign</h5><br>
+    <h5 class="text-white mt-5">Isi Keterangan </h5><br>
 
     <form action="{{ route('ads.store') }}" method="post" class="text-white form-ads">
         {{ csrf_field() }}
@@ -99,8 +99,8 @@
                 </div>
 
                 <div class="form-group mt-4">
-                    <label for="">Nama <span style="color:red;">*</span></label>
-                    <input type="text" name="nama" class="form-control" placeholder="PWL Outer" id="">
+                    <label for="">Nama produk <span style="color:red;">*</span></label>
+                    <input type="text" name="namaProduk" class="form-control" placeholder="PWL Outer" id="">
                 </div>
             </div>
             <div class="col-md-6">
@@ -116,7 +116,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Harga <span style="color:red;">*</span></label>
-                    <input type="text" name="harga" class="form-control" placeholder="Rp.00000" id="">
+                    <input type="text" name="hargaProduk" class="form-control" placeholder="Rp.00000" id="">
                 </div>
             </div>
             <div class="col-md-6">
@@ -137,12 +137,12 @@
         <h5 class="text-white mt-3">Anggaran & Durasi <span style="color: red;">*</span></h5><br>
 
         <div class="row">
-            <div class="col-md-6">
+            {{-- <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Anggaran <span style="color:red;">*</span></label>
                     <input type="text" name="anggaran" class="form-control" placeholder="Rp.100000" id="">
                 </div>
-            </div>
+            </div> --}}
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Durasi <span style="color:red;">*</span></label>
@@ -168,15 +168,20 @@
                     </select>
                 </div>
             </div>
-            <div class="col-md-6">
+            {{-- <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Bukti Pembayaran <span style="color:red;">*</span></label>
                     <input type="file" class="form-control" name="bukti">
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <button type="submit" class="btn btn-block btn-lg btn-ads hvr-shrink mt-3">Submit</button>
+        {{-- <form target="blank" action="/invoiceAds">
+
+            <button type="submit" class="btn btn-block btn-lg btn-ads hvr-shrink mt-3">Just Check Ui</button>
+        
+        </form> --}}
     </form>
 
 @endsection

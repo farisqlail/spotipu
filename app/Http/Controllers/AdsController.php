@@ -27,7 +27,7 @@ class AdsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function invoiceIklan()
     {
         //
     }
@@ -40,28 +40,36 @@ class AdsController extends Controller
      */
     public function store(Request $request)
     {
+        $biayaIklan = 10000;
+        $admin      = 2000;
+
         $kategori = $request->input('kategori');
         $judul = $request->input('judul');
         $merk = $request->input('merk');
-        $nama = $request->input('deskripsi');
-        $harga = $request->input('harga');
+        $namaProduk = $request->input('namaProduk');
+        $deskripsi = $request->input('deskripsi');
+        $hargaProduk = $request->input('hargaProduk');
         $link = $request->input('link');
-        $anggaran = $request->input('anggaran');
+        // $anggaran = $request->input('anggaran');
         $durasi = $request->input('durasi');
         $metode = $request->input('metode');
 
-        return array(
-            $kategori,
-            $judul,
-            $merk,
-            $nama,
-            $harga,
-            $link,
-            $anggaran,
-            $durasi,
-            $metode
-        );
-    }   
+        $total = $biayaIklan * $durasi + $admin;
+
+        return view('frontend.ads.invoidAds', compact('biayaIklan','admin',  'kategori', 'judul', 'merk','namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'total'));
+
+        // return array(
+        //     $kategori,
+        //     $judul,
+        //     $merk,
+        //     $nama,
+        //     $harga,
+        //     $link,
+        //     $anggaran,
+        //     $durasi,
+        //     $metode
+        // );
+    }
 
     /**
      * Display the specified resource.
