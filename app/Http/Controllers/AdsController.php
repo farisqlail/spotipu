@@ -13,6 +13,12 @@ class AdsController extends Controller
      */
     public function index()
     {
+        $a = date('d');
+        $b = $a + 1;
+        $c = $b.'-'.date('M-Y');
+        // date_sub($a, date_interval_create_from_date_string($b));
+
+        dd($c);
         return view('frontend.ads.ads');
     }
 
