@@ -72,7 +72,7 @@
     </div>
     {{-- end Row Card Cicil --}}
 
-    <h5 class="text-white mt-5">Isi Keterangan </h5><br>
+    <h5 class="text-white mt-5">Isi Keterangan Produk</h5><br>
 
     <form action="{{ route('ads.store') }}" method="post" class="text-white form-ads">
         {{ csrf_field() }}
