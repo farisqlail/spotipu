@@ -162,9 +162,10 @@
                     <label for="">Metode Pembayaran <span style="color:red;">*</span></label>
                     <select class="form-control" name="metode">
                         <option>Pilih Metode Pembayaran</option>
-                        <option value="bank">Transfer Bank</option>
                         <option value="ovo">OVO</option>
-                        <option value="gopay">Gopay</option>
+                        <option value="gopay">GoPay</option>
+                        <option value="sopi">ShopeePay</option>
+                        <option value="dana">Dana</option>
                     </select>
                 </div>
             </div>

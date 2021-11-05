@@ -48,8 +48,7 @@ class AdsController extends Controller
     public function store(Request $request)
     {
         $biayaIklan = 10000;
-        $admin      = 2000;
-
+    
         $kategori = $request->input('kategori');
         $judul = $request->input('judul');
         $merk = $request->input('merk');
@@ -60,10 +59,38 @@ class AdsController extends Controller
         $durasi = $request->input('durasi');
         $metode = $request->input('metode');
 
-        $total = new ads();
-        $total = $total -> total($biayaIklan, $durasi) + $admin;
 
-        return view('frontend.ads.invoidAds', compact('biayaIklan','admin',  'kategori', 'judul', 'merk','namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'total'));
+
+        $total = new ads();
+        $admin = 0;
+        
+        if ($metode == "ovo") {
+            $hitung = $total->total($biayaIklan, $durasi);
+            $totalBayar = $hitung - ($hitung * 0.05);
+
+            // dd($totalBayar);
+        } elseif($metode == "gopay") {
+            $admin = 5000;
+            $hitung = $total->total($biayaIklan, $durasi);
+            $totalBayar = $hitung + $admin;
+
+        }
+        elseif ($metode == "sopi") {
+            $cashback = 5000;
+            $hitung = $total -> total($biayaIklan, $durasi);
+            $totalBayar= $hitung - $cashback;
+
+        }
+        elseif ($metode == "dana") {
+            $admin = 10000;
+            $hitung = $total -> total($biayaIklan, $durasi);
+            $totalBayar= $hitung + $admin;
+
+        }
+        
+      
+
+        return view('frontend.ads.invoidAds', compact('biayaIklan', 'admin', 'kategori', 'judul', 'merk','namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'totalBayar'));
 
     }
 
