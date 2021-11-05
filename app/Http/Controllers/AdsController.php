@@ -47,7 +47,7 @@ class AdsController extends Controller
      */
     public function store(Request $request)
     {
-        $biayaIklan = 10000; //Per-Hari
+        $biayaIklan = 10000;
         $admin      = 2000;
 
         $kategori = $request->input('kategori');

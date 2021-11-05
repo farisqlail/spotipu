@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bayar;
-use App\Models\PaketCireng;
-use App\Models\PaketTahubulat;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
@@ -20,18 +18,6 @@ class MemberController extends Controller
         return view('frontend.member.member');
     }
 
-    public function indexCireng()
-    {
-
-        return view('frontend.memberCireng.pembayaran');
-    }
-
-    public function indexTahubulat()
-    {
-
-        return view('frontend.memberTahubulat.pembayaran');
-    }
-
     public function bayar()
     {
 
@@ -42,18 +28,6 @@ class MemberController extends Controller
     {
 
         return view('frontend.member.invoice');
-    }
-
-    public function invoiceCireng()
-    {
-
-        return view('frontend.memberCireng.invoice');
-    }
-
-    public function invoiceTahubulat()
-    {
-
-        return view('frontend.memberTahubulat.invoice');
     }
 
     public function checkout()
@@ -88,100 +62,20 @@ class MemberController extends Controller
     {
         $harga = 5000;
         $admin = 1000;
-
+        
         $lama = $data->input('lama');
         $tgl = $data->input('tglbeli');
         $pbayar = $data->input('metodebayar');
 
         $totalBayar = new Bayar();
-        $totalBayars = $totalBayar->totalBayar($harga, $lama) + $admin;
+        $totalBayars = $totalBayar -> totalBayar($harga, $lama) + $admin;
 
         $dateNow = date('d');
         $lamaMember = $dateNow + $lama;
         $hasilMember = $lamaMember . '-' . date('M-Y');
 
-        return view('frontend.member.invoice', compact('harga', 'admin', 'lama', 'hasilMember', 'tgl', 'pbayar', 'totalBayars'));
-    }
+        return view('frontend.member.invoice', compact('harga', 'admin','lama', 'hasilMember', 'tgl', 'pbayar', 'totalBayars'));
 
-    public function storeCireng(Request $data)
-    {
-        $harga = 5000;
-        $admin = 1000;
-
-        $ppn = '0%';
-        $lama = $data->input('lama');
-        $tgl = $data->input('tglbeli');
-        $pbayar = $data->input('metodebayar');
-
-        $totalBayar = new PaketCireng();
-
-
-        if ($lama == '30') {
-            $totalBayars = $totalBayar->totalBayar($harga, $lama) + $admin;
-            $ppn = '5%';
-
-            // $totalBayars = $totalBayars -> ppnsepuluh($totalBayars);
-            
-            $totalBayars = $totalBayars + ($totalBayars * 0.10);
-
-        } elseif ($lama == '365') {
-            $totalBayars = $totalBayar->totalBayar($harga, $lama) + $admin;
-
-            // $totalBayars = $totalBayars -> ppnlima($totalBayars);
-            $totalBayars = $totalBayars + ($totalBayars * 0.05);
-
-            $ppn = '10%';
-            
-        } else {
-
-            $totalBayars = $totalBayar->totalBayar($harga, $lama) + $admin;
-        }
-
-
-
-        $dateNow = date('d');
-        $lamaMember = $dateNow + $lama;
-        $hasilMember = $lamaMember . '-' . date('M-Y');
-
-        return view('frontend.memberCireng.invoice', compact('ppn', 'harga', 'admin', 'lama', 'hasilMember', 'tgl', 'pbayar', 'totalBayars'));
-    }
-
-
-    public function storeTahuBulat(Request $data)
-    {
-        $harga = 5000;
-        $admin = 1000;
-
-
-        $lama = $data->input('lama');
-        $tgl = $data->input('tglbeli');
-        $pbayar = $data->input('metodebayar');
-
-        $totalBayar = new PaketTahubulat();
-
-        // PPN 
-        if ($lama == '30') {
-
-            $ppn = '20%';
-            $totalBayars = $totalBayar->totalBayar($harga, $lama) + $admin;
-
-            $totalBayars = $totalBayars->ppnduapuluh($totalBayars);
-        } elseif ($lama == '365') {
-
-            $ppn = '10%';
-            $totalBayars = $totalBayar->totalBayar($harga, $lama) + $admin;
-
-            $totalBayars = $totalBayars->ppnsepuluh($totalBayars);
-        } else {
-            $ppn = '0%';
-            $totalBayars = $totalBayar->totalBayar($harga, $lama) + $admin;
-        }
-
-        $dateNow = date('d');
-        $lamaMember = $dateNow + $lama;
-        $hasilMember = $lamaMember . '-' . date('M-Y');
-
-        return view('frontend.memberTahubulat.invoice', compact('ppn', 'harga', 'admin', 'lama', 'hasilMember', 'tgl', 'pbayar', 'totalBayars'));
     }
 
     /**
