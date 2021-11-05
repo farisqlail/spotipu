@@ -62,13 +62,39 @@ class MemberController extends Controller
     {
         $harga = 5000;
         $admin = 1000;
+      
         
         $lama = $data->input('lama');
         $tgl = $data->input('tglbeli');
         $pbayar = $data->input('metodebayar');
+        
+    
 
         $totalBayar = new Bayar();
-        $totalBayars = $totalBayar -> totalBayar($harga, $lama) + $admin;
+        //$totalBayars = $totalBayar -> totalBayar($harga, $lama) + $admin;
+
+        if ($pbayar == 'ovo') {
+            $admin = 0;
+            $potongan = 5000;
+            //$diskon = $harga - $admin - $potongan ;
+            $totalBayars = $totalBayar -> totalBayar($harga, $lama) - $potongan;
+        }
+
+        elseif ($pbayar == 'gopay') {
+            $admin = 5000;
+            $totalBayars = $totalBayar -> totalBayar($harga, $lama) + $admin;
+        }
+
+        elseif ($pbayar == 'shopee' ) {
+            $admin = 0;
+            $cashback = 10000;
+            $totalBayars = $totalBayar -> totalBayar($harga, $lama) - $cashback;
+        }
+
+        elseif ($pbayar == 'dana') {
+            $admin = 10000;
+            $totalBayars = $totalBayar -> totalBayar($harga, $lama) + $admin;
+        }
 
         $dateNow = date('d');
         $lamaMember = $dateNow + $lama;

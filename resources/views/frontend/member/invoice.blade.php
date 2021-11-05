@@ -34,6 +34,7 @@
                     <span><b>Harga</b></span><br><br>
                     <span><b>Metode Pembayaran</b></span><br><br>
                     <span><b>Biaya Admin</b></span><br><br>
+                    
 
                 </div>
                 <div class="col-md-4">
