@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/member', [MemberController::class, 'index']);
+Route::get('/member', [MemberController::class, 'index'])->name('member.index');
 
 Route::get('/pembayaran', [MemberController::class, 'bayar'])->name('member.pembayaran');
 Route::post('/pembayaran-store', [MemberController::class, 'store'])->name('member.store');
