@@ -118,20 +118,18 @@ class MemberController extends Controller
 
         if ($lama == '30') {
             $totalBayars = $totalBayar->totalBayar($harga, $lama) + $admin;
-            $ppn = '5%';
+            $ppn = '10%';
 
             // $totalBayars = $totalBayars -> ppnsepuluh($totalBayars);
-            
-            $totalBayars = $totalBayars + ($totalBayars * 0.10);
 
+            $totalBayars = $totalBayars + ($totalBayars * 0.10);
         } elseif ($lama == '365') {
             $totalBayars = $totalBayar->totalBayar($harga, $lama) + $admin;
 
             // $totalBayars = $totalBayars -> ppnlima($totalBayars);
             $totalBayars = $totalBayars + ($totalBayars * 0.05);
 
-            $ppn = '10%';
-            
+            $ppn = '5%';
         } else {
 
             $totalBayars = $totalBayar->totalBayar($harga, $lama) + $admin;
