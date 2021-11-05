@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Spotipu - Invoice
+    Spotipu - Invoice
 @endsection
 
 @section('content')
