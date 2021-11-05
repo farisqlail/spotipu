@@ -40,7 +40,7 @@
                       </div>
                       <form action="/register">
                         <input type="hidden" value="empty">
-                        <a href="{{ ur('/register') }}" class="btn btn-rounded btn btn-dark mt-2" style="background-color: #2c3e50; width: 60%; border: none">Register</a>
+                        <a href="{{ url('/register') }}" class="btn btn-rounded btn btn-dark mt-2" style="background-color: #2c3e50; width: 60%; border: none">Register</a>
                     </form>
                 </div>
 
