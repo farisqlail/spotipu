@@ -139,7 +139,7 @@
         <div class="row">
             {{-- <div class="col-md-6">
                 <div class="form-group">
-                    <label for="">Anggaran <span style="color:red;">*</span></label>
+                    <labe~l for="">Anggaran <span style="color:red;">*</span></label>
                     <input type="text" name="anggaran" class="form-control" placeholder="Rp.100000" id="">
                 </div>
             </div> --}}
