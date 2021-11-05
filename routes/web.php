@@ -18,7 +18,17 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/member', [MemberController::class, 'index'])->name('member.index');
 
 Route::get('/pembayaran', [MemberController::class, 'bayar'])->name('member.pembayaran');
+Route::get('/pembayaran-tahu', [MemberController::class, 'bayarTahu'])->name('member.pembayaran.tahu');
+Route::get('/pembayaran-klantink', [MemberController::class, 'bayarKlantink'])->name('member.pembayaran.klantink');
+Route::get('/pembayaran-cireng', [MemberController::class, 'bayarCireng'])->name('member.pembayaran.cireng');
+
+
 Route::post('/pembayaran-store', [MemberController::class, 'store'])->name('member.store');
+Route::post('/pembayaran-tahu-store', [MemberController::class, 'storeTahu'])->name('member.store.tahu');
+Route::post('/pembayaran-klantink-store', [MemberController::class, 'storeKlantink'])->name('member.store.klantink');
+Route::post('/pembayaran-cireng-store', [MemberController::class, 'storeCireng'])->name('member.store.cireng');
+
+
 Route::get('/pembayaran/invoice', [MemberController::class, 'invoice'])->name('member.invoice');
 Route::get('/pembayaran/checkout', [MemberController::class, 'checkout'])->name('member.checkout');
 Route::get('/pembayaran/konfirmasi', [MemberController::class, 'konfirmasi'])->name('member.konfirmasi');

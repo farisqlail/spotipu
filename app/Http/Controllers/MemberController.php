@@ -24,6 +24,24 @@ class MemberController extends Controller
         return view('frontend.member.pembayaran');
     }
 
+    public function bayarTahu()
+    {
+
+        return view('frontend.member.pembayaran-tahu');
+    }
+
+    public function bayarKlantink()
+    {
+
+        return view('frontend.member.pembayaran-klantink');
+    }
+
+    public function bayarCireng()
+    {
+
+        return view('frontend.member.pembayaran-cireng');
+    }
+
     public function invoice()
     {
 
@@ -58,6 +76,123 @@ class MemberController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function storeTahu(Request $request)
+    {
+        $harga = 90000;
+        $admin = 1000;
+        
+        $lama = 30;
+        $tgl = $request->input('tglbeli');
+        $member = $request->input('member');
+        $pbayar = $request->input('metodebayar');
+
+        $totalBayar = new Bayar();
+
+        if ($member == "Silver") {
+            $diskon = 10;
+            // $total = $totalBayar->totalBayar($harga, $lama);
+            $totalDiskon = (($diskon * $harga) / 100);
+            $totalBayars = $harga - $totalDiskon + $admin;
+
+        } elseif ($member == "Platinum") {
+            $diskon = 30;
+            // $total = $totalBayar->totalBayar($harga, $lama);
+            $totalDiskon = (($diskon * $harga) / 100);
+            $totalBayars = $harga - $totalDiskon + $admin;
+
+            // dd($totalBayars);
+        }
+        
+        // dd($totalBayars);
+
+        $dateNow = date('d');
+        $lamaMember = $dateNow + $lama;
+        $hasilMember = $lamaMember . '-' . date('M-Y');
+
+        return view('frontend.member.invoice', compact('harga', 'admin','lama', 'hasilMember', 'tgl', 'pbayar', 'totalBayars'));
+
+    }
+
+    public function storeCireng(Request $request)
+    {
+        $harga = 50000;
+        $admin = 1000;
+        
+        $lama = 30;
+        $tgl = $request->input('tglbeli');
+        $member = $request->input('member');
+        $pbayar = $request->input('metodebayar');
+
+        $totalBayar = new Bayar();
+
+        if ($member == "Silver") {
+            $diskon = 10;
+            // $total = $totalBayar->totalBayar($harga, $lama);
+            $totalDiskon = (($diskon * $harga) / 100);
+            $totalBayars = $harga - $totalDiskon + $admin;
+
+        } elseif ($member == "Platinum") {
+            $diskon = 30;
+            // $total = $totalBayar->totalBayar($harga, $lama);
+            $totalDiskon = (($diskon * $harga) / 100) ;
+            $totalBayars = $harga - $totalDiskon + $admin;
+
+            // dd($totalBayars);
+        }
+        
+        // dd($totalBayars);
+
+        $dateNow = date('d');
+        $lamaMember = $dateNow + $lama;
+        $hasilMember = $lamaMember . '-' . date('M-Y');
+
+        return view('frontend.member.invoice', compact('harga', 'admin','lama', 'hasilMember', 'tgl', 'pbayar', 'totalBayars'));
+
+    }
+
+    public function storeKlantink(Request $request)
+    {
+        $harga = 75000;
+        $admin = 1000;
+        
+        $lama = 30;
+        $tgl = $request->input('tglbeli');
+        $member = $request->input('member');
+        $pbayar = $request->input('metodebayar');
+
+        $totalBayar = new Bayar();
+
+        if ($member == "Silver") {
+            $diskon = 10;
+            // $total = $totalBayar->totalBayar($harga, $lama);
+            $totalDiskon = (($diskon * $harga) / 100) ;
+            $totalBayars = $harga - $totalDiskon+ $admin;
+
+        } elseif ($member == "Platinum") {
+            $diskon = 30;
+            // $total = $totalBayar->totalBayar($harga, $lama);
+            $totalDiskon = (($diskon * $harga) / 100);
+            $totalBayars = $harga - $totalDiskon + $admin;
+
+            // dd($totalBayars);
+        } elseif($member == "Gold"){
+            $diskon = 20;
+            // $total = $totalBayar->totalBayar($harga, $lama);
+            $totalDiskon = (($diskon * $harga) / 100);
+            $totalBayars = $harga - $totalDiskon  + $admin;
+
+        }
+        
+        // dd($totalBayars);
+
+        $dateNow = date('d');
+        $lamaMember = $dateNow + $lama;
+        $hasilMember = $lamaMember . '-' . date('M-Y');
+
+        return view('frontend.member.invoice', compact('harga', 'admin','lama', 'hasilMember', 'tgl', 'pbayar', 'totalBayars'));
+
+    }
+
     public function store(Request $data)
     {
         $harga = 5000;
@@ -65,10 +200,27 @@ class MemberController extends Controller
         
         $lama = $data->input('lama');
         $tgl = $data->input('tglbeli');
+        $member = $data->input('member');
         $pbayar = $data->input('metodebayar');
 
         $totalBayar = new Bayar();
-        $totalBayars = $totalBayar -> totalBayar($harga, $lama) + $admin;
+
+        if ($member == "Silver") {
+            $diskon = 10;
+            $total = $totalBayar->totalBayar($harga, $lama);
+            $totalDiskon = (($diskon * $total) / 100);
+            $totalBayars = $total - $totalDiskon + $admin;
+
+        } elseif ($member == "Platinum") {  
+            $diskon = 30;
+            $total = $totalBayar->totalBayar($harga, $lama);
+            $totalDiskon = (($diskon * $total) / 100) + $admin;
+            $totalBayars = $total - $totalDiskon;
+
+            // dd($totalBayars);
+        }
+        
+        // dd($totalBayars);
 
         $dateNow = date('d');
         $lamaMember = $dateNow + $lama;

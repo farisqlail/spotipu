@@ -22,7 +22,7 @@ class AdsController extends Controller
     {
         $a = date('d');
         $b = $a + 1;
-        $c = $b.'-'.date('M-Y');
+        $c = $b . '-' . date('M-Y');
         // date_sub($a, date_interval_create_from_date_string($b));
 
         // dd($c);
@@ -48,7 +48,7 @@ class AdsController extends Controller
     public function store(Request $request)
     {
         $biayaIklan = 10000;
-        $admin      = 2000;
+        // $admin      = 2000;
 
         $kategori = $request->input('kategori');
         $judul = $request->input('judul');
@@ -60,11 +60,23 @@ class AdsController extends Controller
         $durasi = $request->input('durasi');
         $metode = $request->input('metode');
 
+
         $total = new ads();
-        $total = $total -> total($biayaIklan, $durasi) + $admin;
+        $admin = 0;
 
-        return view('frontend.ads.invoidAds', compact('biayaIklan','admin',  'kategori', 'judul', 'merk','namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'total'));
+        if ($metode == "ovo") {
+            $hitung = $total->total($biayaIklan, $durasi);
+            $totalBayar = $hitung - ($hitung * 0.05);
 
+            // dd($totalBayar);
+        } elseif($metode == "gopay") {
+            $admin = 2000;
+            $hitung = $total->total($biayaIklan, $durasi);
+            $totalBayar = $hitung - ($hitung * 0.05);
+
+        }
+
+        return view('frontend.ads.invoidAds', compact('biayaIklan', 'admin',  'kategori', 'judul', 'merk', 'namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'totalBayar'));
     }
 
     /**

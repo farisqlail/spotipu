@@ -49,7 +49,7 @@ Spotipu - Beli Member
                     <br>
                     <br> -->
                     <div class="btn-member hvr-shrink " align="center">
-                        <button class="align-self-end btn btn-light">Pilih Paket</button>
+                        <a href="{{ url('/pembayaran-cireng') }}" class="align-self-end btn btn-light">Pilih Paket</a>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@ Spotipu - Beli Member
                     <br>
                     <br> -->
                     <div class="btn-member hvr-shrink" align="center">
-                        <a href="{{url('/pembayaran')}}" class="align-self-end btn btn-light">Pilih Paket</a>
+                        <a href="{{url('/pembayaran-klantink')}}" class="align-self-end btn btn-light">Pilih Paket</a>
                     </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@ Spotipu - Beli Member
 
 
                     <div class="btn-member hvr-shrink " align="center">
-                        <button class="align-self-end btn btn-light">Pilih Paket</button>
+                        <a href="{{ url('/pembayaran-tahu') }}" class="align-self-end btn btn-light">Pilih Paket</a>
                     </div>
                 </div>
             </div>

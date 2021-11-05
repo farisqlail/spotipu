@@ -63,7 +63,7 @@
                     <h3>Total Bayar</h3>
                 </div>
                 <div class="col-md-4">
-                    <h3>Rp. {{ $total }}</h3>
+                    <h3>Rp. {{ $totalBayar }}</h3>
                 </div>
             </div>
 

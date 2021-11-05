@@ -8,13 +8,13 @@ Spotipu - Bayar Member
 <div class="judul" align="center" style="color: #ffff;">
     <h2><b>Paket kamu</b></h2>
 </div>
-<form action="{{ route('member.store') }}" method="post" >
+<form action="{{ route('member.store.cireng') }}" method="post" >
     {{ csrf_field() }}
     <div class="card-form" data-aos="fade-up" align="center">
 
         <div class="cardpaket" align="left">
             <div class="textcard text-white">
-                <h4><b>Spotipu Premium Batagor</b></h4>
+                <h4><b>Spotipu Premium Cireng</b></h4>
                 <h6>1 Akun premium</h6>
                 <hr style="background-color: #ffff;">
             </div>
@@ -24,21 +24,7 @@ Spotipu - Bayar Member
                     <p>Harga</p>
                 </div>
                 <div class="col-md-6">
-                    <p>Rp 5000</p>
-                </div>
-            </div>
-
-            <div class="row text-white mt-2">
-                <div class="col-md-6">
-                    <p>Lama</p>
-                </div>
-                <div class="col-md-6">
-                    <select class="form-control" name="lama" placeholder="1 hari">
-                        <option value="1">1 hari</option>
-                        <option value="3">3 hari</option>
-                        <option value="5">5 hari</option>
-                        <option value="7">7 hari</option>
-                    </select>
+                    <p>Rp 50.000</p>
                 </div>
             </div>
 
