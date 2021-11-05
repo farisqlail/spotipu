@@ -11,7 +11,7 @@
             <h2 class="text-white"><b>Pesanan Kamu</b></h2>
         </div>
         <div class="col-md-3 align-self-end" align="right">
-            <a href="" class="text-white ml-auto"><u>Batalkan Pesanan</u></a>
+            <a href="{{ route('member.index') }}" class="text-white ml-auto"><u>Batalkan Pesanan</u></a>
         </div>
     </div>
 

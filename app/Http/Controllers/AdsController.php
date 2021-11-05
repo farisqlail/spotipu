@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ads;
-use SebastianBergmann\CodeCoverage\Report\Xml\Total;
 
 class AdsController extends Controller
 {
+
+    public function __construct()
+    {
+        $ads = new Ads();
+        // dd($ads);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +20,12 @@ class AdsController extends Controller
      */
     public function index()
     {
+        $a = date('d');
+        $b = $a + 1;
+        $c = $b.'-'.date('M-Y');
+        // date_sub($a, date_interval_create_from_date_string($b));
+
+        // dd($c);
         return view('frontend.ads.ads');
     }
 
@@ -46,33 +57,14 @@ class AdsController extends Controller
         $deskripsi = $request->input('deskripsi');
         $hargaProduk = $request->input('hargaProduk');
         $link = $request->input('link');
-        // $anggaran = $request->input('anggaran');
         $durasi = $request->input('durasi');
         $metode = $request->input('metode');
 
-        // $total = $biayaIklan * $durasi + $admin;
-
         $total = new ads();
-
-        // $total -> total($biayaIklan, $durasi);
-
         $total = $total -> total($biayaIklan, $durasi) + $admin;
-
-        // $totals = $total + $admin;
 
         return view('frontend.ads.invoidAds', compact('biayaIklan','admin',  'kategori', 'judul', 'merk','namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'total'));
 
-        // return array(
-        //     $kategori,
-        //     $judul,
-        //     $merk,
-        //     $nama,
-        //     $harga,
-        //     $link,
-        //     $anggaran,
-        //     $durasi,
-        //     $metode
-        // );
     }
 
     /**
