@@ -9,11 +9,11 @@ use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\PlayerController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('frontend/index');
-// });
+Route::get('/', function () {
+    return view('admin/index');
+});
 
-Route::get('/', [HomeController::class, 'index']);
+// Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/member', [MemberController::class, 'index'])->name('member.index');
 
@@ -63,3 +63,6 @@ Route::get('/ads-store/transdone', function () {
         "title" => 'Invoice Ads'
     ]);
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
