@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Artis;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ArtistController extends Controller
 {
@@ -54,7 +55,8 @@ class ArtistController extends Controller
             dd($validator->errors());
             return back()->withErrors($validator->errors());
         } else {
-          
+
+            Alert::success('Berhasil', 'Artis berhasil ditambahkan');
 
             $artis = new Artis();
             $artis->name_artis = $request->get('name_artis');
@@ -109,6 +111,7 @@ class ArtistController extends Controller
             return back()->withErrors($validator->errors());
         } else {
           
+            Alert::success('Berhasil', 'Artis berhasil diubah');
 
             $artis = Artis::findOrFail($id);
             $artis->name_artis = $request->get('name_artis');

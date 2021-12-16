@@ -30,8 +30,11 @@
                                         {!! $data->description_artis !!}
                                     </td>
                                     <td>
-                                        <a href="{{ route('admin.artist.edit', $data->id) }}" class="btn btn-lg btn-primary">Edit</a>
-                                        <a href="{{ route('admin.artist.delete', $data->id) }}" class="btn btn-lg btn-danger">Hapus</a>
+                                        <a href="{{ route('admin.artist.edit', $data->id) }}"
+                                            class="btn btn-primary">Edit</a>
+                                            <a href="#" data-id="{{ $data->id }}" class="btn btn-danger delete">
+                                                Hapus
+                                            </a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -42,4 +45,30 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        $('.delete').click(function() {
+            var artisId = $(this).attr('data-id');
+            swal({
+                    title: "Apakah kamu yakin ?",
+                    text: "Apa kamu yakin ingin menghapus data ini",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        window.location = "/artist/admin/delete/" + artisId + ""
+                        swal("Data berhasil dihapus", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Data tidak jadi dihapus");
+                    }
+                });
+        });
+    </script>
 @endsection
