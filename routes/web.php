@@ -7,51 +7,77 @@ use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\PlayerController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+Auth::routes();
+
 Route::get('/', function () {
-    return view('admin/index');
+    return view('frontend/index');
+});
+
+Route::get('/home', [HomeController::class, 'index'])->name('frontend.index');
+
+Route::prefix('/admin')->group(function () {
+    Route::get('/', [HomeController::class, 'admin'])->name('admin.index');
 });
 
 // Route::get('/', [HomeController::class, 'index']);
-
-Route::get('/member', [MemberController::class, 'index'])->name('member.index');
-
-Route::get('/pembayaran', [MemberController::class, 'bayar'])->name('member.pembayaran');
-Route::post('/pembayaran-store', [MemberController::class, 'store'])->name('member.store');
-Route::get('/pembayaran/invoice', [MemberController::class, 'invoice'])->name('member.invoice');
-Route::get('/pembayaran/checkout', [MemberController::class, 'checkout'])->name('member.checkout');
-Route::get('/pembayaran/konfirmasi', [MemberController::class, 'konfirmasi'])->name('member.konfirmasi');
-
-Route::get('/artist', [ArtistController::class, 'index']);
-Route::get('/genre', [GenreController::class, 'index']);
-Route::get('/album', [AlbumController::class, 'index']);
-Route::get('/player/{id}', [PlayerController::class, 'index'])->name('player.index');
-
-// Route Authentication
-
-    // Route Login
-Route::get('/login', function () {
-    return view('authentication/login', [
-        "title" => 'Login'
-    ]);
+Route::prefix('/member')->group(function () {
+    Route::get('/', [MemberController::class, 'index'])->name('member.index');
 });
 
-    //Route Register
-Route::get('/register', function () {
-    return view('authentication/register', [
-        "title" => 'Register'
-    ]);
+Route::prefix('/pembayaran')->group(function () {
+    Route::get('/', [MemberController::class, 'bayar'])->name('member.pembayaran');
+    Route::post('/pembayaran-store', [MemberController::class, 'store'])->name('member.store');
+    Route::get('/pembayaran/invoice', [MemberController::class, 'invoice'])->name('member.invoice');
+    Route::get('/pembayaran/checkout', [MemberController::class, 'checkout'])->name('member.checkout');
+    Route::get('/pembayaran/konfirmasi', [MemberController::class, 'konfirmasi'])->name('member.konfirmasi');
 });
+
+Route::prefix('/artist')->group(function () {
+    Route::get('/', [ArtistController::class, 'index']);
+});
+
+Route::prefix('/genre')->group(function () {
+    Route::get('/', [GenreController::class, 'index']);
+});
+
+Route::prefix('/album')->group(function () {
+    Route::get('/', [AlbumController::class, 'index']);
+});
+
+Route::prefix('/player')->group(function () {
+    Route::get('/player/{id}', [PlayerController::class, 'index'])->name('player.index');
+});
+
+Route::prefix('/ads')->group(function () {
+    Route::get('/', [AdsController::class, 'index']);
+    Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
+});
+
+
+// Route Login
+// Route::get('/login', function () {
+//     return view('authentication/login', [
+//         "title" => 'Login'
+//     ]);
+// });
+
+// //Route Register
+// Route::get('/register', function () {
+//     return view('authentication/register', [
+//         "title" => 'Register'
+//     ]);
+// });
 
 
 // Route Pasang Iklan
-Route::get('/ads', [AdsController::class, 'index']);
-Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
+
 
 // Route::get('/ads/invoiceIklan', [AddsController::class, 'invoiceIklan']);
 
-    // Route Untuk sementara 
+// Route Untuk sementara 
 // Route::get('/invoiceAds', function () {
 //     return view('frontend/ads/invoidAds', [
 //         "title" => 'Invoice Ads'
@@ -63,6 +89,6 @@ Route::get('/ads-store/transdone', function () {
         "title" => 'Invoice Ads'
     ]);
 });
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -5,14 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ads extends Model
+class Ads extends Model
 {
-
-    public function total($biayaIklan, $durasi)
-    {
-        $total = $biayaIklan * $durasi;
-
-
-        return $total;
-    }
+    use HasFactory;
 }
