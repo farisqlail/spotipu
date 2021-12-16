@@ -7,6 +7,7 @@ use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\PlayerController;
+use App\Models\Artis;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +38,12 @@ Route::prefix('/pembayaran')->group(function () {
 
 Route::prefix('/artist')->group(function () {
     Route::get('/', [ArtistController::class, 'index']);
+    Route::get('/admin/artist', [ArtistController::class, 'admin'])->name('admin.artist.index');
+    Route::get('/admin/tambah/', [ArtistController::class, 'create'])->name('admin.artist.create');
+    Route::post('/admin/tambah', [ArtistController::class, 'store'])->name('admin.artist.store');
+    Route::get('/admin/edit/{id}', [ArtistController::class, 'edit'])->name('admin.artist.edit');
+    Route::patch('/admin/edit/{id}', [ArtistController::class, 'update'])->name('admin.artist.update');
+    Route::get('/admin/delete/{id}', [ArtistController::class, 'destroy'])->name('admin.artist.delete');
 });
 
 Route::prefix('/genre')->group(function () {

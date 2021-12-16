@@ -9,7 +9,7 @@ class CreateTransactionsTable extends Migration
     public function up()
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->bigIncrements('id_transaction');
+            $table->id();
             $table->bigInteger('id_user')->index();
             $table->bigInteger('id_member')->index();
             $table->integer('active');

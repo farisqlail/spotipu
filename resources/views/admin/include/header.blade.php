@@ -14,3 +14,5 @@
     <link rel="stylesheet" href="{{ asset('tmpAdmin/assets/css/style.css') }}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ asset('tmpAdmin/assets/images/favicon.png') }}" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">

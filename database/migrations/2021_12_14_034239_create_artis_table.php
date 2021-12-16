@@ -14,7 +14,7 @@ class CreateArtisTable extends Migration
     public function up()
     {
         Schema::create('artis', function (Blueprint $table) {
-            $table->bigIncrements('id_music');
+            $table->id();
             $table->string('name_artis');
             $table->longText('description_artis');
             $table->timestamps();

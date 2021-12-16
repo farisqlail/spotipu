@@ -17,4 +17,6 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="{{ asset('tmpAdmin/assets/js/dashboard.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
     <!-- End custom js for this page -->
