@@ -79,8 +79,14 @@ Route::prefix('/ads')->group(function () {
 // });
 
 
+<<<<<<< HEAD
 // Route Pasang Iklan
 
+=======
+// Route Pasang Iklans
+Route::get('/ads', [AdsController::class, 'index']);
+Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
+>>>>>>> 1449025933f4d96e6564e2b3e23377b424c8b5e9
 
 // Route::get('/ads/invoiceIklan', [AddsController::class, 'invoiceIklan']);
 
