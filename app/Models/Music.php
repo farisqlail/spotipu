@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Music extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'id_artis',
+        'id_music',
+        'id_gener',
+        'name_music',
+        'description_music',
+        'music',
+        'menit'
+    ];
 }

@@ -16,7 +16,7 @@ class CreateMusicTable extends Migration
         Schema::create('music', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('id_artis')->index();
-            $table->bigInteger('id_album')->index();
+            $table->bigInteger('id_album')->index()->nullable();
             $table->bigInteger('id_genre')->index();
             $table->string('name_music');
             $table->longText('description_music');
