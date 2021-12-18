@@ -15,7 +15,6 @@ class CreateGenresTable extends Migration
     {
         Schema::create('genres', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_music')->index();
             $table->string('name_genre');
             $table->timestamps();
         });
