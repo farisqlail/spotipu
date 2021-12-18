@@ -56,7 +56,7 @@ Route::get('/register', function () {
 });
 
 
-// Route Pasang Iklan
+// Route Pasang Iklans
 Route::get('/ads', [AdsController::class, 'index']);
 Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
 
