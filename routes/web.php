@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/home', [HomeController::class, 'index'])->name('frontend.index');
 
-Route::prefix('/admin')->group(function () {
+Route::prefix('/dashboard')->group(function () {
     Route::get('/', [HomeController::class, 'admin'])->name('admin.index');
 });
 
