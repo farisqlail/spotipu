@@ -21,6 +21,13 @@ class GenreController extends Controller
         return view('frontend.genres.genre', ['genre' => $genre]);
     }
 
+    public function admin(){
+
+        $genre = Genre::all();
+
+        return view('admin.genre.index', ['genre' => $genre]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -28,7 +35,7 @@ class GenreController extends Controller
      */
     public function create()
     {
-        return view('admin.genre.index');
+        return view('admin.genre.create');
     }
 
     /**

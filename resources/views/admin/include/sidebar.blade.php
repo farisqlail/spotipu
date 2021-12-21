@@ -24,7 +24,7 @@
           <span class="menu-title">Music</span>
         </a>
       </li>
-      <li class="nav-item menu-items">
+      <li class="nav-item menu-items {{'artist' == request()->segment(1) ? 'active' : ''}}">
         <a class="nav-link" href="{{ route('admin.artist.index') }}">
           <span class="menu-icon">
             <i class="mdi mdi-account-star"></i>
@@ -32,8 +32,8 @@
           <span class="menu-title">Artist</span>
         </a>
       </li>
-      <li class="nav-item menu-items">
-        <a class="nav-link" href="">
+      <li class="nav-item menu-items {{'genre' == request()->segment(1) ? 'active' : ''}}">
+        <a class="nav-link" href="{{ route('admin.genre.index') }}">
           <span class="menu-icon">
             <i class="mdi mdi-music-circle"></i>
           </span>

@@ -50,6 +50,12 @@ Route::prefix('/artist')->group(function () {
 
 Route::prefix('/genre')->group(function () {
     Route::get('/', [GenreController::class, 'index']);
+    Route::get('/admin/genre', [GenreController::class, 'admin'])->name('admin.genre.index');
+    Route::get('/admin/tambah/', [GenreController::class, 'create'])->name('admin.genre.create');
+    Route::post('/admin/tambah', [GenreController::class, 'store'])->name('admin.genre.store');
+    Route::get('/admin/edit/{id}', [GenreController::class, 'edit'])->name('admin.genre.edit');
+    Route::patch('/admin/edit/{id}', [GenreController::class, 'update'])->name('admin.genre.update');
+    Route::get('/admin/delete/{id}', [GenreController::class, 'destroy'])->name('admin.genre.delete');
 });
 
 Route::prefix('/album')->group(function () {
