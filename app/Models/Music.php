@@ -12,7 +12,7 @@ class Music extends Model
     protected $fillable = [
         'id_artis',
         'id_music',
-        'id_gener',
+        'id_genre',
         'name_music',
         'description_music',
         'music',
