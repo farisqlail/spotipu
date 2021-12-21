@@ -10,8 +10,8 @@ class Artis extends Model
     use HasFactory;
 
     protected $fillable  = [
-        'id_artis',
         'name_artis',
-        'description_artis'
+        'description_artis',
+        'image'
     ];
 }

@@ -17,6 +17,7 @@ class CreateArtisTable extends Migration
             $table->id();
             $table->string('name_artis');
             $table->longText('description_artis');
+            $table->string('image');
             $table->timestamps();
         });
     }

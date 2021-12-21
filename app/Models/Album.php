@@ -14,6 +14,7 @@ class Album extends Model
         'id_music',
         'name_album',
         'description_album',
+        'image'
     ];
 
 

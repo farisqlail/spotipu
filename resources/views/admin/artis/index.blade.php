@@ -18,6 +18,7 @@
                                 <th>No</th>
                                 <th>Nama Artis</th>
                                 <th>Deskripsi Artis</th>
+                                <th>Foto Artis</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -29,6 +30,7 @@
                                     <td>
                                         {!! $data->description_artis !!}
                                     </td>
+                                    <td><img src="{{ asset('storage/image/artis/'.$data->image) }}" class="img-fluid rounded" style="width: 100px; height: 100px;"></td>
                                     <td>
                                         <a href="{{ route('admin.artist.edit', $data->id) }}"
                                             class="btn btn-primary">Edit</a>

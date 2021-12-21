@@ -30,22 +30,22 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/login';
 
-    public function authenticated(Request $request, $user)
-    {
-        if ($user->hasRole('admin')) {
-            // return view('admin.dashboard');
-            return redirect()->route('admin.index');
+    // public function authenticated(Request $request, $user)
+    // {
+    //     if ($user->hasRole('admin')) {
+    //         // return view('admin.dashboard');
+    //         return redirect()->route('admin.index');
 
-        } elseif ($user->hasRole('user')) {
-            // return view('hrd.dashboard');
-            return redirect()->route('frontend.index');
+    //     } elseif ($user->hasRole('user')) {
+    //         // return view('hrd.dashboard');
+    //         return redirect()->route('frontend.index');
 
-        }
+    //     }
     
-        return redirect()->route('login');
-    }
+    //     return redirect()->route('login');
+    // }
 
     /**
      * Create a new controller instance.

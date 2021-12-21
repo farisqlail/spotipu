@@ -7,7 +7,6 @@ use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\PlayerController;
-use App\Models\Artis;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
