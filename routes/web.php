@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('frontend/index');
 });
 
+
 Route::get('/home', [HomeController::class, 'index'])->name('frontend.index');
 
 Route::prefix('/admin')->group(function () {
@@ -28,6 +29,7 @@ Route::prefix('/member')->group(function () {
     Route::get('/', [MemberController::class, 'index'])->name('member.index');
 });
 
+// Route pembayaran
 Route::prefix('/pembayaran')->group(function () {
     Route::get('/', [MemberController::class, 'bayar'])->name('member.pembayaran');
     Route::post('/pembayaran-store', [MemberController::class, 'store'])->name('member.store');
