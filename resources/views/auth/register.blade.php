@@ -102,7 +102,15 @@
 <body>
 
     <div class="container">
-
+        @if($errors->any())
+        <div class="row collapse">
+            <ul class="alert-box warning radius">
+                @foreach($errors->all() as $error)
+                    <li> {{ $error }} </li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <div class="card" style="background-color: #00856B; border-radius: 25%">
             <img src="assets/img/logo-2.png" alt="">
             <form method="POST" action="{{ route('register') }}">
@@ -150,10 +158,10 @@
                     </div>
 
                     {{-- TextField NomerHp --}}
-                    {{-- <div class="form-group mt-1" style="margin-top: 10px">
+                    <div class="form-group mt-1" style="margin-top: 10px">
                         <Label class="labelhp">Confirm Password</Label>
                         <input id="password-confirm" style="width: 60%; background: transparent; border-width: 3px; border-top: none; border-left: none; border-right: none;" type="password" class="form-control mt-2" id="exampleInputPassword1" name="password_confirmation" required>
-                      </div> --}}
+                      </div>
 
                     <div class="buttoncon">
                         <button style="width: 60%; background-color: #009BA0; border: none" type="submit"

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginController extends Controller
 {
@@ -38,13 +39,15 @@ class LoginController extends Controller
 
         } elseif ($user->hasRole('user')) {
             // return view('hrd.dashboard');
+            Alert::success('Haloo', 'Kamu kembali lagi, banyak lagu yang baru loh');
+
             return redirect()->route('frontend.index');
 
         }
     
         return redirect()->route('login');
     }
-
+    
     /**
      * Create a new controller instance.
      *

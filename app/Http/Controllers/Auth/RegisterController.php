@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -32,21 +31,6 @@ class RegisterController extends Controller
      */
     protected $redirectTo = '/login';
 
-    // public function authenticated(Request $request, $user)
-    // {
-    //     if ($user->hasRole('admin')) {
-    //         // return view('admin.dashboard');
-    //         return redirect()->route('admin.index');
-
-    //     } elseif ($user->hasRole('user')) {
-    //         // return view('hrd.dashboard');
-    //         return redirect()->route('frontend.index');
-
-    //     }
-    
-    //     return redirect()->route('login');
-    // }
-
     /**
      * Create a new controller instance.
      *
@@ -67,7 +51,6 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'role'  => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
