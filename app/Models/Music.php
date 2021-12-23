@@ -18,4 +18,12 @@ class Music extends Model
         'music',
         'menit'
     ];
+
+    public function artis(){
+        return $this->belongsTo(Artis::class);
+    }
+
+    public function genre(){
+        return $this->belongsTo(Genre::class);
+    }
 }

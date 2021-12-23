@@ -17,6 +17,8 @@ class Album extends Model
         'image'
     ];
 
-
+    public function artis(){
+        return $this->belongsTo(Artis::class, 'id_artis', 'id_artis');
+    }
     
 }

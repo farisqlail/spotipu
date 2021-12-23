@@ -14,4 +14,8 @@ class Artis extends Model
         'description_artis',
         'image'
     ];
+
+    public function music(){
+        return $this->hasMany(Music::class);
+    }
 }

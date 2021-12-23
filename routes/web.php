@@ -7,6 +7,7 @@ use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\MusicController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -68,6 +69,16 @@ Route::prefix('/player')->group(function () {
 Route::prefix('/ads')->group(function () {
     Route::get('/', [AdsController::class, 'index']);
     Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
+});
+
+Route::prefix('/music')->group(function () {
+    Route::get('/', [MusicController::class, 'index']);
+    Route::get('/admin/music', [MusicController::class, 'admin'])->name('admin.music.index');
+    Route::get('/admin/tambah/', [MusicController::class, 'create'])->name('admin.music.create');
+    Route::post('/admin/tambah', [MusicController::class, 'store'])->name('admin.music.store');
+    Route::get('/admin/edit/{id}', [MusicController::class, 'edit'])->name('admin.music.edit');
+    Route::patch('/admin/edit/{id}', [MusicController::class, 'update'])->name('admin.music.update');
+    Route::get('/admin/delete/{id}', [MusicController::class, 'destroy'])->name('admin.music.delete');
 });
 
 
