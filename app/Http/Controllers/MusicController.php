@@ -181,6 +181,11 @@ class MusicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $music = Music::findOrFail($id);
+        
+        $music->delete();
+        Storage::delete($music->image);
+
+        return redirect()->back();
     }
 }
