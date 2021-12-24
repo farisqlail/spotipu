@@ -5,7 +5,7 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h1>Tambah Data Genre</h1>
+                <h1>Edit Data Genre</h1>
 
                 <form action="{{ route('admin.genre.update', $genre->id) }}" method="post">
                     {{ csrf_field() }}

@@ -11,10 +11,9 @@ class Album extends Model
 
     protected $fillable = [
         'id_artis',
-        'id_music',
         'name_album',
         'description_album',
-        'image'
+        'cover'
     ];
 
     public function artis(){

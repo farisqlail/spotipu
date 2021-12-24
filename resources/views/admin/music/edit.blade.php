@@ -5,7 +5,7 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h1>Tambah Data Music</h1>
+                <h1>Edit Data Music</h1>
 
                 <form action="{{ route('admin.music.update', $music->id) }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}

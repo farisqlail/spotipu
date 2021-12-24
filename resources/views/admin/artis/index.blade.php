@@ -32,6 +32,7 @@
                                     </td>
                                     <td><img src="{{ asset('storage/image/artis/'.$data->image) }}" class="img-fluid rounded" style="width: 100px; height: 100px;"></td>
                                     <td>
+                                        <a href="{{ route('admin.album.index', $data->id) }}" class="btn btn-success">Album</a>
                                         <a href="{{ route('admin.music.index', $data->id) }}" class="btn btn-info">Music</a>
                                         <a href="{{ route('admin.artist.edit', $data->id) }}"
                                             class="btn btn-primary">Edit</a>
