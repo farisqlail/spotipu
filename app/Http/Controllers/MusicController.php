@@ -9,6 +9,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Music;
 use App\Models\Artis;
 use App\Models\Genre;
+use App\Models\Album;
 
 class MusicController extends Controller
 {
@@ -27,9 +28,10 @@ class MusicController extends Controller
     public function admin($id){
 
         $artis = Artis::findOrFail($id);
+        $album = Album::where('id_artis', $id)->get();
         $music = Music::join('genres', 'genres.id', '=', 'music.id_genre')->where('id_artis', $id)->get();
 // dd($music);
-        return view('admin.music.index', ['music' => $music, 'artis' => $artis]);
+        return view('admin.music.index', ['music' => $music, 'artis' => $artis, 'album' => $album]);
     }
 
     /**
@@ -166,6 +168,30 @@ class MusicController extends Controller
                 $music->cover = $filename;
                 Storage::putFileAs("public/music/cover", $file, $filename);
             }
+            // dd($music);
+            $music->save();
+
+            return redirect()->route('admin.music.index', $music->id_artis);
+        }
+    }
+
+    public function tambahAlbum(Request $request, $id){
+
+        $validator = Validator::make(request()->all(), [
+            'id_album' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            dd($validator->errors());
+            return back()->withErrors($validator->errors());
+        } else {
+
+            Alert::success('Berhasil', 'Music berhasil ditambahkan ke album');
+
+            $music = Music::findOrfail($id);
+
+            $music->id_album = $request->get('id_album');
+
             // dd($music);
             $music->save();
 

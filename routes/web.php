@@ -84,6 +84,7 @@ Route::prefix('/music')->group(function () {
     Route::post('/admin/tambah', [MusicController::class, 'store'])->name('admin.music.store');
     Route::get('/admin/edit/{id}', [MusicController::class, 'edit'])->name('admin.music.edit');
     Route::patch('/admin/edit/{id}', [MusicController::class, 'update'])->name('admin.music.update');
+    Route::patch('/admin/album/{id}', [MusicController::class, 'tambahAlbum'])->name('admin.music.album');
     Route::get('/admin/delete/{id}', [MusicController::class, 'destroy'])->name('admin.music.delete');
 });
 

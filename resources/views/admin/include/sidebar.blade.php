@@ -41,14 +41,6 @@
                 </span>
                 <span class="menu-title">Genres</span>
               </a>
-            </li>    
-            <li class="nav-item menu-items">
-              <a class="nav-link" href="">
-                <span class="menu-icon">
-                  <i class="mdi mdi-album"></i>
-                </span>
-                <span class="menu-title">Album</span>
-              </a>
             </li>
           </ul>
         </div>

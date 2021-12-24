@@ -25,6 +25,44 @@
                         </thead>
                         <tbody>
                             @foreach ($music as $data)
+
+                                <div class="modal fade" id="album{{ $data->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Tambahkan ke Album</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="{{ route('admin.music.album', $data->id) }}" method="post">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('PATCH') }}
+
+                                                    <div class="form-group">
+                                                        <label for="">Pilih album</label>
+                                                        <select name="id_album" id="" class="form-control">
+                                                            <option value="">-- Pilih Album --</option>
+                                                            @foreach ($album as $item)
+                                                                <option value="{{ $item->id }}">
+                                                                    {{ $item->name_album }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Tambahkan</button>
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <tr class="text-center">
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
@@ -51,6 +89,10 @@
                                         </div>
                                     </td>
                                     <td>
+                                        <a href="" class="btn btn-info" data-toggle="modal"
+                                            data-target="#album{{ $data->id }}">
+                                            Tambah Ke Album
+                                        </a>
                                         <a href="{{ route('admin.music.edit', $data->id) }}"
                                             class="btn btn-primary">Edit</a>
                                         <a href="#" data-id="{{ $data->id }}" class="btn btn-danger delete">

@@ -157,7 +157,7 @@ class AlbumController extends Controller
         $album = Album::findOrFail($id);
         
         $album->delete();
-        Storage::delete($album->image);
+        Storage::delete($album->cover);
 
         return redirect()->back();
     }
