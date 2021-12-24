@@ -24,11 +24,12 @@ class MusicController extends Controller
         // return view('admin.music.index', ['music' => $music]);
     }
 
-    public function admin(){
+    public function admin($id){
 
-        $music = Music::all();
+        $artis = Artis::findOrFail($id);
+        $music = Music::where('id_artis', $id)->get();
 
-        return view('admin.music.index', ['music' => $music]);
+        return view('admin.music.index', ['music' => $music, 'artis' => $artis]);
     }
 
     /**
@@ -36,10 +37,10 @@ class MusicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         $genre = Genre::all();
-        $artis = Artis::all();
+        $artis = Artis::findOrFail($id);
 
         return view('admin.music.create', ['genre' => $genre, 'artis' => $artis]);
     }
@@ -64,9 +65,9 @@ class MusicController extends Controller
             return back()->withErrors($validator->errors());
         } else {
 
-            Alert::success('Berhasil', 'Artis berhasil ditambahkan');
+            Alert::success('Berhasil', 'Music berhasil ditambahkan');
 
-            $music = new Artis();
+            $music = new Music();
 
             $music->id_artis = $request->get('id_artis');
             $music->id_genre = $request->get('id_genre');
@@ -74,16 +75,16 @@ class MusicController extends Controller
             $music->description_music = $request->get('description_music');
             $music->menit = $request->get('menit');
 
-            if($request->file('musc')){
-                $file = $request->file('musc');
+            if($request->file('music')){
+                $file = $request->file('music');
                 $filename = time() . '.' . $file->getClientOriginalExtension();
-                $music->musc = $filename;
+                $music->music = $filename;
                 Storage::putFileAs("public/music", $file, $filename);
             }
-            
+            // dd($music);
             $music->save();
 
-            return redirect()->route('admin.artist.index');
+            return redirect()->route('admin.music.index', $music->id_artis);
         }
     }
 

@@ -73,8 +73,8 @@ Route::prefix('/ads')->group(function () {
 
 Route::prefix('/music')->group(function () {
     Route::get('/', [MusicController::class, 'index']);
-    Route::get('/admin/music', [MusicController::class, 'admin'])->name('admin.music.index');
-    Route::get('/admin/tambah/', [MusicController::class, 'create'])->name('admin.music.create');
+    Route::get('/admin/music/{id}', [MusicController::class, 'admin'])->name('admin.music.index');
+    Route::get('/admin/tambah/{id}', [MusicController::class, 'create'])->name('admin.music.create');
     Route::post('/admin/tambah', [MusicController::class, 'store'])->name('admin.music.store');
     Route::get('/admin/edit/{id}', [MusicController::class, 'edit'])->name('admin.music.edit');
     Route::patch('/admin/edit/{id}', [MusicController::class, 'update'])->name('admin.music.update');

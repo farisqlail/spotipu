@@ -8,7 +8,7 @@
             <h1>Data Music</h1>
 
             <div class="float-right mb-3">
-                <a href="{{ route('admin.music.create') }}" class="btn btn-success btn-lg">Tambah Data</a>
+                <a href="{{ route('admin.music.create', $artis->id) }}" class="btn btn-success btn-lg">Tambah Data</a>
             </div>
 
             <div class="table-responsive">

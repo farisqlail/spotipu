@@ -19,21 +19,13 @@
       <li class="nav-item menu-items ">
         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <span class="menu-icon">
-            <i class="mdi mdi-laptop"></i>
+            <i class="mdi mdi-music"></i>
           </span>
           <span class="menu-title">Musics</span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item menu-items {{'music' == request()->segment(1) ? 'active' : ''}}">
-              <a class="nav-link" href="{{ route('admin.music.index') }}">
-                <span class="menu-icon">
-                  <i class="mdi mdi-music"></i>
-                </span>
-                <span class="menu-title">Music</span>
-              </a>
-            </li>
             <li class="nav-item menu-items {{'artist' == request()->segment(1) ? 'active' : ''}}">
               <a class="nav-link" href="{{ route('admin.artist.index') }}">
                 <span class="menu-icon">
