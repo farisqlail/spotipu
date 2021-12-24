@@ -7,22 +7,23 @@
             <div class="card-body">
                 <h1>Tambah Data Music</h1>
 
-                <form action="{{ route('admin.music.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin.music.update', $music->id) }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
+                    {{ method_field('PATCH') }}
 
-                    <input type="number" name="id_artis" value="{{ $artis->id }}" hidden>
+                    <input type="number" name="id_artis" value="{{ $music->id_artis }}" hidden>
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Judul Music</label>
-                                <input type="text" name="name_music" class="form-control" placeholder="Judul Musik ....">
+                                <input type="text" name="name_music" class="form-control" value="{{ $music->name_music }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Menit Music</label>
-                                <input type="text" name="menit" class="form-control" placeholder="Menit Musik ....">
+                                <input type="text" name="menit" class="form-control" value="{{ $music->menit }}">
                             </div>
                         </div>
                     </div>
@@ -39,7 +40,7 @@
                     <div class="form-group">
                         <label for="">Description Music</label>
                         <textarea class="form-control" name="description_music" id="description_music" required
-                            rows="3"></textarea>
+                            rows="3">{!! $music->description_music !!}</textarea>
                     </div>
 
                     <div class="row">
@@ -58,7 +59,7 @@
                     </div>
 
                     <div class="button-submit float-right">
-                        <button type="submit" class="btn btn-lg btn-success">Tambah</button>
+                        <button type="submit" class="btn btn-lg btn-success">Edit</button>
                     </div>
                 </form>
             </div>

@@ -16,6 +16,7 @@ class Music extends Model
         'name_music',
         'description_music',
         'music',
+        'cover',
         'menit'
     ];
 
@@ -24,6 +25,6 @@ class Music extends Model
     }
 
     public function genre(){
-        return $this->belongsTo(Genre::class);
+        return $this->belongsTo(Genre::class, 'id_genre');
     }
 }

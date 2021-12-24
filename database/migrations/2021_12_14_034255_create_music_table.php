@@ -21,7 +21,8 @@ class CreateMusicTable extends Migration
             $table->string('name_music');
             $table->longText('description_music');
             $table->string('music');
-            $table->integer('menit');
+            $table->string('cover');
+            $table->string('menit');
             $table->timestamps();
         });
     }

@@ -27,8 +27,8 @@ class MusicController extends Controller
     public function admin($id){
 
         $artis = Artis::findOrFail($id);
-        $music = Music::where('id_artis', $id)->get();
-
+        $music = Music::join('genres', 'genres.id', '=', 'music.id_genre')->where('id_artis', $id)->get();
+// dd($music);
         return view('admin.music.index', ['music' => $music, 'artis' => $artis]);
     }
 
@@ -57,6 +57,7 @@ class MusicController extends Controller
             'name_music' => 'required',
             'description_music' => 'required',
             'music' => 'required',
+            'cover' => 'required',
             'menit' => 'required'
         ]);
 
@@ -80,6 +81,13 @@ class MusicController extends Controller
                 $filename = time() . '.' . $file->getClientOriginalExtension();
                 $music->music = $filename;
                 Storage::putFileAs("public/music", $file, $filename);
+            }
+
+            if($request->file('cover')){
+                $file = $request->file('cover');
+                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $music->cover = $filename;
+                Storage::putFileAs("public/music/cover", $file, $filename);
             }
             // dd($music);
             $music->save();
@@ -107,7 +115,10 @@ class MusicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $genre = Genre::all();
+        $music = Music::findOrFail($id);
+
+        return view('admin.music.edit', ['genre' => $genre, 'music' => $music]);
     }
 
     /**
@@ -119,7 +130,47 @@ class MusicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make(request()->all(), [
+            'name_music' => 'required',
+            'description_music' => 'required',
+            'music' => 'required',
+            'cover' => 'required',
+            'menit' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            dd($validator->errors());
+            return back()->withErrors($validator->errors());
+        } else {
+
+            Alert::success('Berhasil', 'Music berhasil ditambahkan');
+
+            $music = Music::findOrfail($id);
+
+            $music->id_artis = $request->get('id_artis');
+            $music->id_genre = $request->get('id_genre');
+            $music->name_music = $request->get('name_music');
+            $music->description_music = $request->get('description_music');
+            $music->menit = $request->get('menit');
+
+            if($request->file('music')){
+                $file = $request->file('music');
+                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $music->music = $filename;
+                Storage::putFileAs("public/music", $file, $filename);
+            }
+
+            if($request->file('cover')){
+                $file = $request->file('cover');
+                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $music->cover = $filename;
+                Storage::putFileAs("public/music/cover", $file, $filename);
+            }
+            // dd($music);
+            $music->save();
+
+            return redirect()->route('admin.music.index', $music->id_artis);
+        }
     }
 
     /**

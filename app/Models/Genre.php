@@ -14,6 +14,6 @@ class Genre extends Model
     ];
 
     public function music(){
-        return $this->hasMany(Music::class);
+        return $this->hasOne(Music::class);
     }
 }
