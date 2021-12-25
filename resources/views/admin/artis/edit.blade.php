@@ -5,9 +5,9 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h1>Tambah Data Artis</h1>
+                <h1>Edit Data Artis</h1>
 
-                <form action="{{ route('admin.artist.update', $artis->id) }}" method="post">
+                <form action="{{ route('admin.artist.update', $artis->id) }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{ method_field('PATCH') }}
                     <div class="form-group">
@@ -18,6 +18,11 @@
                     <div class="form-group">
                         <label for="">Description Artis</label>
                         <textarea class="form-control" name="description_artis" id="description_artis" required rows="3">{{ $artis->description_artis }}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Image Artis</label>
+                        <input type="file" class="form-control" name="image">
                     </div>
                     
                     <div class="button-submit float-right">

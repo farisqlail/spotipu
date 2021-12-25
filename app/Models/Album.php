@@ -11,11 +11,13 @@ class Album extends Model
 
     protected $fillable = [
         'id_artis',
-        'id_music',
         'name_album',
         'description_album',
+        'cover'
     ];
 
-
+    public function artis(){
+        return $this->belongsTo(Artis::class, 'id_artis', 'id_artis');
+    }
     
 }

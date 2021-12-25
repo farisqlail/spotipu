@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Artis;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -48,7 +49,8 @@ class ArtistController extends Controller
     {
         $validator = Validator::make(request()->all(), [
             'name_artis' => 'required',
-            'description_artis' => 'required'
+            'description_artis' => 'required',
+            'image' => 'required|mimes:jpeg,png,jpg'
         ]);
 
         if ($validator->fails()) {
@@ -61,7 +63,13 @@ class ArtistController extends Controller
             $artis = new Artis();
             $artis->name_artis = $request->get('name_artis');
             $artis->description_artis = $request->get('description_artis');
-
+            if($request->file('image')){
+                $file = $request->file('image');
+                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $artis->image = $filename;
+                Storage::putFileAs("public/image/artis", $file, $filename);
+            }
+// dd($artis);
             $artis->save();
 
             return redirect()->route('admin.artist.index');
@@ -99,11 +107,16 @@ class ArtistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, Artis $artis)
     {
+        if ($artis->image) {
+            Storage::delete($artis->image);
+        }
+        
         $validator = Validator::make(request()->all(), [
             'name_artis' => 'required',
-            'description_artis' => 'required'
+            'description_artis' => 'required',
+            'image' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -114,8 +127,15 @@ class ArtistController extends Controller
             Alert::success('Berhasil', 'Artis berhasil diubah');
 
             $artis = Artis::findOrFail($id);
+
             $artis->name_artis = $request->get('name_artis');
             $artis->description_artis = $request->get('description_artis');
+            if($request->file('image')){
+                $file = $request->file('image');
+                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $artis->image = $filename;
+                Storage::putFileAs("public/image/artis", $file, $filename);
+            }
 
             $artis->save();
 
@@ -133,6 +153,7 @@ class ArtistController extends Controller
     {
         $artis = Artis::findOrFail($id);
         $artis->delete();
+        Storage::delete($artis->image);
 
         return redirect()->back();
         

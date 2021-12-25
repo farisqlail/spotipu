@@ -72,6 +72,7 @@
     @include('include.script')
     @stack('addon-script')
 
+  
 </body>
 
 </html>

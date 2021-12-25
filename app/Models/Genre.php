@@ -12,4 +12,8 @@ class Genre extends Model
     protected $fillable = [
         'name_genre',
     ];
+
+    public function music(){
+        return $this->hasOne(Music::class);
+    }
 }

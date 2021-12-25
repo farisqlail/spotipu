@@ -12,10 +12,19 @@ class Music extends Model
     protected $fillable = [
         'id_artis',
         'id_music',
-        'id_gener',
+        'id_genre',
         'name_music',
         'description_music',
         'music',
+        'cover',
         'menit'
     ];
+
+    public function artis(){
+        return $this->belongsTo(Artis::class);
+    }
+
+    public function genre(){
+        return $this->belongsTo(Genre::class, 'id_genre');
+    }
 }

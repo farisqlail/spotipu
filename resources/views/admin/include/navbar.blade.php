@@ -13,8 +13,8 @@
       <li class="nav-item dropdown">
         <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
           <div class="navbar-profile">
-            <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
-            <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+            <img class="img-xs rounded-circle" src="https://inspektorat.kotawaringinbaratkab.go.id/public/uploads/user/default-user-imge.jpeg" alt="">
+            <p class="mb-0 d-none d-sm-block navbar-profile-name">Admin</p>
             <i class="mdi mdi-menu-down d-none d-sm-block"></i>
           </div>
         </a>
@@ -37,8 +37,6 @@
           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
         </form>
-          <div class="dropdown-divider"></div>
-          <p class="p-3 mb-0 text-center">Advanced settings</p>
         </div>
       </li>
     </ul>

@@ -5,10 +5,10 @@
     <div class="container">
         <div class="card">
             <div class="card-body rounded">
-                <h1>Data Artist</h1>
+                <h1>Data Genre</h1>
 
                 <div class="float-right mb-3">
-                    <a href="{{ route('admin.artist.create') }}" class="btn btn-success btn-lg">Tambah Data</a>
+                    <a href="{{ route('admin.genre.create') }}" class="btn btn-success btn-lg">Tambah Data</a>
                 </div>
 
                 <div class="table-responsive">
@@ -16,29 +16,21 @@
                         <thead>
                             <tr class="text-center">
                                 <th>No</th>
-                                <th>Nama Artis</th>
-                                <th>Deskripsi Artis</th>
-                                <th>Foto Artis</th>
+                                <th>Nama Genre</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($artis as $data)
+                            @foreach ($genre as $data)
                                 <tr class="text-center">
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $data->name_artis }}</td>
+                                    <td>{{ $data->name_genre }}</td>
                                     <td>
-                                        {!! $data->description_artis !!}
-                                    </td>
-                                    <td><img src="{{ asset('storage/image/artis/'.$data->image) }}" class="img-fluid rounded" style="width: 100px; height: 100px;"></td>
-                                    <td>
-                                        <a href="{{ route('admin.album.index', $data->id) }}" class="btn btn-success">Album</a>
-                                        <a href="{{ route('admin.music.index', $data->id) }}" class="btn btn-info">Music</a>
-                                        <a href="{{ route('admin.artist.edit', $data->id) }}"
+                                        <a href="{{ route('admin.genre.edit', $data->id) }}"
                                             class="btn btn-primary">Edit</a>
-                                            <a href="#" data-id="{{ $data->id }}" class="btn btn-danger delete">
-                                                Hapus
-                                            </a>
+                                        <a href="#" data-id="{{ $data->id }}" class="btn btn-danger delete">
+                                            Hapus
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -49,13 +41,14 @@
         </div>
     </div>
 
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         $('.delete').click(function() {
-            var artisId = $(this).attr('data-id');
+            var genreId = $(this).attr('data-id');
             swal({
                     title: "Apakah kamu yakin ?",
                     text: "Apa kamu yakin ingin menghapus data ini",
@@ -65,7 +58,7 @@
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location = "/artist/admin/delete/" + artisId + ""
+                        window.location = "/genre/admin/delete/" + genreId + ""
                         swal("Data berhasil dihapus", {
                             icon: "success",
                         });
