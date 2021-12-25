@@ -38,6 +38,7 @@ Route::prefix('/pembayaran')->group(function () {
     Route::get('/pembayaran/konfirmasi', [MemberController::class, 'konfirmasi'])->name('member.konfirmasi');
 });
 
+// Route Artist
 Route::prefix('/artist')->group(function () {
     Route::get('/', [ArtistController::class, 'index']);
     Route::get('/admin/artist', [ArtistController::class, 'admin'])->name('admin.artist.index');
@@ -48,23 +49,41 @@ Route::prefix('/artist')->group(function () {
     Route::get('/admin/delete/{id}', [ArtistController::class, 'destroy'])->name('admin.artist.delete');
 });
 
+// Route Genre
 Route::prefix('/genre')->group(function () {
     Route::get('/', [GenreController::class, 'index']);
 });
 
+
+// Route album
 Route::prefix('/album')->group(function () {
     Route::get('/', [AlbumController::class, 'index']);
 });
 
+
+// Rpute Player
 Route::prefix('/player')->group(function () {
     Route::get('/player/{id}', [PlayerController::class, 'index'])->name('player.index');
 });
 
+
+// Route Ads
 Route::prefix('/ads')->group(function () {
     Route::get('/', [AdsController::class, 'index']);
     Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
 });
 
+
+// Route Invoice
+Route::get('/ads-store/transdone', function () {
+    return view('frontend/ads/transiklandone', [
+        "title" => 'Invoice Ads'
+    ]);
+});
+
+// Route Pasang Iklans
+// Route::get('/ads', [AdsController::class, 'index']);
+// Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
 
 // Route Login
 // Route::get('/login', function () {
@@ -81,9 +100,7 @@ Route::prefix('/ads')->group(function () {
 // });
 
 
-// Route Pasang Iklans
-Route::get('/ads', [AdsController::class, 'index']);
-Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
+
 
 // Route::get('/ads/invoiceIklan', [AddsController::class, 'invoiceIklan']);
 
@@ -94,11 +111,7 @@ Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
 //     ]);
 // });
 
-Route::get('/ads-store/transdone', function () {
-    return view('frontend/ads/transiklandone', [
-        "title" => 'Invoice Ads'
-    ]);
-});
+
 
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
