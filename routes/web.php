@@ -85,6 +85,7 @@ Route::prefix('/ads')->group(function () {
     Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
 });
 
+//Route Music
 Route::prefix('/music')->group(function () {
     Route::get('/', [MusicController::class, 'index']);
     Route::get('/admin/music/{id}', [MusicController::class, 'admin'])->name('admin.music.index');

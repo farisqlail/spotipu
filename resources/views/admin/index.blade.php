@@ -5,7 +5,7 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h1>Halo selamat datang admin!</h1>
+                <h1>Halo selamat datang admin Spotipu!</h1>
                 <span>Silahkan lakukan sesukamu </span>
             </div>
         </div>
