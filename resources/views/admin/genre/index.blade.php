@@ -2,13 +2,39 @@
 
 @section('content-admin')
 
+    <div class="modal fade" id="tambahGenre" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah Data Genre</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('admin.genre.store') }}" method="post">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <label for="">Nama Genre</label>
+                            <input type="text" name="name_genre" class="form-control" placeholder="Nama Genre ....">
+                        </div>
+
+                        <div class="button-submit float-right">
+                            <button type="submit" class="btn btn-lg btn-success">Tambah</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="container">
         <div class="card">
             <div class="card-body rounded">
                 <h1>Data Genre</h1>
 
                 <div class="float-right mb-3">
-                    <a href="{{ route('admin.genre.create') }}" class="btn btn-success btn-lg">Tambah Data</a>
+                    <button type="button" class="btn btn-success btn-lg" data-toggle="modal"
+                        data-target="#tambahGenre">Tambah Data</button>
                 </div>
 
                 <div class="table-responsive">
@@ -22,12 +48,40 @@
                         </thead>
                         <tbody>
                             @foreach ($genre as $data)
+                                <div class="modal fade" id="editGenre" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Edit Data Genre</h5>
+                                                <button type="button" class="btn-close" data-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="{{ route('admin.genre.update', $data->id) }}" method="post">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('PATCH') }}
+                                
+                                                    <div class="form-group">
+                                                        <label for="">Nama Genre</label>
+                                                        <input type="text" name="name_genre" class="form-control" value="{{ $data->name_genre }}">
+                                                    </div>
+                                                    
+                                                    <div class="button-submit float-right">
+                                                        <button type="submit" class="btn btn-lg btn-success">Edit</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <tr class="text-center">
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->name_genre }}</td>
                                     <td>
-                                        <a href="{{ route('admin.genre.edit', $data->id) }}"
-                                            class="btn btn-primary">Edit</a>
+                                        <a href="{{ route('admin.genre.edit', $data->id) }}" class="btn btn-primary"
+                                            data-toggle="modal" data-target="#editGenre">Edit</a>
                                         <a href="#" data-id="{{ $data->id }}" class="btn btn-danger delete">
                                             Hapus
                                         </a>
