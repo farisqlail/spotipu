@@ -18,7 +18,7 @@
                             <th>No</th>
                             <th>Nama Album</th>
                             <th>Deskripsi Album</th>
-                            <th>COver Album</th>
+                            <th>Cover Album</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
