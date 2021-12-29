@@ -31,11 +31,11 @@
             <!-- Main Content -->
             <div id="content" style="background-color: #536578;">
                 
+                {{-- Navbar --}}
+                @include('include.navbar')
                 
                 <!-- Begin Page Content -->
                 <div class="container-fluid mb-5">
-                    {{-- Navbar --}}
-                    @include('include.navbar')
 
                     {{-- <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">

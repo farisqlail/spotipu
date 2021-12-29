@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <h2 class="text-white">Hello Wang-jarim, Welcome back!</h2>
+    <h2 class="text-white">Hello {{ Auth::user()->name }}, Welcome back!</h2>
 
     <br>
 
