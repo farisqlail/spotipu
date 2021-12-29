@@ -16,8 +16,10 @@ class ArtistController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        
+        $artis = Artis::all();
 
-        return view('frontend.artist.artist');
+        return view('frontend.artist.artist', ['artis' => $artis]);
     }
 
     public function admin(){

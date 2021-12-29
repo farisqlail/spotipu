@@ -21,35 +21,12 @@
                     </div>
 
                     <div class="row mt-3" align="center">
-                        <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/greenday.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Green Day</h6>
-                        </div>
-
-                        <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/fur.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Fur</h6>
-                        </div>
-
-                        <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/honney.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Honey Moon</h6>
-                        </div>
-
-                        <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/boy.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Boy Pablo</h6>
-                        </div>
-
-                        <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/easy.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Easy Life</h6>
-                        </div>
-
-                        <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/burgerkill.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Burgerkill</h6>
-                        </div>
+                        @foreach ($artis as $data)
+                            <div class="col-sm-2 hvr-grow">
+                                <img src="{{ asset('storage/image/artis/'.$data->image) }}" class="img-fluid rounded" style="width: 80px;" srcset="">
+                                <h6 class="mt-2 text-white">{{ $data->name_artis }}</h6>
+                            </div>
+                        @endforeach
                     </div>
 
                 </div>
@@ -164,7 +141,8 @@
                                     <small>Green Day</small>
                                 </div>
                                 <div class="col-md-3 d-flex align-items-center hvr-grow">
-                                    <a href="{{ route('player.index', $id="still breathing") }}" class="btn btn-warning ml-auto"><i class="fas fa-play"></i></a>
+                                    <a href="{{ route('player.index', $id = 'still breathing') }}"
+                                        class="btn btn-warning ml-auto"><i class="fas fa-play"></i></a>
                                 </div>
                             </div>
 
@@ -207,7 +185,7 @@
             </div>
 
         </div>
-        <div class="col-md-4 mb-4"  data-aos="fade-up">
+        <div class="col-md-4 mb-4" data-aos="fade-up">
             <div class="card card-player shadow-sm rounded" style="background-color: #2D3E50; border: none; ">
                 <div class="card-body">
 

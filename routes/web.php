@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('frontend/index');
-});
+// Route::get('/', function () {
+//     return view('frontend/index');
+// });
 
 
-Route::get('/home', [HomeController::class, 'index'])->name('frontend.index');
+Route::get('/', [HomeController::class, 'index'])->name('frontend.index');
 
 Route::prefix('/dashboard')->group(function () {
     Route::get('/', [HomeController::class, 'admin'])->name('admin.index');
@@ -47,6 +47,21 @@ Route::prefix('/artist')->group(function () {
     Route::get('/admin/edit/{id}', [ArtistController::class, 'edit'])->name('admin.artist.edit');
     Route::patch('/admin/edit/{id}', [ArtistController::class, 'update'])->name('admin.artist.update');
     Route::get('/admin/delete/{id}', [ArtistController::class, 'destroy'])->name('admin.artist.delete');
+
+    Route::get('/admin/music/{id}', [MusicController::class, 'admin'])->name('admin.music.index');
+    Route::get('/admin/music/tambah/{id}', [MusicController::class, 'create'])->name('admin.music.create');
+    Route::post('/admin/music/tambah', [MusicController::class, 'store'])->name('admin.music.store');
+    Route::get('/admin/music/edit/{id}', [MusicController::class, 'edit'])->name('admin.music.edit');
+    Route::patch('/admin/music/edit/{id}', [MusicController::class, 'update'])->name('admin.music.update');
+    Route::patch('/admin/music/album/{id}', [MusicController::class, 'tambahAlbum'])->name('admin.music.album');
+    Route::get('/admin/music/delete/{id}', [MusicController::class, 'destroy'])->name('admin.music.delete');
+
+    Route::get('/admin/album/{id}', [AlbumController::class, 'admin'])->name('admin.album.index');
+    Route::get('/admin/album/tambah/{id}', [AlbumController::class, 'create'])->name('admin.album.create');
+    Route::post('/admin/album/tambah', [AlbumController::class, 'store'])->name('admin.album.store');
+    Route::get('/admin/album/edit/{id}', [AlbumController::class, 'edit'])->name('admin.album.edit');
+    Route::patch('/admin/album/edit/{id}', [AlbumController::class, 'update'])->name('admin.album.update');
+    Route::get('/admin/album/delete/{id}', [AlbumController::class, 'destroy'])->name('admin.album.delete');
 });
 
 // Route Genre
@@ -64,12 +79,7 @@ Route::prefix('/genre')->group(function () {
 // Route album
 Route::prefix('/album')->group(function () {
     Route::get('/', [AlbumController::class, 'index']);
-    Route::get('/admin/album/{id}', [AlbumController::class, 'admin'])->name('admin.album.index');
-    Route::get('/admin/tambah/{id}', [AlbumController::class, 'create'])->name('admin.album.create');
-    Route::post('/admin/tambah', [AlbumController::class, 'store'])->name('admin.album.store');
-    Route::get('/admin/edit/{id}', [AlbumController::class, 'edit'])->name('admin.album.edit');
-    Route::patch('/admin/edit/{id}', [AlbumController::class, 'update'])->name('admin.album.update');
-    Route::get('/admin/delete/{id}', [AlbumController::class, 'destroy'])->name('admin.album.delete');
+  
 });
 
 
@@ -88,13 +98,7 @@ Route::prefix('/ads')->group(function () {
 //Route Music
 Route::prefix('/music')->group(function () {
     Route::get('/', [MusicController::class, 'index']);
-    Route::get('/admin/music/{id}', [MusicController::class, 'admin'])->name('admin.music.index');
-    Route::get('/admin/tambah/{id}', [MusicController::class, 'create'])->name('admin.music.create');
-    Route::post('/admin/tambah', [MusicController::class, 'store'])->name('admin.music.store');
-    Route::get('/admin/edit/{id}', [MusicController::class, 'edit'])->name('admin.music.edit');
-    Route::patch('/admin/edit/{id}', [MusicController::class, 'update'])->name('admin.music.update');
-    Route::patch('/admin/album/{id}', [MusicController::class, 'tambahAlbum'])->name('admin.music.album');
-    Route::get('/admin/delete/{id}', [MusicController::class, 'destroy'])->name('admin.music.delete');
+    
 });
 
 
