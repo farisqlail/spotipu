@@ -18,7 +18,10 @@ class AlbumController extends Controller
      */
     public function index(){
 
-        return view('frontend.album.album');
+        $album = Album::join('artis', 'artis.id', '=', 'albums.id_artis')->get();
+        // dd($album);
+
+        return view('frontend.album.album', ['album' => $album]);
     }
 
     public function admin($id){

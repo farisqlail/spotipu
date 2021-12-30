@@ -9,144 +9,25 @@
     <h2 class="text-white">Album</h2>
 
     <div class="row mt-5" data-aos="fade-up">
-        <div class="col-md-3 hvr-grow">
-            <div class="card" style="background-color: #2D3E50; border: none;">
-                <div class="card-body">
-                    <div class="card-image">
-                        <img src="{{ asset('assets/img/greenday-album.png') }}" class="card-img-top" alt="...">
-                    </div>
+        @foreach ($album as $data)
+            <div class="col-md-3 hvr-grow">
+                <div class="card" style="background-color: #2D3E50; border: none;">
+                    <div class="card-body">
+                        <div class="card-image">
+                            <img src="{{ asset('storage/album/cover/'.$data->cover) }}" class="card-img-top" style="height: 300px;">
+                        </div>
 
-                    <div class="card-caption mt-3">
-                        <a href="" class="text-white">
-                            <h5><b>Uno!</b></h5>
-                            <small class="text-muted">Green Day</small>
-                        </a>
-                    </div>
+                        <div class="card-caption mt-3">
+                            <a href="" class="text-white">
+                                <h5><b>{{ $data->name_album }}</b></h5>
+                                <small class="text-muted">{{ $data->name_artis }}</small>
+                            </a>
+                        </div>
 
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3 hvr-grow">
-            <div class="card" style="background-color: #2D3E50; border: none;">
-                <div class="card-body">
-                    <div class="card-image">
-                        <img src="{{ asset('assets/img/greenday-album.png') }}" class="card-img-top" alt="...">
-                    </div>
+        @endforeach
 
-                    <div class="card-caption mt-3">
-                        <a href="" class="text-white">
-                            <h5><b>Uno!</b></h5>
-                            <small class="text-muted">Green Day</small>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 hvr-grow">
-            <div class="card" style="background-color: #2D3E50; border: none;">
-                <div class="card-body">
-                    <div class="card-image">
-                        <img src="{{ asset('assets/img/greenday-album.png') }}" class="card-img-top" alt="...">
-                    </div>
-
-                    <div class="card-caption mt-3">
-                        <a href="" class="text-white">
-                            <h5><b>Uno!</b></h5>
-                            <small class="text-muted">Green Day</small>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 hvr-grow">
-            <div class="card" style="background-color: #2D3E50; border: none;">
-                <div class="card-body">
-                    <div class="card-image">
-                        <img src="{{ asset('assets/img/greenday-album.png') }}" class="card-img-top" alt="...">
-                    </div>
-
-                    <div class="card-caption mt-3">
-                        <a href="" class="text-white">
-                            <h5><b>Uno!</b></h5>
-                            <small class="text-muted">Green Day</small>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-5" data-aos="fade-up">
-        <div class="col-md-3 hvr-grow">
-            <div class="card" style="background-color: #2D3E50; border: none;">
-                <div class="card-body">
-                    <div class="card-image">
-                        <img src="{{ asset('assets/img/greenday-album.png') }}" class="card-img-top" alt="...">
-                    </div>
-
-                    <div class="card-caption mt-3">
-                        <a href="" class="text-white">
-                            <h5><b>Uno!</b></h5>
-                            <small class="text-muted">Green Day</small>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 hvr-grow">
-            <div class="card" style="background-color: #2D3E50; border: none;">
-                <div class="card-body">
-                    <div class="card-image">
-                        <img src="{{ asset('assets/img/greenday-album.png') }}" class="card-img-top" alt="...">
-                    </div>
-
-                    <div class="card-caption mt-3">
-                        <a href="" class="text-white">
-                            <h5><b>Uno!</b></h5>
-                            <small class="text-muted">Green Day</small>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 hvr-grow">
-            <div class="card" style="background-color: #2D3E50; border: none;">
-                <div class="card-body">
-                    <div class="card-image">
-                        <img src="{{ asset('assets/img/greenday-album.png') }}" class="card-img-top" alt="...">
-                    </div>
-
-                    <div class="card-caption mt-3">
-                        <a href="" class="text-white">
-                            <h5><b>Uno!</b></h5>
-                            <small class="text-muted">Green Day</small>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 hvr-grow">
-            <div class="card" style="background-color: #2D3E50; border: none;">
-                <div class="card-body">
-                    <div class="card-image">
-                        <img src="{{ asset('assets/img/greenday-album.png') }}" class="card-img-top" alt="...">
-                    </div>
-
-                    <div class="card-caption mt-3">
-                        <a href="" class="text-white">
-                            <h5><b>Uno!</b></h5>
-                            <small class="text-muted">Green Day</small>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
     </div>
 @endsection
