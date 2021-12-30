@@ -11,6 +11,7 @@ class Genre extends Model
 
     protected $fillable = [
         'name_genre',
+        'cover_genre'
     ];
 
     public function music(){

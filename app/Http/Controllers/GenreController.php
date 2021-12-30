@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Genre;
 
 class GenreController extends Controller
@@ -49,6 +50,7 @@ class GenreController extends Controller
        
         $validator = Validator::make(request()->all(), [
             'name_genre' => 'required',
+            'cover_genre' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -59,8 +61,15 @@ class GenreController extends Controller
             Alert::success('Berhasil', 'Berhasil menambahkan genre');
 
             $genre = new Genre();
-            $genre->name_genre = $request->get('name_genre');
 
+            $genre->name_genre = $request->get('name_genre');
+            if($request->file('cover_genre')){
+                $file = $request->file('cover_genre');
+                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $genre->cover_genre = $filename;
+                Storage::putFileAs("public/genre/cover", $file, $filename);
+            }
+            // dd($genre);
             $genre->save();
 
             return redirect()->route('admin.genre.index');
@@ -113,6 +122,12 @@ class GenreController extends Controller
 
             $genre = Genre::findOrFail($id);
             $genre->name_genre = $request->get('name_genre');
+            if($request->file('cover_genre')){
+                $file = $request->file('cover_genre');
+                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $genre->cover_genre = $filename;
+                Storage::putFileAs("public/genre/cover", $file, $filename);
+            }
 
             $genre->save();
 
