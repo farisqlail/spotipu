@@ -23,7 +23,8 @@
                     <div class="row mt-3" align="center">
                         @foreach ($artis as $data)
                             <div class="col-sm-2 hvr-grow">
-                                <img src="{{ asset('storage/image/artis/'.$data->image) }}" class="img-fluid rounded" style="width: 80px;" srcset="">
+                                <img src="{{ asset('storage/image/artis/' . $data->image) }}" class="img-fluid rounded"
+                                    style="width: 80px;" srcset="">
                                 <h6 class="mt-2 text-white">{{ $data->name_artis }}</h6>
                             </div>
                         @endforeach
@@ -46,72 +47,18 @@
                             </div>
 
                             <div class="row mt-3">
-                                <div class="col-sm-6 hvr-grow">
-                                    <a href="">
-                                        <div class="card"
-                                            style="background-color: #446FDD; border: none; height: 5rem;">
-                                            <div class="card-body d-flex align-items-center" align="center">
-                                                <h6 class="text-white mx-auto"><b>Hip Hop</b></h6>
+                                @foreach ($genre as $data)
+                                    <div class="col-sm-6 hvr-grow">
+                                        <a href="">
+                                            <div class="card"
+                                                style="background-image: linear-gradient(#FFC700, #11E58F); border: none; height: 5rem;">
+                                                <div class="card-body d-flex align-items-center" align="center">
+                                                    <h6 class="text-white mx-auto"><b>{{ $data->name_genre }}</b></h6>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-sm-6 hvr-grow">
-                                    <a href="">
-                                        <div class="card"
-                                            style="background-color: #CCD93B; border: none; height: 5rem;">
-                                            <div class="card-body d-flex align-items-center" align="center">
-                                                <h6 class="text-white mx-auto"><b>Rock</b></h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="row mt-3">
-                                <div class="col-sm-6 hvr-grow">
-                                    <a href="">
-                                        <div class="card"
-                                            style="background-color: #D29A67; border: none; height: 5rem;">
-                                            <div class="card-body d-flex align-items-center" align="center">
-                                                <h6 class="text-white mx-auto"><b>Folk</b></h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-sm-6 hvr-grow">
-                                    <a href="">
-                                        <div class="card"
-                                            style="background-color: #E36AA4; border: none; height: 5rem;">
-                                            <div class="card-body d-flex align-items-center" align="center">
-                                                <h6 class="text-white mx-auto"><b>Metal</b></h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="row mt-3">
-                                <div class="col-sm-6 hvr-grow">
-                                    <a href="">
-                                        <div class="card"
-                                            style="background-color: #79C256; border: none; height: 5rem;">
-                                            <div class="card-body d-flex align-items-center" align="center">
-                                                <h6 class="text-white mx-auto"><b>Dance</b></h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-sm-6 hvr-grow">
-                                    <a href="">
-                                        <div class="card"
-                                            style="background-color: #B444D0; border: none; height: 5rem;">
-                                            <div class="card-body d-flex align-items-center" align="center">
-                                                <h6 class="text-white mx-auto"><b>Pop</b></h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                        </a>
+                                    </div>
+                                @endforeach
                             </div>
 
                         </div>
