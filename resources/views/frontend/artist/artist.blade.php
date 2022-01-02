@@ -11,7 +11,7 @@
     <div class="row mt-5" data-aos="fade-up">
         @foreach ($artis as $data)
             <div class="col-md-3 hvr-grow">
-                <a href="">
+                <a href="{{ route('artist.show', $data->id) }}">
                     <div class="card" style="background-color: #2D3E50; border: none;">
                         <div class="card-body">
                             <div class="card-image" align="center">
@@ -20,7 +20,7 @@
                             </div>
 
                             <div class="card-caption text-start mt-3">
-                                <a href="" style="text-decoration-color: white">
+                                <a href="{{ route('artist.show', $data->id) }}" style="text-decoration-color: white">
                                     <h5 class="text-white"><b>{{ $data->name_artis }}</b></h5>
                                 </a>
                                 <small class="text-muted">Artist</small>

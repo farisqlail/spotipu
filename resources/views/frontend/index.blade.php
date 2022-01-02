@@ -49,7 +49,7 @@
                             <div class="row mt-3">
                                 @foreach ($genre as $data)
                                     <div class="col-sm-6 hvr-grow">
-                                        <a href="">
+                                        <a href="" style="text-decoration-color: white;">
                                             <div class="card"
                                                 style="background-image: linear-gradient(#FFC700, #11E58F); border: none; height: 5rem;">
                                                 <div class="card-body d-flex align-items-center" align="center">

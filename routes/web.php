@@ -41,6 +41,8 @@ Route::prefix('/pembayaran')->group(function () {
 // Route Artist
 Route::prefix('/artist')->group(function () {
     Route::get('/', [ArtistController::class, 'index']);
+    Route::get('/artist/{id}', [ArtistController::class, 'show'])->name('artist.show');
+    
     Route::get('/admin/artist', [ArtistController::class, 'admin'])->name('admin.artist.index');
     Route::get('/admin/tambah/', [ArtistController::class, 'create'])->name('admin.artist.create');
     Route::post('/admin/tambah', [ArtistController::class, 'store'])->name('admin.artist.store');

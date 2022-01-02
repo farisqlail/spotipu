@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Artis;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\Artis;
+use App\Models\Music;
 
 class ArtistController extends Controller
 {
@@ -86,7 +87,14 @@ class ArtistController extends Controller
      */
     public function show($id)
     {
-        //
+        // $artis = Artis::findOrFail($id);
+        $music = Music::join('artis', 'artis.id', '=', 'music.id_artis')
+                    ->where('id_artis', $id)
+                    ->get();
+
+        // dd($music);
+
+        return view('frontend.artist.artist-show', ['music' => $music]);
     }
 
     /**

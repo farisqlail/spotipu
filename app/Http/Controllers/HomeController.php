@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $artis = Artis::all();
+        $artis = Artis::take(7)->get();
         $genre = Genre::take(6)->get();
 
         return view('frontend.index', ['artis' => $artis, 'genre' => $genre]);
