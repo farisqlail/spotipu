@@ -76,55 +76,33 @@
                                 </div>
                             </div>
 
-                            <div class="row mt-3">
-                                <div class="col-md-2 d-flex align-items-center">
-                                    <h4>01</h4>
+                            @foreach ($music as $data)
+                                <div class="row mt-3">
+                                    <div class="col-md-2 d-flex align-items-center">
+                                        <h4>{{ $loop->iteration }}</h4>
+                                    </div>
+                                    <div class="col-md-1 mr-auto">
+                                        <img src="{{ asset('storage/music/cover/' . $data->cover) }}" class="img-fluid"
+                                         srcset="">
+                                    </div>
+                                    <div class="col-md-5 pl-4 hvr-grow">
+                                        <h6 class="text-white">{{ $data->name_music }}</h6>
+                                        <small>{{ $data->name_artis }}</small>
+                                    </div>
+                                    <div class="col-md-3 d-flex align-items-center hvr-grow">
+                                        <div class="button-play" align="center">
+                                            <audio id="audio">
+                                                <source src="{{ asset('storage/music/' . $data->music) }}"
+                                                    type="audio/mpeg">
+                                            </audio>
+                                            <button class="btn btn-warning ml-auto hvr-grow" id="playPauseBtn"
+                                                onClick="playPause()" align="center">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-1 mr-auto">
-                                    <img src="{{ asset('assets/img/greenday.png') }}" alt="" srcset="">
-                                </div>
-                                <div class="col-md-5 pl-4 hvr-grow">
-                                    <h6 class="text-white">Still Breathing</h6>
-                                    <small>Green Day</small>
-                                </div>
-                                <div class="col-md-3 d-flex align-items-center hvr-grow">
-                                    <a href="{{ route('player.index', $id = 'still breathing') }}"
-                                        class="btn btn-warning ml-auto"><i class="fas fa-play"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="row mt-3">
-                                <div class="col-md-2 d-flex align-items-center">
-                                    <h4>02</h4>
-                                </div>
-                                <div class="col-md-1 mr-auto">
-                                    <img src="{{ asset('assets/img/honney.png') }}" alt="" srcset="">
-                                </div>
-                                <div class="col-md-5 pl-4 hvr-grow">
-                                    <h6 class="text-white">Magic</h6>
-                                    <small>Honney Moon</small>
-                                </div>
-                                <div class="col-md-3 d-flex align-items-center hvr-grow">
-                                    <button class="btn btn-warning ml-auto"><i class="fas fa-play"></i></button>
-                                </div>
-                            </div>
-
-                            <div class="row mt-3">
-                                <div class="col-md-2 d-flex align-items-center">
-                                    <h4>03</h4>
-                                </div>
-                                <div class="col-md-1 mr-auto">
-                                    <img src="{{ asset('assets/img/easy.png') }}" alt="" srcset="">
-                                </div>
-                                <div class="col-md-5 pl-4 hvr-grow">
-                                    <h6 class="text-white">Nightmare</h6>
-                                    <small>Easy Life</small>
-                                </div>
-                                <div class="col-md-3 d-flex align-items-center hvr-grow">
-                                    <button class="btn btn-warning ml-auto"><i class="fas fa-play"></i></button>
-                                </div>
-                            </div>
-
+                            @endforeach
 
                         </div>
                     </div>
@@ -159,5 +137,31 @@
             </div>
         </div>
     </div>
+
+
+    
+    <script>
+        var audio = document.getElementById('audio');
+        var playPauseBtn = document.getElementById('playPauseBtn');
+        var count = 0;
+
+        function playPause() {
+            if (count == 0) {
+                count = 1;
+                audio.play();
+                playPauseBtn.innerHTML = "<i class='fas fa-pause'></i>";
+            } else {
+                count = 0;
+                audio.pause();
+                playPauseBtn.innerHTML = "<i class='fas fa-play'></i>";
+            }
+        }
+
+        function stop() {
+            playPause();
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    </script>
 
 @endsection
