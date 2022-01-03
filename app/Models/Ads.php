@@ -14,4 +14,12 @@ class Ads extends Model
         'description_ads',
         'price'
     ];
+
+    public function total($biayaIklan, $durasi)
+    {
+        $total = $biayaIklan * $durasi;
+
+
+        return $total;
+    }
 }
