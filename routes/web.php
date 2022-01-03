@@ -97,6 +97,7 @@ Route::prefix('/player')->group(function () {
 Route::prefix('/ads')->group(function () {
     Route::get('/', [AdsController::class, 'index']);
     Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
+    
 });
 
 //Route Music

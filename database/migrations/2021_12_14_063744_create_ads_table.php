@@ -15,9 +15,16 @@ class CreateAdsTable extends Migration
     {
         Schema::create('ads', function (Blueprint $table) {
             $table->id();
-            $table->string('name_ads');
-            $table->string('description_ads');
-            $table->integer('price');
+            $table->string('kategori_produk');
+            $table->string('judul_iklan');
+            $table->string('merk');
+            $table->string('deskripsi_produk');
+            $table->string('nama_produk');
+            $table->integer('harga');
+            $table->string('link_website');
+            $table->string('gambar_produk');
+            $table->integer('durasi');
+            $table->string("metode_pembayaran");
             $table->timestamps();
         });
     }
