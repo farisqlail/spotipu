@@ -94,7 +94,10 @@ Route::prefix('/player')->group(function () {
 // Route Ads
 Route::prefix('/ads')->group(function () {
     Route::get('/', [AdsController::class, 'index']);
-    Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
+    // Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
+    Route::post('/ads/create', [AdsController::class, 'create']) -> name('ads.create');
+
+    Route::get('/admin/ads', [AdsController::class, 'admin'])->name('admin.ads.show');
     
 });
 
