@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Artis;
 use App\Models\Album;
+use App\Models\Music;
 
 class AlbumController extends Controller
 {
@@ -16,7 +17,8 @@ class AlbumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function index()
+    {
 
         $album = Album::join('artis', 'artis.id', '=', 'albums.id_artis')->get();
         // dd($album);
@@ -24,8 +26,9 @@ class AlbumController extends Controller
         return view('frontend.album.album', ['album' => $album]);
     }
 
-    public function admin($id){
-        
+    public function admin($id)
+    {
+
         $artis = Artis::findOrFail($id);
         $album = Album::where('id_artis', $id)->get();
 
@@ -71,7 +74,7 @@ class AlbumController extends Controller
             $album->name_album = $request->get('name_album');
             $album->description_album = $request->get('description_album');
 
-            if($request->file('cover')){
+            if ($request->file('cover')) {
                 $file = $request->file('cover');
                 $filename = time() . '.' . $file->getClientOriginalExtension();
                 $album->cover = $filename;
@@ -92,7 +95,12 @@ class AlbumController extends Controller
      */
     public function show($id)
     {
-        //
+        $music = Music::join('artis', 'artis.id', '=', 'music.id_artis')
+                        ->join('albums', 'albums.id', '=', 'music.id_genre')
+                        ->where('id_album', $id)
+                        ->get();
+        // dd($music);
+        return view('frontend.album.album-show', ['music' => $music]);
     }
 
     /**
@@ -136,7 +144,7 @@ class AlbumController extends Controller
             $album->name_album = $request->get('name_album');
             $album->description_album = $request->get('description_album');
 
-            if($request->file('cover')){
+            if ($request->file('cover')) {
                 $file = $request->file('cover');
                 $filename = time() . '.' . $file->getClientOriginalExtension();
                 $album->cover = $filename;
@@ -158,7 +166,7 @@ class AlbumController extends Controller
     public function destroy($id)
     {
         $album = Album::findOrFail($id);
-        
+
         $album->delete();
         Storage::delete($album->cover);
 

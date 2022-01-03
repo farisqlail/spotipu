@@ -83,7 +83,7 @@ Route::prefix('/genre')->group(function () {
 // Route album
 Route::prefix('/album')->group(function () {
     Route::get('/', [AlbumController::class, 'index']);
-  
+    Route::get('/album/{id}', [AlbumController::class, 'show'])->name('album.show');
 });
 
 

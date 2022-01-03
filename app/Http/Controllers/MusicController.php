@@ -59,7 +59,7 @@ class MusicController extends Controller
             'name_music' => 'required',
             'description_music' => 'required',
             'music' => 'required',
-            'cover' => 'required',
+            'cover_music' => 'required',
             'menit' => 'required'
         ]);
 
@@ -85,10 +85,10 @@ class MusicController extends Controller
                 Storage::putFileAs("public/music", $file, $filename);
             }
 
-            if($request->file('cover')){
-                $file = $request->file('cover');
+            if($request->file('cover_music')){
+                $file = $request->file('cover_music');
                 $filename = time() . '.' . $file->getClientOriginalExtension();
-                $music->cover = $filename;
+                $music->cover_music = $filename;
                 Storage::putFileAs("public/music/cover", $file, $filename);
             }
             // dd($music);
@@ -162,10 +162,10 @@ class MusicController extends Controller
                 Storage::putFileAs("public/music", $file, $filename);
             }
 
-            if($request->file('cover')){
-                $file = $request->file('cover');
+            if($request->file('cover_music')){
+                $file = $request->file('cover_music');
                 $filename = time() . '.' . $file->getClientOriginalExtension();
-                $music->cover = $filename;
+                $music->cover_music = $filename;
                 Storage::putFileAs("public/music/cover", $file, $filename);
             }
             // dd($music);

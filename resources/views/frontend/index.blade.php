@@ -82,7 +82,7 @@
                                         <h4>{{ $loop->iteration }}</h4>
                                     </div>
                                     <div class="col-md-1 mr-auto">
-                                        <img src="{{ asset('storage/music/cover/' . $data->cover) }}" class="img-fluid"
+                                        <img src="{{ asset('storage/music/cover/' . $data->cover_music) }}" class="img-fluid"
                                          srcset="">
                                     </div>
                                     <div class="col-md-5 pl-4 hvr-grow">
