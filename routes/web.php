@@ -69,6 +69,8 @@ Route::prefix('/artist')->group(function () {
 // Route Genre
 Route::prefix('/genre')->group(function () {
     Route::get('/', [GenreController::class, 'index']);
+    Route::get('/genre/{id}', [GenreController::class, 'show'])->name('genre.show');
+
     Route::get('/admin/genre', [GenreController::class, 'admin'])->name('admin.genre.index');
     Route::get('/admin/tambah/', [GenreController::class, 'create'])->name('admin.genre.create');
     Route::post('/admin/tambah', [GenreController::class, 'store'])->name('admin.genre.store');
