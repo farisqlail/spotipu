@@ -34,6 +34,17 @@ class MusicController extends Controller
         return view('admin.music.index', ['music' => $music, 'artis' => $artis, 'album' => $album]);
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->search;
+
+        $music = Music::where('name_music', 'like', "%" . $search)
+            ->paginate();
+
+        return view('frontend.music.search', ['music' => $music]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

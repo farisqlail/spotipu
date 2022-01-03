@@ -103,7 +103,7 @@ Route::prefix('/ads')->group(function () {
 //Route Music
 Route::prefix('/music')->group(function () {
     Route::get('/', [MusicController::class, 'index']);
-    
+    Route::get('/music/search', [MusicController::class, 'search'])->name('music.search');
 });
 
 
