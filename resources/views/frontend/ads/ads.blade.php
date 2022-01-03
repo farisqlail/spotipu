@@ -129,9 +129,9 @@
 
         <div class="form-group">
             <label for="">Unggah foto produk <span style="color:red;">*</span></label><br>
-            <button type="button" class="imp-up hvr-shrink" style="background-color: transparent; border: none;">
-                <img src="{{ asset('assets/img/upload-img.png') }}" class="img-fluid" width="160" alt="">
-            </button>
+            <img src="{{ asset('assets/img/upload-img.png') }}" class="img-fluid" width="160px" alt="">
+            <input type="file" class="imp-up hvr-shrink img-fluid" style="background-color: traparant; border: none;">
+            
         </div>
 
         <h5 class="text-white mt-3">Anggaran & Durasi <span style="color: red;">*</span></h5><br>
