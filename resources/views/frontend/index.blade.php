@@ -81,16 +81,16 @@
                                     <div class="col-md-2 d-flex align-items-center">
                                         <h4>{{ $loop->iteration }}</h4>
                                     </div>
-                                    <div class="col-md-1 mr-auto">
+                                    <div class="col-md-2 mr-auto mt-3">
                                         <img src="{{ asset('storage/music/cover/' . $data->cover_music) }}" class="img-fluid"
                                          srcset="">
                                     </div>
-                                    <div class="col-md-5 pl-4 hvr-grow">
-                                        <h6 class="text-white">{{ $data->name_music }}</h6>
+                                    <div class="col-md-4 pl-4 hvr-grow">
+                                        <h6 style="font-size: 13px;" class="text-white">{{ $data->name_music }}</h6>
                                         <small>{{ $data->name_artis }}</small>
                                     </div>
-                                    <div class="col-md-3 d-flex align-items-center hvr-grow">
-                                        <div class="button-play" align="center">
+                                    <div class="col-md-4 d-flex align-items-center hvr-grow">
+                                        <div class="button-play ml-5">
                                             <audio id="audio">
                                                 <source src="{{ asset('storage/music/' . $data->music) }}"
                                                     type="audio/mpeg">
