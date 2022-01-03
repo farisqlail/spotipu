@@ -16,7 +16,7 @@ class Music extends Model
         'name_music',
         'description_music',
         'music',
-        'cover',
+        'cover_music',
         'menit'
     ];
 

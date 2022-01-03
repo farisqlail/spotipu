@@ -66,7 +66,7 @@
                                 <tr class="text-center">
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
-                                        <img src="{{ asset('storage/music/cover/' . $data->cover) }}"
+                                        <img src="{{ asset('storage/music/cover/' . $data->cover_music) }}"
                                             class="img-fluid rounded" style="width: 100px; height: 100px;">
                                     </td>
                                     <td>{{ $data->name_music }}</td>

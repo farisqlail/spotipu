@@ -11,16 +11,19 @@
     <div class="row mt-5" data-aos="fade-up">
         @foreach ($genre as $data)
             <div class="col-md-3 hvr-grow">
-                <div class="card" style="background-color: #2D3E50; border: none;">
-                    <img src="{{ asset('storage/genre/cover/'.$data->cover_genre) }}" class="card-img-top" style="height: 300px;" >
-                    <div class="card-body">
+                <a href="{{ route('genre.show', $data->id) }}">
+                    <div class="card" style="background-color: #2D3E50; border: none;">
+                        <img src="{{ asset('storage/genre/cover/' . $data->cover_genre) }}" class="card-img-top"
+                            style="height: 300px;">
+                        <div class="card-body">
 
-                        <a href="" class="text-white">
-                            <h5 align="center"><b>{{ $data->name_genre }}</b></h5>
-                        </a>
+                            <a href="{{ route('genre.show', $data->id) }}" class="text-white">
+                                <h5 align="center"><b>{{ $data->name_genre }}</b></h5>
+                            </a>
 
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         @endforeach
 

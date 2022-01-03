@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Genre;
+use App\Models\Music;
 
 class GenreController extends Controller
 {
@@ -84,7 +85,13 @@ class GenreController extends Controller
      */
     public function show($id)
     {
-        //
+        $music = Music::join('artis', 'artis.id', '=', 'music.id_artis')
+                    ->join('genres', 'genres.id', '=', 'music.id_genre')
+                    ->where('id_genre', $id)
+                    ->get();
+        // dd($music);
+
+        return view('frontend.genres.genre-show', ['music' => $music]);
     }
 
     /**

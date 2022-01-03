@@ -53,7 +53,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                         <label for="">Cover Music</label>
-                        <input type="file" class="form-control" name="cover">
+                        <input type="file" class="form-control" name="cover_music">
                     </div>
                         </div>
                     </div>
