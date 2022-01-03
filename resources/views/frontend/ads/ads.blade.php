@@ -74,8 +74,18 @@
 
     <h5 class="text-white mt-5">Isi Keterangan </h5><br>
 
-    <form action="{{ route('ads.store') }}" method="post" class="text-white form-ads">
+    <form action="{{ route('ads.create') }}" method="post" class="text-white form-ads">
         {{ csrf_field() }}
+
+        {{-- <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">id_Iklan <span style="color:red;">*</span></label>
+                    <input  type="number"  name="id_iklan" class="form-control" placeholder="Fashion" id="">
+                </div>
+            </div>
+        </div> --}}
+
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -130,7 +140,7 @@
         <div class="form-group">
             <label for="">Unggah foto produk <span style="color:red;">*</span></label><br>
             <img src="{{ asset('assets/img/upload-img.png') }}" class="img-fluid" width="160px" alt="">
-            <input type="file" class="imp-up hvr-shrink img-fluid" style="background-color: traparant; border: none;">
+            <input type="file" name="gambarProduk" class="imp-up hvr-shrink img-fluid" style="background-color: traparant; border: none;">
             
         </div>
 
