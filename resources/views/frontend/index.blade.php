@@ -55,7 +55,7 @@
                                                 <div class="card-body d-flex align-items-center" align="center">
                                                     <h6 class="text-white mx-auto"><b>{{ $data->name_genre }}</b></h6>
                                                 </div>
-                                            </div>
+                                            </div><br>
                                         </a>
                                     </div>
                                 @endforeach

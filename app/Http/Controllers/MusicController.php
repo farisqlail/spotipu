@@ -29,7 +29,9 @@ class MusicController extends Controller
 
         $artis = Artis::findOrFail($id);
         $album = Album::where('id_artis', $id)->get();
-        $music = Music::join('genres', 'genres.id', '=', 'music.id_genre')->where('id_artis', $id)->get();
+        $music = Music::join('genres', 'genres.id', '=', 'music.id_genre')
+                    ->where('id_artis', $id)
+                    ->get();
 // dd($music);
         return view('admin.music.index', ['music' => $music, 'artis' => $artis, 'album' => $album]);
     }
@@ -130,7 +132,7 @@ class MusicController extends Controller
     {
         $genre = Genre::all();
         $music = Music::findOrFail($id);
-
+        // dd($music);
         return view('admin.music.edit', ['genre' => $genre, 'music' => $music]);
     }
 
@@ -147,7 +149,7 @@ class MusicController extends Controller
             'name_music' => 'required',
             'description_music' => 'required',
             'music' => 'required',
-            'cover' => 'required',
+            'cover_music' => 'required',
             'menit' => 'required'
         ]);
 

@@ -54,7 +54,7 @@
                         </thead>
                         <tbody>
                             @foreach ($genre as $data)
-                                <div class="modal fade" id="editGenre" tabindex="-1"
+                                <div class="modal fade" id="editGenre{{ $data->id }}" tabindex="-1"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -93,7 +93,7 @@
                                     <td><img src="{{ asset('storage/genre/cover/'.$data->cover_genre) }}" class="img-fluid rounded" style="width: 100px; height: 100px;"></td>
                                     <td>
                                         <a href="{{ route('admin.genre.edit', $data->id) }}" class="btn btn-primary"
-                                            data-toggle="modal" data-target="#editGenre">Edit</a>
+                                            data-toggle="modal" data-target="#editGenre{{ $data->id }}">Edit</a>
                                         <a href="#" data-id="{{ $data->id }}" class="btn btn-danger delete">
                                             Hapus
                                         </a>

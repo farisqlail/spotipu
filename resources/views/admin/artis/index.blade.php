@@ -28,7 +28,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->name_artis }}</td>
                                     <td>
-                                        {!! $data->description_artis !!}
+                                        {!! Str::limit($data->description_artis, 60) !!}
                                     </td>
                                     <td><img src="{{ asset('storage/image/artis/'.$data->image) }}" class="img-fluid rounded" style="width: 100px; height: 100px;"></td>
                                     <td>
