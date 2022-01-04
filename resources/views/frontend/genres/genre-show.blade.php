@@ -6,7 +6,7 @@
 
 @section('content')
 
-    @if ($music == null)
+    @if ($music != null)
         <div class="card" style="background-color: #2D3E50; border: none; ">
             <div class="card-body">
                 <h4 class="text-white"><strong>Genre {{ $music[0]->name_genre }}</strong></h4>

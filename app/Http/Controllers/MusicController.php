@@ -29,8 +29,7 @@ class MusicController extends Controller
 
         $artis = Artis::findOrFail($id);
         $album = Album::where('id_artis', $id)->get();
-        $music = Music::join('genres', 'genres.id', '=', 'music.id_genre')
-                    ->where('id_artis', $id)
+        $music = Music::where('id_artis', $id)
                     ->get();
 // dd($music);
         return view('admin.music.index', ['music' => $music, 'artis' => $artis, 'album' => $album]);

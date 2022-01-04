@@ -26,7 +26,6 @@
                         </thead>
                         <tbody>
                             @foreach ($music as $data)
-
                                 <div class="modal fade" id="album{{ $data->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
                                     aria-hidden="true">
                                     <div class="modal-dialog">

@@ -6,7 +6,7 @@
 
 @section('content')
 
-    @if ($music == null)
+    @if ($music != null)
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3" align="center">
