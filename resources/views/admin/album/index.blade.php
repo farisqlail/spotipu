@@ -8,6 +8,7 @@
             <h1>Data Album</h1>
 
             <div class="float-right mb-3">
+                <a href="{{ route('admin.artist.index') }}" class="btn btn-danger btn-lg">Kembali</a>
                 <a href="{{ route('admin.album.create', $artis->id) }}" class="btn btn-success btn-lg">Tambah Data</a>
             </div>
 
