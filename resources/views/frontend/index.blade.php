@@ -21,35 +21,13 @@
                     </div>
 
                     <div class="row mt-3" align="center">
-                        <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/greenday.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Green Day</h6>
-                        </div>
-
-                        <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/fur.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Fur</h6>
-                        </div>
-
-                        <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/honney.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Honey Moon</h6>
-                        </div>
-
-                        <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/boy.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Boy Pablo</h6>
-                        </div>
-
-                        <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/easy.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Easy Life</h6>
-                        </div>
-
-                        <div class="col-sm-2 hvr-grow">
-                            <img src="{{ asset('assets/img/burgerkill.png') }}" class="img-fluid" alt="" srcset="">
-                            <h6 class="mt-2 text-white">Burgerkill</h6>
-                        </div>
+                        @foreach ($artis as $data)
+                            <div class="col-sm-2 hvr-grow">
+                                <img src="{{ asset('storage/image/artis/' . $data->image) }}" class="img-fluid rounded"
+                                    style="width: 80px;" srcset="">
+                                <h6 class="mt-2 text-white">{{ $data->name_artis }}</h6>
+                            </div>
+                        @endforeach
                     </div>
 
                 </div>
@@ -69,72 +47,18 @@
                             </div>
 
                             <div class="row mt-3">
-                                <div class="col-sm-6 hvr-grow">
-                                    <a href="">
-                                        <div class="card"
-                                            style="background-color: #446FDD; border: none; height: 5rem;">
-                                            <div class="card-body d-flex align-items-center" align="center">
-                                                <h6 class="text-white mx-auto"><b>Hip Hop</b></h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-sm-6 hvr-grow">
-                                    <a href="">
-                                        <div class="card"
-                                            style="background-color: #CCD93B; border: none; height: 5rem;">
-                                            <div class="card-body d-flex align-items-center" align="center">
-                                                <h6 class="text-white mx-auto"><b>Rock</b></h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="row mt-3">
-                                <div class="col-sm-6 hvr-grow">
-                                    <a href="">
-                                        <div class="card"
-                                            style="background-color: #D29A67; border: none; height: 5rem;">
-                                            <div class="card-body d-flex align-items-center" align="center">
-                                                <h6 class="text-white mx-auto"><b>Folk</b></h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-sm-6 hvr-grow">
-                                    <a href="">
-                                        <div class="card"
-                                            style="background-color: #E36AA4; border: none; height: 5rem;">
-                                            <div class="card-body d-flex align-items-center" align="center">
-                                                <h6 class="text-white mx-auto"><b>Metal</b></h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="row mt-3">
-                                <div class="col-sm-6 hvr-grow">
-                                    <a href="">
-                                        <div class="card"
-                                            style="background-color: #79C256; border: none; height: 5rem;">
-                                            <div class="card-body d-flex align-items-center" align="center">
-                                                <h6 class="text-white mx-auto"><b>Dance</b></h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-sm-6 hvr-grow">
-                                    <a href="">
-                                        <div class="card"
-                                            style="background-color: #B444D0; border: none; height: 5rem;">
-                                            <div class="card-body d-flex align-items-center" align="center">
-                                                <h6 class="text-white mx-auto"><b>Pop</b></h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                @foreach ($genre as $data)
+                                    <div class="col-sm-6 hvr-grow">
+                                        <a href="" style="text-decoration-color: white;">
+                                            <div class="card"
+                                                style="background-image: linear-gradient(#FFC700, #11E58F); border: none; height: 5rem;">
+                                                <div class="card-body d-flex align-items-center" align="center">
+                                                    <h6 class="text-white mx-auto"><b>{{ $data->name_genre }}</b></h6>
+                                                </div>
+                                            </div><br>
+                                        </a>
+                                    </div>
+                                @endforeach
                             </div>
 
                         </div>
@@ -152,54 +76,33 @@
                                 </div>
                             </div>
 
-                            <div class="row mt-3">
-                                <div class="col-md-2 d-flex align-items-center">
-                                    <h4>01</h4>
+                            @foreach ($music as $data)
+                                <div class="row mt-3">
+                                    <div class="col-md-2 d-flex align-items-center">
+                                        <h4>{{ $loop->iteration }}</h4>
+                                    </div>
+                                    <div class="col-md-2 mr-auto mt-3">
+                                        <img src="{{ asset('storage/music/cover/' . $data->cover_music) }}" class="img-fluid"
+                                         srcset="">
+                                    </div>
+                                    <div class="col-md-4 pl-4 hvr-grow">
+                                        <h6 style="font-size: 13px;" class="text-white">{{ $data->name_music }}</h6>
+                                        <small>{{ $data->name_artis }}</small>
+                                    </div>
+                                    <div class="col-md-4 d-flex align-items-center hvr-grow">
+                                        <div class="button-play ml-5">
+                                            <audio id="audio">
+                                                <source src="{{ asset('storage/music/' . $data->music) }}"
+                                                    type="audio/mpeg">
+                                            </audio>
+                                            <button class="btn btn-warning ml-auto hvr-grow" id="playPauseBtn"
+                                                onClick="playPause()" align="center">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-1 mr-auto">
-                                    <img src="{{ asset('assets/img/greenday.png') }}" alt="" srcset="">
-                                </div>
-                                <div class="col-md-5 pl-4 hvr-grow">
-                                    <h6 class="text-white">Still Breathing</h6>
-                                    <small>Green Day</small>
-                                </div>
-                                <div class="col-md-3 d-flex align-items-center hvr-grow">
-                                    <a href="{{ route('player.index', $id="still breathing") }}" class="btn btn-warning ml-auto"><i class="fas fa-play"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="row mt-3">
-                                <div class="col-md-2 d-flex align-items-center">
-                                    <h4>02</h4>
-                                </div>
-                                <div class="col-md-1 mr-auto">
-                                    <img src="{{ asset('assets/img/honney.png') }}" alt="" srcset="">
-                                </div>
-                                <div class="col-md-5 pl-4 hvr-grow">
-                                    <h6 class="text-white">Magic</h6>
-                                    <small>Honney Moon</small>
-                                </div>
-                                <div class="col-md-3 d-flex align-items-center hvr-grow">
-                                    <button class="btn btn-warning ml-auto"><i class="fas fa-play"></i></button>
-                                </div>
-                            </div>
-
-                            <div class="row mt-3">
-                                <div class="col-md-2 d-flex align-items-center">
-                                    <h4>03</h4>
-                                </div>
-                                <div class="col-md-1 mr-auto">
-                                    <img src="{{ asset('assets/img/easy.png') }}" alt="" srcset="">
-                                </div>
-                                <div class="col-md-5 pl-4 hvr-grow">
-                                    <h6 class="text-white">Nightmare</h6>
-                                    <small>Easy Life</small>
-                                </div>
-                                <div class="col-md-3 d-flex align-items-center hvr-grow">
-                                    <button class="btn btn-warning ml-auto"><i class="fas fa-play"></i></button>
-                                </div>
-                            </div>
-
+                            @endforeach
 
                         </div>
                     </div>
@@ -207,7 +110,7 @@
             </div>
 
         </div>
-        <div class="col-md-4 mb-4"  data-aos="fade-up">
+        <div class="col-md-4 mb-4" data-aos="fade-up">
             <div class="card card-player shadow-sm rounded" style="background-color: #2D3E50; border: none; ">
                 <div class="card-body">
 
@@ -234,5 +137,31 @@
             </div>
         </div>
     </div>
+
+
+    
+    <script>
+        var audio = document.getElementById('audio');
+        var playPauseBtn = document.getElementById('playPauseBtn');
+        var count = 0;
+
+        function playPause() {
+            if (count == 0) {
+                count = 1;
+                audio.play();
+                playPauseBtn.innerHTML = "<i class='fas fa-pause'></i>";
+            } else {
+                count = 0;
+                audio.pause();
+                playPauseBtn.innerHTML = "<i class='fas fa-play'></i>";
+            }
+        }
+
+        function stop() {
+            playPause();
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    </script>
 
 @endsection

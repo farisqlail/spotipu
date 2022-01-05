@@ -27,13 +27,13 @@
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
+            
             <!-- Main Content -->
             <div id="content" style="background-color: #536578;">
-
+                
                 {{-- Navbar --}}
                 @include('include.navbar')
-
+                
                 <!-- Begin Page Content -->
                 <div class="container-fluid mb-5">
 
@@ -72,6 +72,7 @@
     @include('include.script')
     @stack('addon-script')
 
+  
 </body>
 
 </html>

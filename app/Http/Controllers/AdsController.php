@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ads;
+use Illuminate\Support\Facades\DB;
 
 class AdsController extends Controller
 {
@@ -22,7 +23,7 @@ class AdsController extends Controller
     {
         $a = date('d');
         $b = $a + 1;
-        $c = $b.'-'.date('M-Y');
+        $c = $b . '-' . date('M-Y');
         // date_sub($a, date_interval_create_from_date_string($b));
 
         // dd($c);
@@ -62,6 +63,7 @@ class AdsController extends Controller
 
 
         $total = new ads();
+<<<<<<< HEAD
         $admin = 0;
         
         if ($metode == "ovo") {
@@ -91,7 +93,33 @@ class AdsController extends Controller
       
 
         return view('frontend.ads.invoidAds', compact('biayaIklan', 'admin', 'kategori', 'judul', 'merk','namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'totalBayar'));
+=======
+        $total = $total->total($biayaIklan, $durasi) + $admin;
 
+        return view('frontend.ads.invoidAds', compact('biayaIklan', 'admin',  'kategori', 'judul', 'merk', 'namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'total'));
+    }
+
+    public function create(Request $request)
+    {
+        DB::table('ads')->insert([
+
+            // 'id'                    => $request -> id_iklan,
+            'kategori_produk'       => $request -> kategori,
+            'judul_iklan'           => $request -> judul,
+            'merk'                  => $request -> merk,
+            'nama_produk'           => $request -> namaProduk,
+            'deskripsi_produk'      => $request -> deskripsi,
+            'harga'                 => $request -> hargaProduk,
+            'link_website'          => $request -> link,
+            'gambar_produk'         => $request -> gambarProduk,
+            'durasi'                => $request -> durasi,
+            'metode_pembayaran'     => $request -> metode
+>>>>>>> 906dc556a9eb88adc1d872dedcc9000472a50632
+
+
+        ]);
+        
+        return redirect('/');
     }
 
     /**
@@ -100,9 +128,11 @@ class AdsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function admin()
     {
-        //
+        $iklan = DB::table('ads')->get();
+
+        return view('admin.iklan.index', ['iklan' => $iklan]);
     }
 
     /**

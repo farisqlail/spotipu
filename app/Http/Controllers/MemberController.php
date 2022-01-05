@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bayar;
+use App\Models\Member;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class MemberController extends Controller
 {
@@ -16,6 +19,12 @@ class MemberController extends Controller
     {
 
         return view('frontend.member.member');
+    }
+
+    public function admin()
+    {
+        $member = Member::all();
+        return view('admin.member.index', ['member' =>$member]);
     }
 
     public function bayar()
@@ -49,7 +58,7 @@ class MemberController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.member.create');
     }
 
     /**
@@ -58,23 +67,50 @@ class MemberController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $data)
+    public function store(Request $request)
     {
-        $harga = 5000;
-        $admin = 1000;
+        // $harga = 5000;
+        // $admin = 1000;
         
-        $lama = $data->input('lama');
-        $tgl = $data->input('tglbeli');
-        $pbayar = $data->input('metodebayar');
+        // $lama = $data->input('lama');
+        // $tgl = $data->input('tglbeli');
+        // $pbayar = $data->input('metodebayar');
 
-        $totalBayar = new Bayar();
-        $totalBayars = $totalBayar -> totalBayar($harga, $lama) + $admin;
+        // $totalBayar = new Bayar();
+        // $totalBayars = $totalBayar -> totalBayar($harga, $lama) + $admin;
 
-        $dateNow = date('d');
-        $lamaMember = $dateNow + $lama;
-        $hasilMember = $lamaMember . '-' . date('M-Y');
+        // $dateNow = date('d');
+        // $lamaMember = $dateNow + $lama;
+        // $hasilMember = $lamaMember . '-' . date('M-Y');
 
-        return view('frontend.member.invoice', compact('harga', 'admin','lama', 'hasilMember', 'tgl', 'pbayar', 'totalBayars'));
+        // return view('frontend.member.invoice', compact('harga', 'admin','lama', 'hasilMember', 'tgl', 'pbayar', 'totalBayars'));
+
+        $validator = Validator::make(request()->all(), [
+            'name_member' => 'required',
+            'description_member' => 'required',
+            'price' => 'required',
+            'account' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            dd($validator->errors());
+            return back()->withErrors($validator->errors());
+        } else {
+
+            Alert::success('Berhasil', 'Berhasil menambahkan member');
+
+            $member = new Member();
+
+            $member->name_member = $request->get('name_member');
+            $member->description_member = $request->get('description_member');
+            $member->price = $request->get('price');
+            $member->account = $request->get('account');
+           
+            // dd($member);
+            $member->save();
+
+            return redirect()->route('admin.member.index');
+        }
 
     }
 
@@ -97,7 +133,8 @@ class MemberController extends Controller
      */
     public function edit($id)
     {
-        //
+        $member = Member::findOrFail($id);
+        return view('admin.member.edit', ['member' =>$member]);
     }
 
     /**
@@ -109,7 +146,33 @@ class MemberController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make(request()->all(), [
+            'name_member' => 'required',
+            'description_member' => 'required',
+            'price' => 'required',
+            'account' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            dd($validator->errors());
+            return back()->withErrors($validator->errors());
+        } else {
+
+            Alert::success('Berhasil', 'Berhasil menambahkan member');
+
+            $member = Member::findOrFail($id);
+
+            $member->name_member = $request->get('name_member');
+            $member->description_member = $request->get('description_member');
+            $member->price = $request->get('price');
+            $member->account = $request->get('account');
+           
+            // dd($member);
+            $member->save();
+
+            return redirect()->route('admin.member.index');
+        }
+
     }
 
     /**
@@ -120,6 +183,8 @@ class MemberController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $member = Member::findOrFail($id);
+        $member->delete();
+        return redirect()->route('admin.member.index');
     }
 }

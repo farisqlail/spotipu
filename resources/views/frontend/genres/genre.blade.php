@@ -9,106 +9,25 @@
     <h2 class="text-white">Genres</h2>
 
     <div class="row mt-5" data-aos="fade-up">
-        <div class="col-md-3 hvr-grow">
-             <div class="card" style="background-color: #2D3E50; border: none;">
-                <img src="{{ asset('assets/img/rock.png') }}" class="card-img-top" alt="...">
-                <div class="card-body">
+        @foreach ($genre as $data)
+            <div class="col-md-3 hvr-grow">
+                <a href="{{ route('genre.show', $data->id) }}">
+                    <div class="card" style="background-color: #2D3E50; border: none;">
+                        <img src="{{ asset('storage/genre/cover/' . $data->cover_genre) }}" class="card-img-top"
+                            style="height: 300px;">
+                        <div class="card-body">
 
-                    <a href="" class="text-white">
-                        <h5 align="center"><b>Rock</b></h5>
-                    </a>
+                            <a href="{{ route('genre.show', $data->id) }}" class="text-white">
+                                <h5 align="center"><b>{{ $data->name_genre }}</b></h5>
+                            </a>
 
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 hvr-grow">
-             <div class="card" style="background-color: #2D3E50; border: none;">
-                <img src="{{ asset('assets/img/folk.png') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-
-                    <a href="" class="text-white">
-                        <h5 align="center"><b>Folk</b></h5>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 hvr-grow">
-             <div class="card" style="background-color: #2D3E50; border: none;">
-                <img src="{{ asset('assets/img/hiphop.png') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-
-                    <a href="" class="text-white">
-                        <h5 align="center"><b>Hip Hop</b></h5>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 hvr-grow">
-            <div class="card" style="background-color: #2D3E50; border: none;">
-                <img src="{{ asset('assets/img/folk.png') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-
-                   <a href="" class="text-white">
-                    <h5 align="center"><b>Folk</b></h5>
+                        </div>
+                    </div>
                 </a>
+            </div>
+        @endforeach
 
-               </div>
-           </div>
-       </div>
     </div>
 
-    <div class="row mt-5" data-aos="fade-up">
-        <div class="col-md-3 hvr-grow">
-             <div class="card" style="background-color: #2D3E50; border: none;">
-                <img src="{{ asset('assets/img/rock.png') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-
-                    <a href="" class="text-white">
-                        <h5 align="center"><b>Rock</b></h5>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 hvr-grow">
-             <div class="card" style="background-color: #2D3E50; border: none;">
-                <img src="{{ asset('assets/img/folk.png') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-
-                    <a href="" class="text-white">
-                        <h5 align="center"><b>Folk</b></h5>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 hvr-grow">
-             <div class="card" style="background-color: #2D3E50; border: none;">
-                <img src="{{ asset('assets/img/hiphop.png') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-
-                    <a href="" class="text-white">
-                        <h5 align="center"><b>Hip Hop</b></h5>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 hvr-grow">
-            <div class="card" style="background-color: #2D3E50; border: none;">
-                <img src="{{ asset('assets/img/folk.png') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-
-                   <a href="" class="text-white">
-                    <h5 align="center"><b>Folk</b></h5>
-                </a>
-
-               </div>
-           </div>
-       </div>
-    </div>  
-    
 
 @endsection

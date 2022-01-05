@@ -19,3 +19,5 @@
     <script>
         AOS.init();
     </script>
+
+    @include('sweetalert::alert')
