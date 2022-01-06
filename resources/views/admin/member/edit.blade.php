@@ -19,7 +19,7 @@
 
                 <div class="form-group">
                     <label for="">Deskripsi member</label>
-                    <textarea class="form-control" name="description_member" id="description_member" required rows="3" >{{$member->name_member}}</textarea>
+                    <textarea class="form-control" name="description_member" id="description_member" required rows="3" >{{$member->description_member}}</textarea>
                 </div>
                 
                 <div class="form-group">
