@@ -6,9 +6,9 @@
 
 @section('content')
 
-    @if ($music != null)
-        <div class="card" style="background-color: #2D3E50; border: none; ">
-            <div class="card-body">
+    <div class="card" style="background-color: #2D3E50; border: none; ">
+        <div class="card-body">
+            @if (!empty($music))
                 <h4 class="text-white"><strong>Genre {{ $music[0]->name_genre }}</strong></h4>
                 @foreach ($music as $data)
                     <div class="row mt-5">
@@ -16,8 +16,8 @@
                             <h4>{{ $loop->iteration }}</h4>
                         </div>
                         <div class="col-md-2 mr-auto">
-                            <img src="{{ asset('storage/music/cover/' . $data->cover_music) }}" class="img-fluid" width="80"
-                                srcset="">
+                            <img src="{{ asset('storage/music/cover/' . $data->cover_music) }}" class="img-fluid"
+                                width="80" srcset="">
                         </div>
                         <div class="col-md-6 pl-4 hvr-grow">
                             <h6 class="text-white">{{ $data->name_music }}</h6>
@@ -40,11 +40,12 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
+            @else
+                <h4 class="text-white text-center"><strong>Data belum ada</strong></h4>
+            @endif
         </div>
-    @else
-        <h4 class="text-white text-center"><strong>Data belum ada</strong></h4>
-    @endif
+    </div>
+
 
     <script>
         var audio = document.getElementById('audio');
