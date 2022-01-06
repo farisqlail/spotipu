@@ -63,7 +63,7 @@ class AdsController extends Controller
 
 
         $total = new ads();
-<<<<<<< HEAD
+
         $admin = 0;
         
         if ($metode == "ovo") {
@@ -93,7 +93,7 @@ class AdsController extends Controller
       
 
         return view('frontend.ads.invoidAds', compact('biayaIklan', 'admin', 'kategori', 'judul', 'merk','namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'totalBayar'));
-=======
+
         $total = $total->total($biayaIklan, $durasi) + $admin;
 
         return view('frontend.ads.invoidAds', compact('biayaIklan', 'admin',  'kategori', 'judul', 'merk', 'namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'total'));
@@ -114,7 +114,6 @@ class AdsController extends Controller
             'gambar_produk'         => $request -> gambarProduk,
             'durasi'                => $request -> durasi,
             'metode_pembayaran'     => $request -> metode
->>>>>>> 906dc556a9eb88adc1d872dedcc9000472a50632
 
 
         ]);
