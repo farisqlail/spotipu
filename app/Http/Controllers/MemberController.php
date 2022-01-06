@@ -17,8 +17,9 @@ class MemberController extends Controller
      */
     public function index()
     {
+        $member = Member::take(4)->get();
 
-        return view('frontend.member.member');
+        return view('frontend.member.member', ['member' =>$member]);
     }
 
     public function admin()
