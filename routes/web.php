@@ -39,7 +39,7 @@ Route::prefix('/member')->group(function () {
 // Route pembayaran
 Route::prefix('/pembayaran')->group(function () {
     Route::get('/{id}', [TransactionController::class, 'create'])->name('member.pembayaran');
-    Route::post('/pembayaran-store', [MemberController::class, 'store'])->name('member.store');
+    Route::post('/pembayaran-store', [TransactionController::class, 'store'])->name('member.store');
     Route::get('/pembayaran/invoice', [MemberController::class, 'invoice'])->name('member.invoice');
     Route::get('/pembayaran/checkout', [MemberController::class, 'checkout'])->name('member.checkout');
     Route::get('/pembayaran/konfirmasi', [MemberController::class, 'konfirmasi'])->name('member.konfirmasi');

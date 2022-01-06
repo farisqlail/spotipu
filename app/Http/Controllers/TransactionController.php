@@ -41,7 +41,27 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Alert::success('Berhasil', 'Music berhasil ditambahkan');
+
+        $paket = $request->get('paket');
+        $dateNow = date('d');
+        $lamaMember = $dateNow + $paket;
+        $hasilMember = $lamaMember . '-' . date('m-y');
+        // dd($hasilMember);
+        
+        $transaction = new Transaction();
+
+        $transaction->id_user = $request->get('id_user');
+        $transaction->id_member = $request->get('id_member');
+        $transaction->method = $request->get('method');
+        $transaction->active = date('d-m-y');
+        $transaction->duedate = $hasilMember;
+        $transaction->total = $request->get('total');
+
+        // dd($music);
+        $transaction->save();
+
+        return redirect()->route('frontend.index');
     }
 
     /**
