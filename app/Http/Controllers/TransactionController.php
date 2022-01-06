@@ -46,7 +46,7 @@ class TransactionController extends Controller
         $paket = $request->get('paket');
         $dateNow = date('d');
         $lamaMember = $dateNow + $paket;
-        $hasilMember = $lamaMember . '-' . date('m-y');
+        $hasilMember = date('Y-m'). '-' .'0'.$lamaMember ;
         // dd($hasilMember);
         
         $transaction = new Transaction();
@@ -54,7 +54,7 @@ class TransactionController extends Controller
         $transaction->id_user = $request->get('id_user');
         $transaction->id_member = $request->get('id_member');
         $transaction->method = $request->get('method');
-        $transaction->active = date('d-m-y');
+        $transaction->active = date('Y-m-d');
         $transaction->duedate = $hasilMember;
         $transaction->total = $request->get('total');
 
