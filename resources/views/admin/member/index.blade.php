@@ -20,6 +20,7 @@
                             <th>Deskripsi Member</th>
                             <th>Harga</th>  
                             <th>Banyak Akun</th>
+                            <th>Durasi</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -31,6 +32,7 @@
                             <td>{!! Str::limit($data->description_member, 60)!!}</td>
                             <td>{{ $data->price}}</td>
                             <td>{{ $data->account}}</td>
+                            <td>{{ $data->duration }}</td>
                             <td>
                            
                                         

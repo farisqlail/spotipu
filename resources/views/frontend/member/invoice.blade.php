@@ -37,13 +37,13 @@
 
                 </div>
                 <div class="col-md-4">
-                    <span class="text-muted">@smunny23</span><br><br>
+                    {{-- <span class="text-muted">@smunny23</span><br><br>
                     <span class="text-muted">{{ date('d-M-Y')}}</span><br><br>
                     <span class="text-muted">{{ $lama }} hari</span><br><br>
                     <span class="text-muted">{{ $hasilMember }}</span><br><br>
                     <span class="text-muted">Rp. {{ $harga }}</span><br><br>
                     <span class="text-muted">{{ $pbayar }}</span><br><br>
-                    <span class="text-muted">Rp. {{ $admin }}</span><br><br>
+                    <span class="text-muted">Rp. {{ $admin }}</span><br><br> --}}
                 </div>
             </div>
 
@@ -54,7 +54,7 @@
                     <h3>Total Bayar</h3>
                 </div>
                 <div class="col-md-4">
-                    <h3>Rp. {{ $totalBayars }}</h3>
+                    {{-- <h3>Rp. {{ $totalBayars }}</h3> --}}
                 </div>
             </div>
 

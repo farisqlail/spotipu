@@ -106,7 +106,7 @@ class MemberController extends Controller
             $member->description_member = $request->get('description_member');
             $member->price = $request->get('price');
             $member->account = $request->get('account');
-           
+            $member->duration = $request->get('duration');
             // dd($member);
             $member->save();
 
@@ -167,7 +167,7 @@ class MemberController extends Controller
             $member->description_member = $request->get('description_member');
             $member->price = $request->get('price');
             $member->account = $request->get('account');
-           
+            $member->duration = $request->get('duration');
             // dd($member);
             $member->save();
 

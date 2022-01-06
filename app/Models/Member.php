@@ -14,6 +14,7 @@ class Member extends Model
         'name_member',
         'description_member',
         'price',
-        'account'
+        'account',
+        'duration'
     ];
 }

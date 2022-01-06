@@ -32,7 +32,10 @@
                     <input type="text" class="form-control" name="account" value="{{$member->account}}">
                 </div>
 
-                
+                <div class="form-group">
+                    <label for="">Duration</label>
+                    <input type="text" class="form-control" name="duration" value="{{ $member->duration }}">
+                </div>
                 
                 <div class="button-submit float-right">
                     <button type="submit" class="btn btn-lg btn-success">Ubah</button>
