@@ -5,10 +5,10 @@
 <div class="container">
     <div class="card">
         <div class="card-body rounded">
-            <h1>Data Album</h1>
+            <h1>Data Member</h1>
 
             <div class="float-right mb-3">
-                <a href="{{ route('admin.album.create', $artis->id) }}" class="btn btn-success btn-lg">Tambah Data</a>
+                <a href="{{ route('admin.member.create') }}" class="btn btn-success btn-lg">Tambah Data</a>
             </div>
 
             <div class="table-responsive">
@@ -16,29 +16,31 @@
                     <thead>
                         <tr class="text-center">
                             <th>No</th>
-                            <th>Nama Album</th>
-                            <th>Deskripsi Album</th>
-                            <th>COver Album</th>
+                            <th>Nama Member </th>
+                            <th>Deskripsi Member</th>
+                            <th>Harga</th>  
+                            <th>Banyak Akun</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($album as $data)
-                            <tr class="text-center">
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $data->name_album }}</td>
-                                <td>
-                                    {!! $data->description_album !!}
-                                </td>
-                                <td><img src="{{ asset('storage/album/cover/'.$data->cover) }}" class="img-fluid rounded" style="width: 100px; height: 100px;"></td>
-                                <td>
-                                    <a href="{{ route('admin.album.edit', $data->id) }}"
-                                        class="btn btn-primary">Edit</a>
-                                        <a href="#" data-id="{{ $data->id }}" class="btn btn-danger delete">
-                                            Hapus
-                                        </a>
-                                </td>
-                            </tr>
+                        @foreach($member as $data)
+                        <tr>
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{ $data->name_member}}</td>
+                            <td>{!! Str::limit($data->description_member, 60)!!}</td>
+                            <td>{{ $data->price}}</td>
+                            <td>{{ $data->account}}</td>
+                            <td>
+                           
+                                        
+                                        <a href="{{ route('admin.member.edit', $data->id) }}"
+                                            class="btn btn-primary">Edit</a>
+                                            <a href="#" data-id="{{ $data->id }}" class="btn btn-danger delete">
+                                                Hapus
+                                            </a>
+                            </td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -54,7 +56,7 @@ integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRk
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 $('.delete').click(function() {
-    var albumId = $(this).attr('data-id');
+    var memberId = $(this).attr('data-id');
     swal({
             title: "Apakah kamu yakin ?",
             text: "Apa kamu yakin ingin menghapus data ini",
@@ -64,7 +66,7 @@ $('.delete').click(function() {
         })
         .then((willDelete) => {
             if (willDelete) {
-                window.location = "/album/admin/delete/" + albumId + ""
+                window.location = "/member/admin/delete/" + memberId + ""
                 swal("Data berhasil dihapus", {
                     icon: "success",
                 });

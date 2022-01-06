@@ -27,6 +27,12 @@ Route::prefix('/dashboard')->group(function () {
 // Route::get('/', [HomeController::class, 'index']);
 Route::prefix('/member')->group(function () {
     Route::get('/', [MemberController::class, 'index'])->name('member.index');
+    Route::get('/admin/member', [MemberController::class, 'admin'])->name('admin.member.index');
+    Route::get('/admin/tambah/', [MemberController::class, 'create'])->name('admin.member.create');
+    Route::post('/admin/tambah', [MemberController::class, 'store'])->name('admin.member.store');
+    Route::get('/admin/edit/{id}', [MemberController::class, 'edit'])->name('admin.member.edit');
+    Route::patch('/admin/edit/{id}', [MemberController::class, 'update'])->name('admin.member.update');
+    Route::get('/admin/delete/{id}', [MemberController::class, 'destroy'])->name('admin.member.delete');
 });
 
 // Route pembayaran
