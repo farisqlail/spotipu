@@ -12,9 +12,9 @@ class CreateTransactionsTable extends Migration
             $table->id();
             $table->bigInteger('id_user')->index();
             $table->bigInteger('id_member')->index();
-            $table->integer('active');
+            $table->date('active');
             $table->string('method');
-            $table->dateTime('duedate');
+            $table->date('duedate');
             $table->integer('total');
             $table->timestamps();
         });

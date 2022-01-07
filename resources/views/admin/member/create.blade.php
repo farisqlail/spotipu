@@ -31,7 +31,10 @@
                     <input type="text" class="form-control" name="account">
                 </div>
 
-                
+                <div class="form-group">
+                    <label for="">Duration</label>
+                    <input type="text" class="form-control" name="duration">
+                </div>
                 
                 <div class="button-submit float-right">
                     <button type="submit" class="btn btn-lg btn-success">Tambah</button>

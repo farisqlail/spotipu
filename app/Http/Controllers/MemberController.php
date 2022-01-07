@@ -34,10 +34,23 @@ class MemberController extends Controller
         return view('frontend.member.pembayaran');
     }
 
-    public function invoice()
+    public function invoice(Request $request)
     {
+        $harga = 5000;
+        $admin = 1000;
+        
+        $lama = $request->input('lama');
+        $tgl = $request->input('tglbeli');
+        $pbayar = $request->input('metodebayar');
 
-        return view('frontend.member.invoice');
+        $totalBayar = new Bayar();
+        $totalBayars = $totalBayar -> totalBayar($harga, $lama) + $admin;
+
+        $dateNow = date('d');
+        $lamaMember = $dateNow + $lama;
+        $hasilMember = $lamaMember . '-' . date('M-Y');
+
+        return view('frontend.member.invoice', compact('harga', 'admin','lama', 'hasilMember', 'tgl', 'pbayar', 'totalBayars'));
     }
 
     public function checkout()
@@ -106,7 +119,7 @@ class MemberController extends Controller
             $member->description_member = $request->get('description_member');
             $member->price = $request->get('price');
             $member->account = $request->get('account');
-           
+            $member->duration = $request->get('duration');
             // dd($member);
             $member->save();
 
@@ -167,7 +180,7 @@ class MemberController extends Controller
             $member->description_member = $request->get('description_member');
             $member->price = $request->get('price');
             $member->account = $request->get('account');
-           
+            $member->duration = $request->get('duration');
             // dd($member);
             $member->save();
 
