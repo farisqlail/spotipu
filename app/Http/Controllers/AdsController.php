@@ -92,7 +92,7 @@ class AdsController extends Controller
         
       
 
-        return view('frontend.ads.invoidAds', compact('biayaIklan', 'admin', 'kategori', 'judul', 'merk','namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'totalBayar'));
+        // return view('frontend.ads.invoidAds', compact('biayaIklan', 'admin', 'kategori', 'judul', 'merk','namaProduk', 'deskripsi', 'hargaProduk', 'link', 'durasi', 'metode', 'totalBayar'));
 
         $total = $total->total($biayaIklan, $durasi) + $admin;
 
