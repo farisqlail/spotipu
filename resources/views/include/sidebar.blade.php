@@ -44,9 +44,8 @@
                     <span>Album</span></a>
             </li>
 
-            @if ($member[0]->id_user == Auth::user()->id)
+            @if ($member[0]->id_user == Auth::user()->id && date('Y-m-d') > $member[0]->duedate)
                 <hr class="sidebar-divider">
-
                 <!-- Heading -->
                 <div class="sidebar-heading">
                     Membership
@@ -57,6 +56,13 @@
                         <i class="far fa-fw fa-gem"></i>
                         <span>Member</span></a>
                 </li>
+            @else
+                <hr class="sidebar-divider">
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    User Member
+                </div>
+
             @endif
 
 
