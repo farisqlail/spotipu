@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -46,7 +47,17 @@ class TransactionController extends Controller
         $paket = $request->get('paket');
         $dateNow = date('d');
         $lamaMember = $dateNow + $paket;
-        $hasilMember = date('Y-m'). '-' .'0'.$lamaMember ;
+        
+        if ($lamaMember < 10) {
+            $hasilMember = date('Y-m'). '-' .'0' .$lamaMember;
+            
+        } elseif($lamaMember >= 31) {
+            $lamaMember  = $lamaMember - 31;
+            $bulan = date('m') + 1;
+            $hasilMember = date('Y'). '-' . '0' . $bulan . '-' . '0' .$lamaMember;
+            // dd($hasilMember);
+        }
+        
         // dd($hasilMember);
         
         $transaction = new Transaction();
@@ -58,10 +69,9 @@ class TransactionController extends Controller
         $transaction->duedate = $hasilMember;
         $transaction->total = $request->get('total');
 
-        // dd($music);
         $transaction->save();
 
-        return redirect()->route('frontend.index');
+        return redirect()->route('member.konfirmasi');
     }
 
     /**
