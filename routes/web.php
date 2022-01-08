@@ -6,6 +6,7 @@ use App\Http\Controllers\AdsController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\TransactionController;
@@ -34,6 +35,11 @@ Route::prefix('/member')->group(function () {
     Route::get('/admin/edit/{id}', [MemberController::class, 'edit'])->name('admin.member.edit');
     Route::patch('/admin/edit/{id}', [MemberController::class, 'update'])->name('admin.member.update');
     Route::get('/admin/delete/{id}', [MemberController::class, 'destroy'])->name('admin.member.delete');
+});
+
+//Route Account
+Route::prefix('/account')->group(function () {
+    Route::get('/', [HistoryController::class, 'index'])->name('account.history');
 });
 
 // Route pembayaran
@@ -123,42 +129,5 @@ Route::get('/ads-store/transdone', function () {
         "title" => 'Invoice Ads'
     ]);
 });
-
-// Route Pasang Iklans
-// Route::get('/ads', [AdsController::class, 'index']);
-// Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
-
-// Route Login
-// Route::get('/login', function () {
-//     return view('authentication/login', [
-//         "title" => 'Login'
-//     ]);
-// });
-
-// //Route Register
-// Route::get('/register', function () {
-//     return view('authentication/register', [
-//         "title" => 'Register'
-//     ]);
-// });
-
-
-
-
-// Route::get('/ads/invoiceIklan', [AddsController::class, 'invoiceIklan']);
-
-// Route Untuk sementara 
-// Route::get('/invoiceAds', function () {
-//     return view('frontend/ads/invoidAds', [
-//         "title" => 'Invoice Ads'
-//     ]);
-// });
-
-
-
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
