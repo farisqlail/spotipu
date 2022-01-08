@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Artis;
 use App\Models\Album;
+use App\Models\Member;
 use App\Models\Music;
 
 class AlbumController extends Controller
@@ -21,9 +22,13 @@ class AlbumController extends Controller
     {
 
         $album = Album::join('artis', 'artis.id', '=', 'albums.id_artis')->get();
+        $member = Member::all();
         // dd($album);
 
-        return view('frontend.album.album', ['album' => $album]);
+        return view('frontend.album.album', [
+            'album' => $album,
+            'member' => $member
+        ]);
     }
 
     public function admin($id)

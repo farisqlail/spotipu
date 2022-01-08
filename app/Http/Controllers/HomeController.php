@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Artis;
 use App\Models\Genre;
+use App\Models\Member;
 use App\Models\Music;
 
 class HomeController extends Controller
@@ -31,8 +32,14 @@ class HomeController extends Controller
         $music = Music::join('artis', 'artis.id', '=', 'music.id_artis')
                 ->take(3)
                 ->get();
+        $member = Member::all();
 
-        return view('frontend.index', ['artis' => $artis, 'genre' => $genre, 'music' => $music]);
+        return view('frontend.index', [
+            'artis' => $artis, 
+            'genre' => $genre, 
+            'music' => $music,
+            'member' => $member
+        ]);
     }
 
     public function admin(){
