@@ -116,8 +116,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Deskripsi <span style="color:red;">*</span></label>
-                    <textarea name="deskripsi" class="form-control" id="" cols="30"
-                        rows="5" placeholder="ouetr ini dibuat dari bahan pilihan..."></textarea>
+                    <textarea name="deskripsi" class="form-control" id="" cols="30" rows="5"
+                        placeholder="ouetr ini dibuat dari bahan pilihan..."></textarea>
                 </div>
             </div>
         </div>
@@ -137,13 +137,37 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="">Unggah foto produk <span style="color:red;">*</span></label><br>
-            <img src="{{ asset('assets/img/upload-img.png') }}" class="img-fluid" width="160px" alt="">
-            <input type="file" name="gambarProduk" class="imp-up hvr-shrink img-fluid" style="background-color: traparant; border: none;">
-            
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Unggah foto produk <span style="color:red;">*</span></label><br>
+                    <img src="{{ asset('assets/img/upload-img.png') }}" class="img-fluid" width="160px" alt="">
+                    <input type="file" name="gambarProduk" class="imp-up hvr-shrink img-fluid"
+                        style="background-color: traparant; border: none;">
+        
+                </div>
+        
+            </div>
+            <div class="col-md-6">
+                <div class="card mt-4" style="background-color: #2D3E50; border: none;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 align-self-center">
+                                <span>Bayar ke nomor virtual</span>
+                                <input type="text" class="form-control mt-3" name="" id="" value="SPTP19478524614" disabled>
+                            </div>
+                            <div class="col-md-4 align-self-center" align="center">
+                                <span class="text-white">atau scan</span>
+                            </div>
+                            <div class="col-md-4" align="center">
+                                <img src="{{ asset('assets/img/scan.png') }}" class="img-fluid" width="150" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
+       
         <h5 class="text-white mt-3">Anggaran & Durasi <span style="color: red;">*</span></h5><br>
 
         <div class="row">
@@ -163,11 +187,7 @@
                         <option value="3">3 Hari</option>
                     </select>
                 </div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Metode Pembayaran <span style="color:red;">*</span></label>
                     <select class="form-control" name="metode">
@@ -179,12 +199,9 @@
                     </select>
                 </div>
             </div>
-            {{-- <div class="col-md-6">
-                <div class="form-group">
-                    <label for="">Bukti Pembayaran <span style="color:red;">*</span></label>
-                    <input type="file" class="form-control" name="bukti">
-                </div>
-            </div> --}}
+            <div class="col-md-6">
+               
+            </div>
         </div>
 
         <button type="submit" class="btn btn-block btn-lg btn-ads hvr-shrink mt-3">Submit</button>

@@ -45,7 +45,7 @@
             </li>
 
             @if (!empty(Auth::check()) && Auth::user()->id)
-                @if (Carbon::now() > $member[0]->duedate)
+                @if (date('Y-m-d') > $member[0]->duedate)
                     <hr class="sidebar-divider">
                     <!-- Heading -->
                     <div class="sidebar-heading">

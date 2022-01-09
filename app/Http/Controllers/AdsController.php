@@ -62,8 +62,6 @@ class AdsController extends Controller
         $durasi = $request->input('durasi');
         $metode = $request->input('metode');
 
-
-
         $total = new ads();
 
         $admin = 0;
@@ -134,6 +132,13 @@ class AdsController extends Controller
         $iklan = DB::table('ads')->get();
 
         return view('admin.iklan.index', ['iklan' => $iklan]);
+    }
+
+    public function show($id){
+
+        $ads = Ads::findOrFail($id);
+
+        return view('admin.iklan.show', ['ads' => $ads]);
     }
 
     /**
