@@ -44,7 +44,27 @@
                     <span>Album</span></a>
             </li>
 
-            @if ($member[0]->id_user == Auth::user()->id && date('Y-m-d') > $member[0]->duedate)
+            @if (!empty(Auth::check()) && Auth::user()->id)
+                @if (Carbon::now() > $member[0]->duedate)
+                    <hr class="sidebar-divider">
+                    <!-- Heading -->
+                    <div class="sidebar-heading">
+                        Membership
+                    </div>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/member') }}">
+                            <i class="far fa-fw fa-gem"></i>
+                            <span>Member</span></a>
+                    </li>
+                @else
+                    <hr class="sidebar-divider">
+                    <!-- Heading -->
+                    <div class="sidebar-heading">
+                        User Member
+                    </div>
+                @endif
+            @else
                 <hr class="sidebar-divider">
                 <!-- Heading -->
                 <div class="sidebar-heading">
@@ -56,13 +76,6 @@
                         <i class="far fa-fw fa-gem"></i>
                         <span>Member</span></a>
                 </li>
-            @else
-                <hr class="sidebar-divider">
-                <!-- Heading -->
-                <div class="sidebar-heading">
-                    User Member
-                </div>
-
             @endif
 
 
