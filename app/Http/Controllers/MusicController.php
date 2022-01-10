@@ -10,6 +10,7 @@ use App\Models\Music;
 use App\Models\Artis;
 use App\Models\Genre;
 use App\Models\Album;
+use App\Models\Member;
 
 class MusicController extends Controller
 {

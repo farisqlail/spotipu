@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Genre;
+use App\Models\Member;
 use App\Models\Music;
 
 class GenreController extends Controller
@@ -19,8 +20,12 @@ class GenreController extends Controller
     public function index()
     {
         $genre = Genre::all();
+        $member = Member::all();
 
-        return view('frontend.genres.genre', ['genre' => $genre]);
+        return view('frontend.genres.genre', [
+            'genre' => $genre,
+            'member' => $member
+        ]);
     }
 
     public function admin(){

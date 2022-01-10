@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Artis;
+use App\Models\Member;
 use App\Models\Music;
 
 class ArtistController extends Controller
@@ -19,8 +20,12 @@ class ArtistController extends Controller
     public function index() {
         
         $artis = Artis::all();
+        $member = Member::all();
 
-        return view('frontend.artist.artist', ['artis' => $artis]);
+        return view('frontend.artist.artist', [
+            'artis' => $artis,
+            'member' => $member
+        ]);
     }
 
     public function admin(){

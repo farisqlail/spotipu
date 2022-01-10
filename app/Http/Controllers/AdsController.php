@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ads;
+use App\Models\Member;
 use Illuminate\Support\Facades\DB;
 
 class AdsController extends Controller
@@ -25,9 +26,10 @@ class AdsController extends Controller
         $b = $a + 1;
         $c = $b . '-' . date('M-Y');
         // date_sub($a, date_interval_create_from_date_string($b));
+        $member = Member::all();
 
         // dd($c);
-        return view('frontend.ads.ads');
+        return view('frontend.ads.ads', ['member' => $member]);
     }
 
     /**
@@ -59,8 +61,6 @@ class AdsController extends Controller
         $link = $request->input('link');
         $durasi = $request->input('durasi');
         $metode = $request->input('metode');
-
-
 
         $total = new ads();
 
@@ -132,6 +132,13 @@ class AdsController extends Controller
         $iklan = DB::table('ads')->get();
 
         return view('admin.iklan.index', ['iklan' => $iklan]);
+    }
+
+    public function show($id){
+
+        $ads = Ads::findOrFail($id);
+
+        return view('admin.iklan.show', ['ads' => $ads]);
     }
 
     /**
