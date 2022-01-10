@@ -104,9 +104,13 @@ class AlbumController extends Controller
                         ->join('albums', 'albums.id', '=', 'music.id_genre')
                         ->where('id_album', $id)
                         ->get();
+        $member = Member::all();
                         
         // dd($music);
-        return view('frontend.album.album-show', ['music' => $music]);
+        return view('frontend.album.album-show', [
+            'music' => $music,
+            'member' => $member
+        ]);
     }
 
     /**

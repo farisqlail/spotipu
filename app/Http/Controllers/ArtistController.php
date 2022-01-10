@@ -96,10 +96,10 @@ class ArtistController extends Controller
         $music = Music::join('artis', 'artis.id', '=', 'music.id_artis')
                     ->where('id_artis', $id)
                     ->get();
-
+        $member = Member::all();
         // dd($music);
 
-        return view('frontend.artist.artist-show', ['music' => $music]);
+        return view('frontend.artist.artist-show', ['music' => $music, 'member' => $member]);
     }
 
     /**
