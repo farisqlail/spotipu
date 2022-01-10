@@ -19,13 +19,13 @@ class MemberController extends Controller
     {
         $member = Member::take(4)->get();
 
-        return view('frontend.member.member', ['member' =>$member]);
+        return view('frontend.member.member', ['member' => $member]);
     }
 
     public function admin()
     {
         $member = Member::all();
-        return view('admin.member.index', ['member' =>$member]);
+        return view('admin.member.index', ['member' => $member]);
     }
 
     public function bayar()
@@ -38,7 +38,7 @@ class MemberController extends Controller
     // {
     //     $harga = 5000;
     //     $admin = 1000;
-        
+
     //     $lama = $request->input('lama');
     //     $tgl = $request->input('tglbeli');
     //     $pbayar = $request->input('metodebayar');
@@ -72,7 +72,7 @@ class MemberController extends Controller
      */
     public function create()
     {
-        
+
 
         return view('admin.member.create');
     }
@@ -87,7 +87,7 @@ class MemberController extends Controller
     {
         // $harga = 5000;
         // $admin = 1000;
-        
+
         // $lama = $data->input('lama');
         // $tgl = $data->input('tglbeli');
         // $pbayar = $data->input('metodebayar');
@@ -105,6 +105,7 @@ class MemberController extends Controller
             'name_member' => 'required',
             'description_member' => 'required',
             'price' => 'required',
+            'ppn' => 'required',
             'account' => 'required'
         ]);
 
@@ -120,6 +121,7 @@ class MemberController extends Controller
             $member->name_member = $request->get('name_member');
             $member->description_member = $request->get('description_member');
             $member->price = $request->get('price');
+            $member->ppn = $request->get('ppn');
             $member->account = $request->get('account');
             $member->duration = $request->get('duration');
             // dd($member);
@@ -127,7 +129,6 @@ class MemberController extends Controller
 
             return redirect()->route('admin.member.index');
         }
-
     }
 
     /**
@@ -150,7 +151,7 @@ class MemberController extends Controller
     public function edit($id)
     {
         $member = Member::findOrFail($id);
-        return view('admin.member.edit', ['member' =>$member]);
+        return view('admin.member.edit', ['member' => $member]);
     }
 
     /**
@@ -166,6 +167,7 @@ class MemberController extends Controller
             'name_member' => 'required',
             'description_member' => 'required',
             'price' => 'required',
+            'ppn' => 'required',
             'account' => 'required'
         ]);
 
@@ -188,7 +190,6 @@ class MemberController extends Controller
 
             return redirect()->route('admin.member.index');
         }
-
     }
 
     /**

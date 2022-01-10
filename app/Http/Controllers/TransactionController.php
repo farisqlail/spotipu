@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Transaction;
+use App\Models\Bayar;
 use App\Models\Member;
+use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
 {
@@ -62,12 +64,58 @@ class TransactionController extends Controller
         
         $transaction = new Transaction();
 
-        $transaction->id_user = $request->get('id_user');
-        $transaction->id_member = $request->get('id_member');
-        $transaction->method = $request->get('method');
-        $transaction->active = date('Y-m-d');
-        $transaction->duedate = $hasilMember;
-        $transaction->total = $request->get('total');
+
+        $user = $transaction->id_user = $request->get('id_user');
+        $member = $transaction->id_member = $request->get('id_member');
+        $metode = $transaction->method = $request->get('method');
+        $tanggal = $transaction->active = date('Y-m-d');
+        $hasilMember = $transaction->duedate = $hasilMember;
+        $total = $transaction->total = $request->get('total');
+
+        
+
+        // $metode = $request -> input('method');
+        // $ppn = 0;
+
+        // if($member == '1') {
+
+        //     $ppn = 0.10;
+        //     $totalAkhir = $total + ($total * $ppn);
+
+        // } else if ($member == '2') {
+
+        //     $ppn = 0.20;
+        //     $totalAkhir = $total + ($total * $ppn);
+
+        // }
+
+
+        // $total = new Bayar();
+
+        // $admin = 0;
+        
+        // if ($metode == "ovo") {
+        //     // $hitung = $total->total($biayaIklan, $durasi);
+        //     // $totalBayar = $hitung + ($hitung * 0.05);
+
+        //     // dd($totalBayar);
+        // } elseif($metode == "gopay") {
+        //     // $admin = 5000;
+        //     // $hitung = $total->total($biayaIklan, $durasi);
+        //     // $totalBayar = $hitung + $admin;
+
+        // }
+        // elseif ($metode == "sopi") {
+        //     // $cashback = 5000;
+        //     // $hitung = $total -> total($biayaIklan, $durasi);
+        //     // $totalBayar= $hitung - $cashback;
+
+        // }
+        // elseif ($metode == "dana") {
+        //     // $admin = 10000;
+        //     // $hitung = $total -> total($biayaIklan, $durasi);
+        //     // $totalBayar= $hitung + $admin;
+        // }
 
         $transaction->save();
 

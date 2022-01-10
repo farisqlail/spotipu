@@ -18,6 +18,8 @@ class CreateMembersTable extends Migration
             $table->string('name_member');
             $table->longText('description_member');
             $table->integer('price');
+            $table->float('ppn');
+            $table->integer('total');
             $table->integer('account');
             $table->string('duration');
             $table->timestamps();

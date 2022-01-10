@@ -80,6 +80,30 @@
                         </div>
                     </div>
 
+                    <div class="row text-white mt-2">
+                        <div class="col-md-6">
+                            <p>PPN</p>
+                        </div>
+                        <div class="col-md-6">
+                            @php
+                                $ppn = $member->ppn;
+
+                                if ($ppn === 0.1) {
+                                    
+                                    $ppn = "10%";
+
+                                } else if ($ppn === 0.2) {
+                                    
+                                    $ppn = "20%";
+                                }
+
+                                // $ppnConvert = "20%";
+                                // $total = $member->price + 1000;
+                            @endphp
+                            <h5><strong>{{ $ppn }}</strong></h5>
+                        </div>
+                    </div>
+
                     <hr mt-7 style="background-color: #ffff;">
 
                     <div class="row text-white mt-2">
@@ -88,10 +112,14 @@
                         </div>
                         <div class="col-md-6">
                             @php
+                                // $ppn = 0.10;
+                                $ppn = $member->ppn;
+
                                 $total = $member->price + 1000;
+                                $totalAkhir = $total + ($total * $ppn);
                             @endphp
-                            <h4><strong>Rp {{ number_format($total) }}</strong></h4>
-                            <input type="number" name="total" value="{{ $total }}" hidden>
+                            <h4><strong>Rp {{ number_format($totalAkhir) }}</strong></h4>
+                            <input type="number" name="total" value="{{ $totalAkhir }}" hidden>
                         </div>
                     </div>
 
