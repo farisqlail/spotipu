@@ -9,7 +9,7 @@
     <div class="card" style="background-color: #2D3E50; border: none; ">
         <div class="card-body">
             @if (!empty($music))
-                <h4 class="text-white"><strong>Genre {{ $music[0]->name_genre }}</strong></h4>
+                <h4 class="text-white"><strong>Musik </strong></h4>
                 @foreach ($music as $data)
                     <div class="row mt-5">
                         <div class="col-md-1 d-flex align-items-center">

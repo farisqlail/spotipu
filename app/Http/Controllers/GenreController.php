@@ -94,9 +94,13 @@ class GenreController extends Controller
                     ->join('genres', 'genres.id', '=', 'music.id_genre')
                     ->where('id_genre', $id)
                     ->get();
+        $member = Member::all();
         // dd($music);
 
-        return view('frontend.genres.genre-show', ['music' => $music]);
+        return view('frontend.genres.genre-show', [
+            'music' => $music,
+            'member' => $member
+        ]);
     }
 
     /**

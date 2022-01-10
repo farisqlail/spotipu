@@ -45,7 +45,6 @@
             </li>
 
             @if (!empty(Auth::check()) && Auth::user()->id)
-                @if (date('Y-m-d') > $member[0]->duedate)
                     <hr class="sidebar-divider">
                     <!-- Heading -->
                     <div class="sidebar-heading">
@@ -57,13 +56,12 @@
                             <i class="far fa-fw fa-gem"></i>
                             <span>Member</span></a>
                     </li>
-                @else
-                    <hr class="sidebar-divider">
+             
+                    {{-- <hr class="sidebar-divider">
                     <!-- Heading -->
                     <div class="sidebar-heading">
                         User Member
-                    </div>
-                @endif
+                    </div> --}}
             @else
                 <hr class="sidebar-divider">
                 <!-- Heading -->
