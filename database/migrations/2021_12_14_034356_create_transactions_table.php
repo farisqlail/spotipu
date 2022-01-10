@@ -15,6 +15,7 @@ class CreateTransactionsTable extends Migration
             $table->date('active');
             $table->string('method');
             $table->date('duedate');
+            $table->integer('harga');
             $table->integer('total');
             $table->timestamps();
         });

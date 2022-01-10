@@ -15,6 +15,7 @@ class Transaction extends Model
         'active',
         'method',
         'duedate',
+        'harga',
         'total'
     ];
 }
