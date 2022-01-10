@@ -10,7 +10,7 @@
             <div class="float-right mb-3">
                 <a href="{{ route('admin.member.create') }}" class="btn btn-success btn-lg">Tambah Data</a>
             </div>
-
+            {{-- Fadil --}}
             <div class="table-responsive">
                 <table class="table table-bordered" id="tableCekIn" width="100%" cellspacing="0">
                     <thead>
