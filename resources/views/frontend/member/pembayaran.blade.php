@@ -22,6 +22,7 @@
                         <h4><b>Spotipu Premium {{ $member->name_member }}</b></h4>
                         <h6>{{ $member->account }} Akun premium</h6>
                         <hr style="background-color: #ffff;">
+                        <input type="text" name="name_member" value="{{ $member->name_member }}" hidden>
                     </div>
 
                     <div class="row text-white">
@@ -30,6 +31,7 @@
                         </div>
                         <div class="col-md-6">
                             <h5><strong>Rp {{ number_format($member->price) }}</strong></h5>
+                            <input type="number" name="price" value="{{ $member->price }}" hidden>
                         </div>
                     </div>
 
@@ -88,10 +90,27 @@
                         </div>
                         <div class="col-md-6">
                             @php
-                                $total = $member->price + 1000;
+                                $harga = $member->price;
+                                $admin = 1000;
+                                if ($member->name_member == 'Batagor') {
+                                    $diskon = 10;
+                                    $totalDiskon = (($diskon * $harga) / 100);
+                                    $totalBayars = $harga - $totalDiskon + $admin;
+
+                                } elseif($member->name_member == 'Klantink') {
+                                    $diskon = 20;
+                                    $totalDiskon = (($diskon * $harga) / 100);
+                                    $totalBayars = $harga - $totalDiskon + $admin;
+
+                                } else {
+                                    $diskon = 5;
+                                    $totalDiskon = (($diskon * $harga) / 100);
+                                    $totalBayars = $harga - $totalDiskon + $admin;
+                                }
+
                             @endphp
-                            <h4><strong>Rp {{ number_format($total) }}</strong></h4>
-                            <input type="number" name="total" value="{{ $total }}" hidden>
+                            <h4><strong>Rp {{ number_format($totalBayars) }}</strong></h4>
+                            <input type="number" name="harga" value="{{ $totalBayars }}" hidden>
                         </div>
                     </div>
 

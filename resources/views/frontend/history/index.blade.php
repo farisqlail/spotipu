@@ -17,6 +17,8 @@
                                 <th>No</th>
                                 <th>Nama Akun</th>
                                 <th>Langganan Paket</th>
+                                <th>Harga Paket</th>
+                                <th>Total Harga</th>
                                 <th>Tanggal Langganan</th>
                                 <th>Tanggal Berakhir</th>
                             </tr>
@@ -26,6 +28,8 @@
                                 <tr class="text-center">
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->name }}</td>
+                                    <td>{{ $data->harga }}</td>
+                                    <td>{{ $data->total }}</td>
                                     <td>{{ $data->name_member }}</td>
                                     <td>{{ $data->active }}</td>
                                     <td>{{ $data->duedate }}</td>
